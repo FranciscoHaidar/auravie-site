@@ -305,9 +305,9 @@ function App() {
             
             <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <img 
-                src="/logo.png" 
+                src="/logo-monograma.png" 
                 alt="AuraVie Concept" 
-                style={{ height: '110px', marginBottom: '1rem' }}
+                style={{ height: '110px', marginBottom: '1rem', mixBlendMode: 'screen', WebkitMixBlendMode: 'screen' }}
               />
               <p style={{ opacity: 0.8, fontSize: '0.9rem', maxWidth: '250px', margin: '0 auto', lineHeight: '1.4' }}>Redefinindo paradigmas em qualidade de vida</p>
             </div>
