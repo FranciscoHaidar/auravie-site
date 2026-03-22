@@ -251,7 +251,7 @@ function App() {
               <ul>
                 <li><Check size={14} className="check-icon" /> Tudo do Essential</li>
                 <li><Check size={14} className="check-icon" /> Retorno de validação a cada 30 dias</li>
-                <li><Check size={14} className="check-icon" /> Medicamentos IM personalizados para o objetivo</li>
+                <li><Check size={14} className="check-icon" /> Protocolo IM personalizado para o seu objetivo</li>
               </ul>
               <button onClick={() => setActiveModal('essential')} className="btn-plan btn-plan-essential-plus" style={{cursor: 'pointer'}}>SABER MAIS</button>
             </div>
