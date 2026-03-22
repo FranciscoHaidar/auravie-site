@@ -133,9 +133,9 @@ function App() {
         <div className="container about-grid">
           <div>
             <img 
-              src="https://storage.googleapis.com/antigravity-images-test/fdd420a400a40e94af7d78a87b6408db/394c264a71911aaada3e53ba218fca85.png" 
+              src="/foto-medico.jpg" 
               alt="Dr Francisco Haidar" 
-              style={{ width: '100%', maxWidth: '400px', filter: 'brightness(0) invert(1)' }}
+              style={{ width: '100%', maxWidth: '400px', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', objectFit: 'cover' }}
             />
           </div>
           <div>
