@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, CheckCircle2, Phone, MapPin, Instagram, Brain, BatteryCharging, HeartPulse, Stethoscope, ChevronDown } from 'lucide-react';
+import { ChevronRight, CheckCircle2, Phone, MapPin, Instagram, Brain, BatteryCharging, HeartPulse, Stethoscope, ChevronDown, Check, Award } from 'lucide-react';
 import { supabase } from './supabase';
 import './index.css';
 
@@ -207,54 +207,65 @@ function App() {
           <p className="section-subtitle">A esteira premium de serviços da AuraVie para acompanhamento sistêmico.</p>
           
           <div className="plans-grid">
-            <div className="plan-card plan-essential">
+            {/* Essential */}
+            <div className="plan-card" style={{ borderTop: '4px solid #333', backgroundColor: '#f9f9f9' }}>
+              <span className="plan-subtitle">ACESSO BASE</span>
               <h3>Essential</h3>
               <ul>
-                <li><CheckCircle2 size={16} /> Consulta clínica completa</li>
-                <li><CheckCircle2 size={16} /> Bioimpedância analítica</li>
-                <li><CheckCircle2 size={16} /> Acompanhamento por 3 meses</li>
+                <li><Check size={14} className="check-icon" /> Consulta clínica completa</li>
+                <li><Check size={14} className="check-icon" /> Bioimpedância analítica</li>
+                <li><Check size={14} className="check-icon" /> Acompanhamento por 3 meses</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Essential')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
+              <a href={getPlanWhatsAppLink('Essential')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-outline">SABER MAIS</a>
             </div>
 
-            <div className="plan-card plan-essential-plus">
+            {/* Essential + */}
+            <div className="plan-card" style={{ borderTop: '4px solid #888', backgroundColor: '#fff' }}>
+              <span className="plan-subtitle">PERFORMANCE</span>
               <h3>Essential +</h3>
               <ul>
-                <li><CheckCircle2 size={16} /> Tudo do Essential</li>
-                <li><CheckCircle2 size={16} /> Retorno de validação a cada 30 dias</li>
-                <li><CheckCircle2 size={16} /> Medicamentos IM personalizados para o objetivo</li>
+                <li><Check size={14} className="check-icon" /> Tudo do Essential</li>
+                <li><Check size={14} className="check-icon" /> Retorno de validação a cada 30 dias</li>
+                <li><Check size={14} className="check-icon" /> Medicamentos IM personalizados para o objetivo</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Essential +')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
+              <a href={getPlanWhatsAppLink('Essential +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-outline">SABER MAIS</a>
             </div>
 
-            <div className="plan-card plan-prime">
+            {/* Prime */}
+            <div className="plan-card plan-featured" style={{ borderTop: '4px solid var(--gold-champagne)', backgroundColor: '#fff' }}>
+              <span className="plan-subtitle" style={{ color: 'var(--gold-champagne)' }}>PREMIUM</span>
               <h3>Prime</h3>
               <ul>
-                <li><CheckCircle2 size={16} /> Rota Metabólica Avançada</li>
-                <li><CheckCircle2 size={16} /> Exames Laboratoriais aprofundados</li>
-                <li><CheckCircle2 size={16} /> Acompanhamento por 6 meses</li>
+                <li><Check size={14} className="check-icon" /> Rota Metabólica Avançada</li>
+                <li><Check size={14} className="check-icon" /> Exames Laboratoriais aprofundados</li>
+                <li><Check size={14} className="check-icon" /> Acompanhamento por 6 meses</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Prime')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
+              <a href={getPlanWhatsAppLink('Prime')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-solid-gold">SABER MAIS</a>
             </div>
 
-            <div className="plan-card plan-prime-plus">
+            {/* Prime + */}
+            <div className="plan-card" style={{ borderTop: '4px solid #B87333', backgroundColor: '#fff' }}>
+              <span className="plan-subtitle">ADVANCED</span>
               <h3>Prime +</h3>
               <ul>
-                <li><CheckCircle2 size={16} /> Tudo do Prime</li>
-                <li><CheckCircle2 size={16} /> Protocolos de Injetáveis IM/EV personalizado</li>
-                <li><CheckCircle2 size={16} /> Concierge WhatsApp Direto</li>
+                <li><Check size={14} className="check-icon" /> Tudo do Prime</li>
+                <li><Check size={14} className="check-icon" /> Protocolos de Injetáveis IM/EV personalizado</li>
+                <li><Check size={14} className="check-icon" /> Concierge WhatsApp Direto</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Prime +')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
+              <a href={getPlanWhatsAppLink('Prime +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-outline">SABER MAIS</a>
             </div>
 
-            <div className="plan-card plan-black">
-              <h3>Black</h3>
+            {/* Black */}
+            <div className="plan-card plan-black" style={{ borderTop: 'none', backgroundColor: '#0a0a0a', color: '#fff' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: '#000' }}></div>
+              <span className="plan-subtitle" style={{ color: 'var(--gold-bronze)' }}>ELITE EXCLUSIVE</span>
+              <h3 style={{ color: '#fff' }}>Black</h3>
               <ul>
-                <li><CheckCircle2 size={16} /> Consultoria Médica Full-Year</li>
-                <li><CheckCircle2 size={16} /> Controle de Longevidade Anti-aging</li>
-                <li><CheckCircle2 size={16} /> Acompanhamento a cada 15 dias</li>
+                <li><Award size={14} className="check-icon-gold" /> Consultoria Médica Full-Year</li>
+                <li><Award size={14} className="check-icon-gold" /> Controle de Longevidade Anti-aging</li>
+                <li><Award size={14} className="check-icon-gold" /> Acompanhamento a cada 15 dias</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan">Aplicar para o Black</a>
+              <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-solid-gold-dark">SABER MAIS</a>
             </div>
           </div>
         </div>
