@@ -299,6 +299,10 @@ function App() {
           <h2 className="section-title">Dúvidas Frequentes</h2>
           <div style={{ maxWidth: '800px', margin: '3rem auto 0 auto' }}>
             <div className="faq-item">
+              <h4>O acompanhamento pode ser feito online ou apenas presencial?</h4>
+              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>O método AuraVie Concept foi estruturado para atender pacientes sem barreiras geográficas. Nossas consultas podem ser realizadas de forma <strong>100% online por telemedicina</strong>, com atendimento para todo o Brasil e exterior, ou <strong>presencialmente</strong> em nossa sede em Campo Bom/RS. Em ambas as modalidades, garantimos o mesmo padrão de excelência clínica, guias de exames e conduta terapêutica de precisão.</p>
+            </div>
+            <div className="faq-item">
               <h4>A clínica aceita convênio médico?</h4>
               <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>Nossas consultas são exclusivamente particulares para garantir o tempo, a complexidade laboratorial e a excelência que o método AuraVie exige. Emitimos nota fiscal para pedidos de reembolso junto ao seu plano.</p>
             </div>
