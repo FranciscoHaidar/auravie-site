@@ -6,10 +6,10 @@ import './index.css';
 function App() {
   const [siteConfig, setSiteConfig] = useState({
     hero_title: 'Muito além da estética: redefinindo a sua qualidade de vida com inteligência médica.',
-    hero_subtitle: 'Descubra o método AuraVie Concept para otimização metabólica e envelhecimento saudável.',
+    hero_subtitle: 'Descubra o método BioARch para otimização metabólica e envelhecimento saudável.',
     whatsapp_number: '5551997353309',
     instagram_url: 'https://www.instagram.com/drfranciscohaidar/',
-    about_text_p1: 'Sou fascinado pela máquina humana. Criei o método AuraVie Concept porque compreendi que a maioria dos sintomas clássicos que destroem sua auto-estima e motivação podem ser mapeados e revertidos.',
+    about_text_p1: 'Sou fascinado pela máquina humana. Criei o método BioARch porque compreendi que a maioria dos sintomas clássicos que destroem sua auto-estima e motivação podem ser mapeados e revertidos.',
     about_text_p2: 'Meu compromisso como médico é aplicar protocolos rigorosos e hiper-personalizados, combinando nutrologia avançada, bioimpedância de precisão e terapias de ação ultrarrápida (injetáveis) para entregar não só a estética almejada, mas longevidade biológica.'
   });
 
@@ -311,7 +311,7 @@ function App() {
           <div style={{ maxWidth: '800px', margin: '3rem auto 0 auto' }}>
             <div className="faq-item">
               <h4>O acompanhamento pode ser feito online ou apenas presencial?</h4>
-              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>O método AuraVie Concept foi estruturado para atender pacientes sem barreiras geográficas. Nossas consultas podem ser realizadas de forma <strong>100% online por telemedicina</strong>, com atendimento para todo o Brasil e exterior, ou <strong>presencialmente</strong> em nossa sede na Região do Vale dos Sinos. Em ambas as modalidades, garantimos o mesmo padrão de excelência clínica, guias de exames e conduta terapêutica de precisão.</p>
+              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>O método BioARch foi estruturado para atender pacientes sem barreiras geográficas. Nossas consultas podem ser realizadas de forma <strong>100% online por telemedicina</strong>, com atendimento para todo o Brasil e exterior, ou <strong>presencialmente</strong> em nossa sede na Região do Vale dos Sinos. Em ambas as modalidades, garantimos o mesmo padrão de excelência clínica, guias de exames e conduta terapêutica de precisão.</p>
             </div>
             <div className="faq-item">
               <h4>A clínica aceita convênio médico?</h4>
