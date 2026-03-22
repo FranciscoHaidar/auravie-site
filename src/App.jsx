@@ -51,13 +51,10 @@ function App() {
           <div 
             className="logo-container" 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
           >
-            <img 
-              src="/logo.png" 
-              alt="Logo AuraVie" 
-              style={{ height: '55px'}}
-            />
+            <span style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--title-marinho)', letterSpacing: '-0.5px' }}>AuraVie</span>
+            <span style={{ fontSize: '1.8rem', fontWeight: 400, color: '#C8A97E', marginLeft: '6px' }}>Concept</span>
           </div>
           <div className="nav-links">
             <a href="#problema" onClick={(e) => { e.preventDefault(); scrollTo('problema'); }} className="nav-link">Por que AuraVie?</a>
