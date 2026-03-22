@@ -39,6 +39,7 @@ section {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
   overflow-x: hidden;
 }
 
@@ -133,7 +134,7 @@ h1, h2, h3, h4 {
   left: 0;
   width: 100%;
   padding: 1rem 0;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   z-index: 1000;

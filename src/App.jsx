@@ -39,10 +39,6 @@ function App() {
     return `https://wa.me/${siteConfig.whatsapp_number}?text=${encodeURIComponent(text)}`;
   };
 
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <>
       {/* 0. NAVBAR */}
@@ -57,12 +53,12 @@ function App() {
             <span style={{ fontSize: '1.45rem', fontWeight: 400, color: '#C8A97E', marginLeft: '6px' }}>Concept</span>
           </div>
           <div className="nav-links" style={{ gap: '1.2rem', whiteSpace: 'nowrap' }}>
-            <a href="#problema" onClick={(e) => { e.preventDefault(); scrollTo('problema'); }} className="nav-link">Por que AuraVie?</a>
-            <a href="#medico" onClick={(e) => { e.preventDefault(); scrollTo('medico'); }} className="nav-link">O Médico</a>
-            <a href="#jornada" onClick={(e) => { e.preventDefault(); scrollTo('jornada'); }} className="nav-link">A Jornada</a>
-            <a href="#planos" onClick={(e) => { e.preventDefault(); scrollTo('planos'); }} className="nav-link">Planos</a>
-            <a href="#atuacao" onClick={(e) => { e.preventDefault(); scrollTo('atuacao'); }} className="nav-link">Áreas de Atuação</a>
-            <a href="#faq" onClick={(e) => { e.preventDefault(); scrollTo('faq'); }} className="nav-link">FAQ</a>
+            <a href="#problema" className="nav-link">Por que AuraVie?</a>
+            <a href="#medico" className="nav-link">O Médico</a>
+            <a href="#jornada" className="nav-link">A Jornada</a>
+            <a href="#planos" className="nav-link">Planos</a>
+            <a href="#atuacao" className="nav-link">Áreas de Atuação</a>
+            <a href="#faq" className="nav-link">FAQ</a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
             <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--title-marinho)', display: 'flex', alignItems: 'center' }}>
