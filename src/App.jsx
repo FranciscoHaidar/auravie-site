@@ -89,8 +89,8 @@ function App() {
               {siteConfig.hero_subtitle}
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.9rem 1.4rem', flex: '1 1 180px', textAlign: 'center' }}>
-                Agendar Consulta
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.9rem 1rem', flex: '1 1 200px', textAlign: 'center', fontSize: '1rem' }}>
+                Iniciar Minha Transformação
               </a>
               <button onClick={() => scrollTo('planos')} className="btn btn-outline" style={{ padding: '0.9rem 1.4rem', flex: '1 1 180px', textAlign: 'center' }}>
                 Conhecer os Planos
