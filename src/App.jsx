@@ -77,30 +77,30 @@ function App() {
       </nav>
 
       {/* 1. HERO SECTION */}
-      <section className="hero">
-        <div className="container hero-grid">
-          <div className="hero-content">
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '1.5rem', letterSpacing: '-1px' }}>
+      <section className="hero" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+        <div className="container hero-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
+          <div className="hero-content" style={{ flex: '1 1 450px' }}>
+             <h1 style={{ fontSize: 'clamp(2.3rem, 4.2vw, 3.4rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '1.2rem', letterSpacing: '-1px' }}>
               {siteConfig.hero_title}
             </h1>
-            <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', opacity: 0.85, marginBottom: '2.5rem', lineHeight: 1.6, maxWidth: '95%' }}>
+            <p style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)', opacity: 0.85, marginBottom: '2.5rem', lineHeight: 1.6, maxWidth: '95%' }}>
               {siteConfig.hero_subtitle}
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                Agendar Minha Consulta
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.9rem 1.4rem', flex: '1 1 180px', textAlign: 'center' }}>
+                Agendar Consulta
               </a>
-              <button onClick={() => scrollTo('planos')} className="btn btn-outline">
+              <button onClick={() => scrollTo('planos')} className="btn btn-outline" style={{ padding: '0.9rem 1.4rem', flex: '1 1 180px', textAlign: 'center' }}>
                 Conhecer os Planos
               </button>
             </div>
           </div>
-          <div className="hero-image-wrapper" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div className="hero-image-wrapper" style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingLeft: '1rem' }}>
              <img 
                 src="/logo.png" 
                 className="hero-logo-large" 
                 alt="AuraVie Concept" 
-                style={{ width: '100%', maxWidth: '360px' }}
+                style={{ width: '100%', maxWidth: '320px' }}
              />
           </div>
         </div>
