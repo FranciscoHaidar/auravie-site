@@ -284,17 +284,14 @@ h1, h2, h3, h4 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
-  color: #363636;
-  border: 1px solid #EBEBEB;
+  background: #1A1A1A; /* Unified deep graphite */
+  color: #FFFFFF;
   border-top: 4px solid transparent; /* overriden by specific plan */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   transition: transform 0.3s ease;
 }
 
 .plan-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .plan-card h3 {
@@ -306,7 +303,7 @@ h1, h2, h3, h4 {
   opacity: 0.9;
   font-size: 0.95rem;
   margin-bottom: 2rem;
-  color: #363636;
+  color: #FFFFFF;
 }
 
 .plan-card ul {
@@ -321,7 +318,7 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
-  color: #363636;
+  color: #FFFFFF;
 }
 
 /* Individual Plan Metallic Overrides */
@@ -345,7 +342,7 @@ h1, h2, h3, h4 {
 }
 .plan-black p, .plan-black ul li { color: #FFFFFF !important; }
 .plan-black h3, .plan-black p.tier-name, .plan-black li svg { color: #FFDF00 !important; }
-.plan-black .btn-plan { background: #FFDF00 !important; color: #363636 !important; border-color: #FFDF00 !important; }
+.plan-black .btn-plan { background: transparent !important; color: #FFDF00 !important; border-color: #FFDF00 !important; }
 
 .btn-plan {
   margin-top: auto;
