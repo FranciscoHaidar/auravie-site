@@ -80,8 +80,12 @@ function App() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-content">
-            <h1>{siteConfig.hero_title}</h1>
-            <p>{siteConfig.hero_subtitle}</p>
+            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '1.5rem', letterSpacing: '-1px' }}>
+              {siteConfig.hero_title}
+            </h1>
+            <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', opacity: 0.85, marginBottom: '2.5rem', lineHeight: 1.6, maxWidth: '95%' }}>
+              {siteConfig.hero_subtitle}
+            </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Agendar Minha Consulta
