@@ -48,7 +48,11 @@ function App() {
       {/* 0. NAVBAR */}
       <nav className="navbar">
         <div className="container">
-          <div className="logo-container">
+          <div 
+            className="logo-container" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            style={{ cursor: 'pointer' }}
+          >
             <img 
               src="/logo.png" 
               alt="Logo AuraVie" 
