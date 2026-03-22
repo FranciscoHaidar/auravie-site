@@ -303,13 +303,13 @@ function App() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '3rem', marginBottom: '2rem' }}>
             
-            <div>
+            <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <img 
                 src="/logo.png" 
                 alt="AuraVie Concept" 
-                style={{ height: '70px', marginBottom: '1.5rem' }}
+                style={{ height: '110px', marginBottom: '1rem' }}
               />
-              <p style={{ opacity: 0.8, fontSize: '0.9rem' }}>Redefinindo paradigmas em qualidade de vida</p>
+              <p style={{ opacity: 0.8, fontSize: '0.9rem', maxWidth: '250px', margin: '0 auto', lineHeight: '1.4' }}>Redefinindo paradigmas em qualidade de vida</p>
             </div>
             
             <div>
