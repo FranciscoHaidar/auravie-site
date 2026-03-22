@@ -153,10 +153,10 @@ function App() {
           </div>
           <div>
             <h2 style={{ color: 'var(--gold-champagne)', marginBottom: '1rem', fontSize: '2.8rem'}}>Dr. Francisco Haidar</h2>
-            <p style={{ opacity: 0.9, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
+            <p style={{ opacity: 0.9, marginBottom: '1.5rem', fontSize: '1.1rem', textAlign: 'justify' }}>
               {siteConfig.about_text_p1}
             </p>
-            <p style={{ opacity: 0.9, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
+            <p style={{ opacity: 0.9, marginBottom: '1.5rem', fontSize: '1.1rem', textAlign: 'justify' }}>
               {siteConfig.about_text_p2}
             </p>
             <div style={{ marginTop: '1.5rem' }}>
