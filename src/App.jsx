@@ -9,7 +9,7 @@ function App() {
     hero_subtitle: 'Descubra o método BioARch para otimização metabólica e envelhecimento saudável.',
     whatsapp_number: '5551997353309',
     instagram_url: 'https://www.instagram.com/drfranciscohaidar/',
-    about_text_p1: 'Sou fascinado pela máquina humana. Criei o método BioARch porque compreendi que a maioria dos sintomas clássicos que destroem sua auto-estima e motivação podem ser mapeados e revertidos.',
+    about_text_p1: 'Sou fascinado pela máquina humana. Na AuraVie, criei o método BioARch porque compreendi que a maioria dos sintomas clássicos que destroem sua auto-estima e motivação podem ser mapeados e revertidos.',
     about_text_p2: 'Meu compromisso como médico é aplicar protocolos rigorosos e hiper-personalizados, combinando nutrologia avançada, bioimpedância de precisão e terapias de ação ultrarrápida (injetáveis) para entregar não só a estética almejada, mas longevidade biológica.'
   });
 
