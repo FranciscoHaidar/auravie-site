@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronRight, CheckCircle2, Phone, MapPin, Instagram, Brain, BatteryCharging, HeartPulse, Stethoscope, ChevronDown } from 'lucide-react';
+import { supabase } from './supabase';
 import './index.css';
 
 function App() {
-  const WHATSAPP_NUMBER = "5551997353309"; 
-  const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+AuraVie+Concept.`;
-  const INSTAGRAM_LINK = "https://www.instagram.com/drfranciscohaidar/";
+  const [siteConfig, setSiteConfig] = useState({
+    hero_title: 'Muito além da estética: redefinindo a sua qualidade de vida com inteligência médica.',
+    hero_subtitle: 'Descubra o método AuraVie Concept para otimização metabólica e envelhecimento saudável.',
+    whatsapp_number: '5551997353309',
+    instagram_url: 'https://www.instagram.com/drfranciscohaidar/',
+    about_text_p1: 'Sou fascinado pela máquina humana. Criei o método AuraVie Concept porque compreendi que a maioria dos sintomas clássicos que destroem sua auto-estima e motivação podem ser mapeados e revertidos.',
+    about_text_p2: 'Meu compromisso como médico é aplicar protocolos rigorosos e hiper-personalizados, combinando nutrologia avançada, bioimpedância de precisão e terapias de ação ultrarrápida (injetáveis) para entregar não só a estética almejada, mas longevidade biológica.'
+  });
+
+  useEffect(() => {
+    const fetchConfig = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('site_config')
+          .select('*')
+          .eq('id', 1)
+          .single();
+        if (data) {
+          setSiteConfig(data);
+        }
+      } catch (err) {
+        console.error("Fallback to default config.", err);
+      }
+    };
+    fetchConfig();
+  }, []);
+
+  const WHATSAPP_LINK = `https://wa.me/${siteConfig.whatsapp_number}?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+AuraVie+Concept.`;
+  const INSTAGRAM_LINK = siteConfig.instagram_url;
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -29,7 +56,7 @@ function App() {
             <a href="#jornada" onClick={(e) => { e.preventDefault(); scrollTo('jornada'); }} className="nav-link">A Jornada</a>
             <a href="#planos" onClick={(e) => { e.preventDefault(); scrollTo('planos'); }} className="nav-link">Planos</a>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
             <a href={INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--title-marinho)', display: 'flex', alignItems: 'center' }}>
               <Instagram size={22} />
             </a>
@@ -44,8 +71,8 @@ function App() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-content">
-            <h1>Muito além da estética: <br/><span style={{ color: 'var(--title-petroleo)'}}>redefinindo a sua qualidade de vida</span> com inteligência médica.</h1>
-            <p>Descubra o método AuraVie Concept para otimização metabólica e envelhecimento saudável.</p>
+            <h1>{siteConfig.hero_title}</h1>
+            <p>{siteConfig.hero_subtitle}</p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Agendar Minha Consulta
@@ -105,10 +132,10 @@ function App() {
           <div>
             <h2 style={{ color: 'var(--gold-champagne)', marginBottom: '1rem', fontSize: '2.8rem'}}>Dr. Francisco Haidar</h2>
             <p style={{ opacity: 0.9, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
-              Sou fascinado pela máquina humana. Criei o método AuraVie Concept porque compreendi que a maioria dos sintomas clássicos que destroem sua auto-estima e motivação podem ser mapeados e revertidos.
+              {siteConfig.about_text_p1}
             </p>
             <p style={{ opacity: 0.9, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
-              Meu compromisso como médico é aplicar protocolos rigorosos e hiper-personalizados, combinando nutrologia avançada, bioimpedância de precisão e terapias de ação ultrarrápida (injetáveis) para entregar não só a estética almejada, mas longevidade biológica.
+              {siteConfig.about_text_p2}
             </p>
             <p style={{ fontWeight: 600, color: 'var(--gold-champagne)' }}>CRM: Médico Nutrólogo Especialista</p>
           </div>
