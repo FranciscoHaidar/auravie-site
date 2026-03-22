@@ -284,7 +284,9 @@ h1, h2, h3, h4 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  color: #fff;
+  background: #1A1A1A; /* Unified deep graphite */
+  color: #FFFFFF;
+  border-top: 4px solid transparent; /* overriden by specific plan */
   transition: transform 0.3s ease;
 }
 
@@ -293,7 +295,6 @@ h1, h2, h3, h4 {
 }
 
 .plan-card h3 {
-  color: #fff;
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
@@ -302,6 +303,7 @@ h1, h2, h3, h4 {
   opacity: 0.9;
   font-size: 0.95rem;
   margin-bottom: 2rem;
+  color: #FFFFFF;
 }
 
 .plan-card ul {
@@ -316,27 +318,35 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
+  color: #FFFFFF;
 }
 
-.plan-essential { background: var(--plan-essential); color: var(--text-grafite); }
-.plan-essential h3 { color: var(--text-grafite); }
-.plan-essential-plus { background: var(--plan-essential-plus); }
-.plan-prime { background: var(--plan-prime); color: var(--title-marinho); }
-.plan-prime h3 { color: var(--title-marinho); }
-.plan-prime-plus { background: var(--plan-prime-plus); }
-.plan-black { background: var(--plan-black); border: 1px solid var(--gold-bronze); border-top: 4px solid var(--gold-bronze); }
-.plan-black h3 { color: #FFDF00; } /* 24k Gold */
-.plan-black .btn-plan { background: #FFDF00; color: #000; }
+/* Individual Plan Metallic Overrides */
+.plan-essential { border-top-color: #A9A9A9; }
+.plan-essential h3, .plan-essential p.tier-name, .plan-essential .btn-plan, .plan-essential li svg { color: #A9A9A9 !important; }
+
+.plan-essential-plus { border-top-color: #8C8C8C; }
+.plan-essential-plus h3, .plan-essential-plus p.tier-name, .plan-essential-plus .btn-plan, .plan-essential-plus li svg { color: #8C8C8C !important; }
+
+.plan-prime { border-top-color: #E5D3B3; }
+.plan-prime h3, .plan-prime p.tier-name, .plan-prime .btn-plan, .plan-prime li svg { color: #E5D3B3 !important; }
+
+.plan-prime-plus { border-top-color: #B87333; }
+.plan-prime-plus h3, .plan-prime-plus p.tier-name, .plan-prime-plus .btn-plan, .plan-prime-plus li svg { color: #B87333 !important; }
+
+.plan-black { border-top-color: #FFDF00; }
+.plan-black h3, .plan-black p.tier-name, .plan-black li svg { color: #FFDF00 !important; }
+.plan-black .btn-plan { background: #FFDF00 !important; color: #1A1A1A !important; border-color: #FFDF00 !important; }
 
 .btn-plan {
   margin-top: auto;
-  background: rgba(255,255,255,0.2);
+  background: transparent;
   color: inherit;
   font-weight: 700;
   padding: 0.8rem;
   border-radius: 50px;
   text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1.5px solid currentColor;
 }
 
 /* === FAQ === */

@@ -184,7 +184,7 @@ function App() {
           <div className="plans-grid">
             <div className="plan-card plan-essential">
               <h3>Essential</h3>
-              <p>Silver Tier</p>
+              <p className="tier-name">Prata Fosco / Aço Escovado</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Consulta clínica completa</li>
                 <li><CheckCircle2 size={16} /> Bioimpedância analítica</li>
@@ -194,8 +194,8 @@ function App() {
             </div>
 
             <div className="plan-card plan-essential-plus">
-              <h3 style={{ color: '#fff' }}>Essential +</h3>
-              <p style={{ color: '#ccc'}}>Grafite Metálico</p>
+              <h3>Essential +</h3>
+              <p className="tier-name">Grafite Metálico / Aço Escuro</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Tudo do Essential</li>
                 <li><CheckCircle2 size={16} /> Retorno de validação em 30d</li>
@@ -206,18 +206,18 @@ function App() {
 
             <div className="plan-card plan-prime">
               <h3>Prime</h3>
-              <p style={{ color: 'var(--title-petroleo)'}}>Ouro Champagne</p>
+              <p className="tier-name">Ouro Champagne</p>
               <ul>
-                <li style={{ color: 'var(--text-grafite)'}}><CheckCircle2 size={16} /> Rota Metabólica Avançada</li>
-                <li style={{ color: 'var(--text-grafite)'}}><CheckCircle2 size={16} /> Exames Laboratoriais aprofundados</li>
-                <li style={{ color: 'var(--text-grafite)'}}><CheckCircle2 size={16} /> Acesso a terapias injetáveis (IM)</li>
+                <li><CheckCircle2 size={16} /> Rota Metabólica Avançada</li>
+                <li><CheckCircle2 size={16} /> Exames Laboratoriais aprofundados</li>
+                <li><CheckCircle2 size={16} /> Acesso a terapias injetáveis (IM)</li>
               </ul>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-plan" style={{ border: '2px solid var(--title-marinho)', color: 'var(--title-marinho)'}}>Saber mais</a>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
             </div>
 
             <div className="plan-card plan-prime-plus">
-              <h3 style={{ color: '#fff' }}>Prime +</h3>
-              <p style={{ color: '#fff' }}>Ouro Rosé / Cobre</p>
+              <h3>Prime +</h3>
+              <p className="tier-name">Ouro Rosé / Cobre Polido</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Reposição Hormonal Fina</li>
                 <li><CheckCircle2 size={16} /> Protocolos de Injetáveis IV/EV</li>
@@ -228,11 +228,11 @@ function App() {
 
             <div className="plan-card plan-black">
               <h3>Black</h3>
-              <p style={{ color: '#FFDF00'}}>Absolute Gold</p>
+              <p className="tier-name">Absolute Gold 24k</p>
               <ul>
-                <li><CheckCircle2 size={16} color="#FFDF00" /> Consultoria Médica Full-Year</li>
-                <li><CheckCircle2 size={16} color="#FFDF00" /> Controle de Longevidade Anti-aging</li>
-                <li><CheckCircle2 size={16} color="#FFDF00" /> Acesso irrestrito às Terapias e Reposição Plena</li>
+                <li><CheckCircle2 size={16} /> Consultoria Médica Full-Year</li>
+                <li><CheckCircle2 size={16} /> Controle de Longevidade Anti-aging</li>
+                <li><CheckCircle2 size={16} /> Acesso irrestrito às Terapias e Reposição Plena</li>
               </ul>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-plan">Aplicar para o Black</a>
             </div>
