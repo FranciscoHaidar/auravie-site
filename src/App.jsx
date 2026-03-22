@@ -61,10 +61,10 @@ function App() {
           </div>
           <div className="nav-links">
             <a href="#problema" onClick={(e) => { e.preventDefault(); scrollTo('problema'); }} className="nav-link">Por que AuraVie?</a>
-            <a href="#atuacao" onClick={(e) => { e.preventDefault(); scrollTo('atuacao'); }} className="nav-link">Áreas de Atuação</a>
             <a href="#medico" onClick={(e) => { e.preventDefault(); scrollTo('medico'); }} className="nav-link">O Médico</a>
             <a href="#jornada" onClick={(e) => { e.preventDefault(); scrollTo('jornada'); }} className="nav-link">A Jornada</a>
             <a href="#planos" onClick={(e) => { e.preventDefault(); scrollTo('planos'); }} className="nav-link">Planos</a>
+            <a href="#atuacao" onClick={(e) => { e.preventDefault(); scrollTo('atuacao'); }} className="nav-link">Áreas de Atuação</a>
             <a href="#faq" onClick={(e) => { e.preventDefault(); scrollTo('faq'); }} className="nav-link">FAQ</a>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
@@ -255,7 +255,7 @@ function App() {
       </section>
 
       {/* 6. ÁREAS DE ATUAÇÃO */}
-      <section className="section">
+      <section id="atuacao" className="section">
         <div className="container">
           <h2 className="section-title text-petroleo">Áreas de Atuação</h2>
           <div className="cards-grid" style={{ marginTop: '3rem' }}>
@@ -288,7 +288,7 @@ function App() {
       </section>
 
       {/* 7. FAQ */}
-      <section className="section bg-offwhite">
+      <section id="faq" className="section bg-offwhite">
         <div className="container">
           <h2 className="section-title">Dúvidas Frequentes</h2>
           <div style={{ maxWidth: '800px', margin: '3rem auto 0 auto' }}>
