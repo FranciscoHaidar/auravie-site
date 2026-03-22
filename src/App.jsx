@@ -315,15 +315,27 @@ function App() {
             </div>
             <div className="faq-item">
               <h4>A clínica aceita convênio médico?</h4>
-              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>Nossas consultas são exclusivamente particulares para garantir o tempo, a complexidade laboratorial e a excelência que o método AuraVie exige. Emitimos nota fiscal para pedidos de reembolso junto ao seu plano.</p>
+              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>Na AuraVie Concept, nossos atendimentos são exclusivamente particulares. Isso nos permite dedicar o tempo e a atenção integral que um mapeamento metabólico de alta precisão exige, sem as limitações de tempo impostas pelos convênios. No entanto, emitimos nota fiscal para que você possa solicitar o reembolso junto ao seu plano de saúde, e os exames laboratoriais solicitados podem ser realizados pelo seu convênio.</p>
             </div>
             <div className="faq-item">
-              <h4>Como funcionam os exames?</h4>
-              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>Fornecemos a guia laboratorial detalhada na primeira consulta. Caso seja do seu interesse, também realizamos e possuímos parceiros para coletas direcionadas ao nosso acompanhamento científico.</p>
+              <h4>Qual a diferença entre o acompanhamento na AuraVie e ir apenas ao nutricionista?</h4>
+              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>O trabalho médico nutrológico vai na raiz do problema. Enquanto o plano alimentar cuida do combustível, a nutrologia investiga e otimiza o "motor": seus hormônios, deficiências vitamínicas silenciosas e vias metabólicas. Nós realizamos diagnósticos médicos e prescrevemos tratamentos avançados (como terapias injetáveis e reposição hormonal) que atuam em sinergia com a sua nutrição para destravar resultados definitivos.</p>
             </div>
             <div className="faq-item">
-              <h4>Qual a duração do acompanhamento?</h4>
-              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>Varia de acordo com o plano biológico estabelecido. A longevidade exige constância, mas os primeiros protocolos de ataque costumam trazer respostas perceptíveis já nos primeiros 30 a 45 dias de execução.</p>
+              <h4>Como a Nutrologia e a Harmonização Corporal se conectam no meu tratamento?</h4>
+              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>Acreditamos que a verdadeira estética começa de dentro para fora. Tratar a base metabólica, combater o estresse oxidativo e otimizar seus hormônios melhora drasticamente a qualidade da sua pele, a produção de colágeno e a durabilidade dos procedimentos estéticos. É a união da saúde celular com o refinamento facial.</p>
+            </div>
+            <div className="faq-item">
+              <h4>Os exames laboratoriais estão inclusos no valor dos planos?</h4>
+              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>Os planos incluem a avaliação clínica completa e a bioimpedância analítica realizadas na clínica. Os exames laboratoriais de sangue ou imagem são solicitados à parte, de forma totalmente individualizada conforme a sua necessidade, e você pode realizá-los no laboratório de sua preferência (utilizando seu plano de saúde, se desejar).</p>
+            </div>
+            <div className="faq-item">
+              <h4>Em quanto tempo começo a ver resultados na minha energia e corpo?</h4>
+              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>A medicina de precisão não trabalha com promessas imediatistas irresponsáveis, mas sim com fisiologia. A maioria dos nossos pacientes relata uma melhora significativa na disposição, foco e qualidade do sono já nas primeiras semanas de ajuste metabólico e reposição de nutrientes. As mudanças na composição corporal tornam-se visíveis e consistentes ao longo dos primeiros meses de protocolo.</p>
+            </div>
+            <div className="faq-item">
+              <h4>O tratamento é indicado para quem já treina pesado, como musculação e jiu-jitsu?</h4>
+              <p style={{ color: 'var(--text-grafite)', fontSize: '0.95rem'}}>Absolutamente. Para praticantes de atividades de alta intensidade, o desgaste oxidativo e a demanda nutricional são muito maiores. Nossos protocolos aceleram a recuperação muscular, previnem lesões e otimizam a hipertrofia e a performance no tatame ou na academia, ajustando o corpo para suportar e evoluir com a carga de treinos.</p>
             </div>
           </div>
         </div>
