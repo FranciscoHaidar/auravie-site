@@ -28,6 +28,7 @@ function App() {
             <a href="#especialidades" onClick={(e) => { e.preventDefault(); scrollTo('especialidades'); }} className="nav-link">Especialidades</a>
             <a href="#metodo" onClick={(e) => { e.preventDefault(); scrollTo('metodo'); }} className="nav-link">Método AuraVie</a>
             <a href="#sobre" onClick={(e) => { e.preventDefault(); scrollTo('sobre'); }} className="nav-link">O Doutor</a>
+          </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
             <a href="https://www.instagram.com/drfranciscohaidar/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', display: 'flex', alignItems: 'center' }}>
               <Instagram size={22} />
