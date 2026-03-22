@@ -74,15 +74,15 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary {
-  background: var(--title-petroleo);
+  background: var(--title-marinho);
   color: #FFFFFF;
-  box-shadow: 0 8px 20px rgba(0, 95, 106, 0.3);
+  box-shadow: 0 8px 20px rgba(29, 41, 81, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  background: #004d56; /* Escurece um pouco no hover */
-  box-shadow: 0 12px 25px rgba(0, 95, 106, 0.4);
+  background: #141d3b; /* Escurece um pouco no hover */
+  box-shadow: 0 12px 25px rgba(29, 41, 81, 0.4);
 }
 
 .btn-outline {
