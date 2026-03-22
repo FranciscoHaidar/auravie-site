@@ -74,15 +74,15 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary {
-  background: var(--gold-bronze);
+  background: var(--title-petroleo);
   color: #FFFFFF;
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 95, 106, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  background: #c29928;
-  box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4);
+  background: #004d56; /* Escurece um pouco no hover */
+  box-shadow: 0 12px 25px rgba(0, 95, 106, 0.4);
 }
 
 .btn-outline {
