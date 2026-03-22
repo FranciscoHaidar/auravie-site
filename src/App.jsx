@@ -84,7 +84,7 @@ function App() {
               <p>O achismo e dietas padrão ignoram sua assinatura metabólica. A nutrição baseada e orientada por IA química corta o abismo para o resultado.</p>
             </div>
             <div className="info-card">
-              <HeartPulse size={32} color="var(--gold-bronze)" style={{ marginBottom: '1rem' }} />
+              <HeartPulse size={32} color="var(--gold-champagne)" style={{ marginBottom: '1rem' }} />
               <h3>A Solução Baseada em Evidências</h3>
               <p>Troque a tentativa e erro por um sistema médico investigativo onde cada decisão suplementar e clínica é rastreada com parâmetros claros.</p>
             </div>
