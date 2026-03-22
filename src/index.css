@@ -282,18 +282,23 @@ h1, h2, h3, h4 {
 /* === PLANOS === */
 #planos .container { max-width: 1350px; width: 98%; padding: 0 1rem; }
 .plans-grid { display: flex; justify-content: center; align-items: stretch; gap: 1rem; flex-wrap: nowrap; margin-top: 3rem; overflow-x: visible; padding-bottom: 3rem; background: transparent; }
-.plan-card { flex: 1; min-width: 0; background: white; border-radius: 12px; padding: 2.5rem 1rem; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #eaeaea; position: relative; display: flex; flex-direction: column; overflow: hidden; }
+.plan-card { flex: 1; min-width: 0; background: white; border-radius: 12px; padding: 2.5rem 1rem; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #eaeaea; position: relative; display: flex; flex-direction: column; overflow: hidden; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.plan-card:hover { transform: scale(1.04) translateY(-8px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); z-index: 10; border-color: transparent; }
 .plan-card.plan-featured { box-shadow: 0 15px 35px rgba(29, 41, 81, 0.08); transform: scale(1.02); z-index: 2; border: none; }
+.plan-card.plan-featured:hover { transform: scale(1.06) translateY(-8px); box-shadow: 0 30px 60px rgba(29, 41, 81, 0.15); z-index: 11; }
 .plan-subtitle { font-size: 0.60rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #777; margin-bottom: 0.8rem; display: block; }
 .plan-card h3 { font-size: 1.3rem; margin-bottom: 1.5rem; color: #111; }
 .plan-card ul { list-style: none; padding: 0; margin-bottom: 2rem; flex-grow: 1; }
 .plan-card ul li { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.85rem; color: #444; line-height: 1.3; }
 .check-icon { color: #888; flex-shrink: 0; margin-top: 2px; }
 .check-icon-gold { color: var(--gold-bronze); flex-shrink: 0; margin-top: 2px; }
-.btn-plan { width: 100%; padding: 0.9rem 0.5rem; text-align: center; font-weight: 700; font-size: 0.70rem; letter-spacing: 0.5px; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border-radius: 8px; display: block; margin-top: auto; }
-.btn-plan.btn-outline { border: 1px solid #ddd; color: var(--title-marinho); background: transparent; }
-.btn-plan.btn-solid-gold { background: var(--gold-champagne); color: var(--title-marinho); border: none; }
-.btn-plan.btn-solid-gold-dark { background: #FFD700; color: #000; border: none; }
+.btn-plan { width: 100%; padding: 0.9rem 0.5rem; text-align: center; font-weight: 700; font-size: 0.70rem; letter-spacing: 0.5px; text-transform: uppercase; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, filter 0.2s; border-radius: 8px; display: block; margin-top: auto; }
+.btn-plan:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); filter: brightness(1.15); }
+.btn-plan-essential { background: #333; color: white; border: none; }
+.btn-plan-essential-plus { background: #888; color: white; border: none; }
+.btn-plan-prime { background: var(--gold-champagne); color: var(--title-marinho); border: none; }
+.btn-plan-prime-plus { background: #B87333; color: white; border: none; }
+.btn-plan-black { background: #FFD700; color: #000; border: none; }
 .plan-black { background: #0a0a0a; border: none; box-shadow: 0 15px 45px rgba(0,0,0,0.3); }
 .plan-black p, .plan-black ul li { color: rgba(255,255,255,0.75); }
 .plan-black h3 { color: #fff; }

@@ -216,7 +216,7 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Bioimpedância analítica</li>
                 <li><Check size={14} className="check-icon" /> Acompanhamento por 3 meses</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Essential')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-outline">SABER MAIS</a>
+              <a href={getPlanWhatsAppLink('Essential')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-essential">SABER MAIS</a>
             </div>
 
             {/* Essential + */}
@@ -228,7 +228,7 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Retorno de validação a cada 30 dias</li>
                 <li><Check size={14} className="check-icon" /> Medicamentos IM personalizados para o objetivo</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Essential +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-outline">SABER MAIS</a>
+              <a href={getPlanWhatsAppLink('Essential +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-essential-plus">SABER MAIS</a>
             </div>
 
             {/* Prime */}
@@ -240,7 +240,7 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Exames Laboratoriais aprofundados</li>
                 <li><Check size={14} className="check-icon" /> Acompanhamento por 6 meses</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Prime')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-solid-gold">SABER MAIS</a>
+              <a href={getPlanWhatsAppLink('Prime')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-prime">SABER MAIS</a>
             </div>
 
             {/* Prime + */}
@@ -252,7 +252,7 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Protocolos de Injetáveis IM/EV personalizado</li>
                 <li><Check size={14} className="check-icon" /> Concierge WhatsApp Direto</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Prime +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-outline">SABER MAIS</a>
+              <a href={getPlanWhatsAppLink('Prime +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-prime-plus">SABER MAIS</a>
             </div>
 
             {/* Black */}
@@ -265,7 +265,7 @@ function App() {
                 <li><Award size={14} className="check-icon-gold" /> Controle de Longevidade Anti-aging</li>
                 <li><Award size={14} className="check-icon-gold" /> Acompanhamento a cada 15 dias</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-solid-gold-dark">SABER MAIS</a>
+              <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-black">SABER MAIS</a>
             </div>
           </div>
         </div>
