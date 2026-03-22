@@ -192,7 +192,7 @@ function App() {
               <ul>
                 <li><CheckCircle2 size={16} /> Consulta clínica completa</li>
                 <li><CheckCircle2 size={16} /> Bioimpedância analítica</li>
-                <li><CheckCircle2 size={16} /> Protocolo Nutricional base</li>
+                <li><CheckCircle2 size={16} /> Acompanhamento por 3 meses</li>
               </ul>
               <a href={getPlanWhatsAppLink('Essential')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
             </div>
@@ -201,8 +201,8 @@ function App() {
               <h3>Essential +</h3>
               <ul>
                 <li><CheckCircle2 size={16} /> Tudo do Essential</li>
-                <li><CheckCircle2 size={16} /> Retorno de validação em 30d</li>
-                <li><CheckCircle2 size={16} /> Ajuste Medicamentoso via Oral</li>
+                <li><CheckCircle2 size={16} /> Retorno de validação a cada 30 dias</li>
+                <li><CheckCircle2 size={16} /> Medicamentos IM personalizados para o objetivo</li>
               </ul>
               <a href={getPlanWhatsAppLink('Essential +')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
             </div>
@@ -212,7 +212,7 @@ function App() {
               <ul>
                 <li><CheckCircle2 size={16} /> Rota Metabólica Avançada</li>
                 <li><CheckCircle2 size={16} /> Exames Laboratoriais aprofundados</li>
-                <li><CheckCircle2 size={16} /> Acesso a terapias injetáveis (IM)</li>
+                <li><CheckCircle2 size={16} /> Acompanhamento por 6 meses</li>
               </ul>
               <a href={getPlanWhatsAppLink('Prime')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
             </div>
@@ -220,8 +220,8 @@ function App() {
             <div className="plan-card plan-prime-plus">
               <h3>Prime +</h3>
               <ul>
-                <li><CheckCircle2 size={16} /> Reposição Hormonal Fina</li>
-                <li><CheckCircle2 size={16} /> Protocolos de Injetáveis IV/EV</li>
+                <li><CheckCircle2 size={16} /> Tudo do Prime</li>
+                <li><CheckCircle2 size={16} /> Protocolos de Injetáveis IM/EV personalizado</li>
                 <li><CheckCircle2 size={16} /> Concierge WhatsApp Direto</li>
               </ul>
               <a href={getPlanWhatsAppLink('Prime +')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
@@ -232,7 +232,7 @@ function App() {
               <ul>
                 <li><CheckCircle2 size={16} /> Consultoria Médica Full-Year</li>
                 <li><CheckCircle2 size={16} /> Controle de Longevidade Anti-aging</li>
-                <li><CheckCircle2 size={16} /> Acesso irrestrito às Terapias e Reposição Plena</li>
+                <li><CheckCircle2 size={16} /> Acompanhamento a cada 15 dias</li>
               </ul>
               <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan">Aplicar para o Black</a>
             </div>
