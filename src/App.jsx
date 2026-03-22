@@ -184,7 +184,6 @@ function App() {
           <div className="plans-grid">
             <div className="plan-card plan-essential">
               <h3>Essential</h3>
-              <p className="tier-name">Grafite Metálico / Aço Escuro</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Consulta clínica completa</li>
                 <li><CheckCircle2 size={16} /> Bioimpedância analítica</li>
@@ -195,7 +194,6 @@ function App() {
 
             <div className="plan-card plan-essential-plus">
               <h3>Essential +</h3>
-              <p className="tier-name">Prata Fosco / Aço Escovado</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Tudo do Essential</li>
                 <li><CheckCircle2 size={16} /> Retorno de validação em 30d</li>
@@ -206,7 +204,6 @@ function App() {
 
             <div className="plan-card plan-prime">
               <h3>Prime</h3>
-              <p className="tier-name">Ouro Champagne</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Rota Metabólica Avançada</li>
                 <li><CheckCircle2 size={16} /> Exames Laboratoriais aprofundados</li>
@@ -217,7 +214,6 @@ function App() {
 
             <div className="plan-card plan-prime-plus">
               <h3>Prime +</h3>
-              <p className="tier-name">Ouro Rosé / Cobre Polido</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Reposição Hormonal Fina</li>
                 <li><CheckCircle2 size={16} /> Protocolos de Injetáveis IV/EV</li>
@@ -228,7 +224,6 @@ function App() {
 
             <div className="plan-card plan-black">
               <h3>Black</h3>
-              <p className="tier-name">Absolute Gold 24k</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Consultoria Médica Full-Year</li>
                 <li><CheckCircle2 size={16} /> Controle de Longevidade Anti-aging</li>
