@@ -97,12 +97,11 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="hero-image-wrapper" style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingLeft: '1rem' }}>
+          <div className="hero-image-wrapper" style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
              <img 
-                src="/logo.png" 
-                className="hero-logo-large" 
-                alt="AuraVie Concept" 
-                style={{ width: '100%', maxWidth: '320px' }}
+                src="/hero-photo.jpg" 
+                alt="Dr. Francisco Haidar - AuraVie Concept" 
+                style={{ width: '100%', maxWidth: '500px', borderRadius: '20px', boxShadow: '0 25px 50px rgba(29, 41, 81, 0.15)', objectFit: 'cover' }}
              />
           </div>
         </div>
