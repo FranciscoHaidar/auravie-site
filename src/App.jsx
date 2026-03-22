@@ -34,6 +34,11 @@ function App() {
   const WHATSAPP_LINK = `https://wa.me/${siteConfig.whatsapp_number}?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+AuraVie+Concept.`;
   const INSTAGRAM_LINK = siteConfig.instagram_url;
 
+  const getPlanWhatsAppLink = (planName) => {
+    const text = `Olá! Gostaria de saber mais sobre o plano ${planName}`;
+    return `https://wa.me/${siteConfig.whatsapp_number}?text=${encodeURIComponent(text)}`;
+  };
+
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -189,7 +194,7 @@ function App() {
                 <li><CheckCircle2 size={16} /> Bioimpedância analítica</li>
                 <li><CheckCircle2 size={16} /> Protocolo Nutricional base</li>
               </ul>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
+              <a href={getPlanWhatsAppLink('Essential')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
             </div>
 
             <div className="plan-card plan-essential-plus">
@@ -199,7 +204,7 @@ function App() {
                 <li><CheckCircle2 size={16} /> Retorno de validação em 30d</li>
                 <li><CheckCircle2 size={16} /> Ajuste Medicamentoso via Oral</li>
               </ul>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
+              <a href={getPlanWhatsAppLink('Essential +')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
             </div>
 
             <div className="plan-card plan-prime">
@@ -209,7 +214,7 @@ function App() {
                 <li><CheckCircle2 size={16} /> Exames Laboratoriais aprofundados</li>
                 <li><CheckCircle2 size={16} /> Acesso a terapias injetáveis (IM)</li>
               </ul>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
+              <a href={getPlanWhatsAppLink('Prime')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
             </div>
 
             <div className="plan-card plan-prime-plus">
@@ -219,7 +224,7 @@ function App() {
                 <li><CheckCircle2 size={16} /> Protocolos de Injetáveis IV/EV</li>
                 <li><CheckCircle2 size={16} /> Concierge WhatsApp Direto</li>
               </ul>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
+              <a href={getPlanWhatsAppLink('Prime +')} target="_blank" rel="noopener noreferrer" className="btn-plan">Saber mais</a>
             </div>
 
             <div className="plan-card plan-black">
@@ -229,7 +234,7 @@ function App() {
                 <li><CheckCircle2 size={16} /> Controle de Longevidade Anti-aging</li>
                 <li><CheckCircle2 size={16} /> Acesso irrestrito às Terapias e Reposição Plena</li>
               </ul>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-plan">Aplicar para o Black</a>
+              <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan">Aplicar para o Black</a>
             </div>
           </div>
         </div>
