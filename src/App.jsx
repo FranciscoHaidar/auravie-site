@@ -4,7 +4,7 @@ import './index.css';
 
 function App() {
   
-  const WHATSAPP_NUMBER = "551199999999"; // Change this to real number
+  const WHATSAPP_NUMBER = "5551997353309"; 
   const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+AuraVie.`;
 
   const scrollTo = (id) => {
