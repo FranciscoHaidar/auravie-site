@@ -35,7 +35,7 @@ function App() {
   const INSTAGRAM_LINK = siteConfig.instagram_url;
 
   const getPlanWhatsAppLink = (planName) => {
-    const text = `Olá! Gostaria de saber mais sobre o plano ${planName}`;
+    const text = `Olá, equipe AuraVie! Estava navegando pelo site e me identifiquei muito com o método de vocês. Gostaria de dar o próximo passo e receber um atendimento exclusivo para saber mais detalhes sobre o Programa Clínico ${planName}. Como funciona para iniciarmos?`;
     return `https://wa.me/${siteConfig.whatsapp_number}?text=${encodeURIComponent(text)}`;
   };
 
@@ -210,7 +210,7 @@ function App() {
             {/* Essential */}
             <div className="plan-card" style={{ borderTop: '4px solid #333', backgroundColor: '#f9f9f9' }}>
               <span className="plan-subtitle">ACESSO BASE</span>
-              <h3>Essential</h3>
+              <h3 style={{ color: '#333' }}>Essential</h3>
               <ul>
                 <li><Check size={14} className="check-icon" /> Consulta clínica completa</li>
                 <li><Check size={14} className="check-icon" /> Bioimpedância analítica</li>
@@ -222,7 +222,7 @@ function App() {
             {/* Essential + */}
             <div className="plan-card" style={{ borderTop: '4px solid #888', backgroundColor: '#fff' }}>
               <span className="plan-subtitle">PERFORMANCE</span>
-              <h3>Essential +</h3>
+              <h3 style={{ color: '#888' }}>Essential +</h3>
               <ul>
                 <li><Check size={14} className="check-icon" /> Tudo do Essential</li>
                 <li><Check size={14} className="check-icon" /> Retorno de validação a cada 30 dias</li>
@@ -234,7 +234,7 @@ function App() {
             {/* Prime */}
             <div className="plan-card plan-featured" style={{ borderTop: '4px solid var(--gold-champagne)', backgroundColor: '#fff' }}>
               <span className="plan-subtitle" style={{ color: 'var(--gold-champagne)' }}>PREMIUM</span>
-              <h3>Prime</h3>
+              <h3 style={{ color: 'var(--gold-champagne)' }}>Prime</h3>
               <ul>
                 <li><Check size={14} className="check-icon" /> Rota Metabólica Avançada</li>
                 <li><Check size={14} className="check-icon" /> Exames Laboratoriais aprofundados</li>
@@ -246,7 +246,7 @@ function App() {
             {/* Prime + */}
             <div className="plan-card" style={{ borderTop: '4px solid #B87333', backgroundColor: '#fff' }}>
               <span className="plan-subtitle">ADVANCED</span>
-              <h3>Prime +</h3>
+              <h3 style={{ color: '#B87333' }}>Prime +</h3>
               <ul>
                 <li><Check size={14} className="check-icon" /> Tudo do Prime</li>
                 <li><Check size={14} className="check-icon" /> Protocolos de Injetáveis IM/EV personalizado</li>
@@ -259,7 +259,7 @@ function App() {
             <div className="plan-card plan-black" style={{ borderTop: 'none', backgroundColor: '#0a0a0a', color: '#fff' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: '#000' }}></div>
               <span className="plan-subtitle" style={{ color: 'var(--gold-bronze)' }}>ELITE EXCLUSIVE</span>
-              <h3 style={{ color: '#fff' }}>Black</h3>
+              <h3 style={{ color: '#FFD700' }}>Black</h3>
               <ul>
                 <li><Award size={14} className="check-icon-gold" /> Consultoria Médica Full-Year</li>
                 <li><Award size={14} className="check-icon-gold" /> Controle de Longevidade Anti-aging</li>
