@@ -47,16 +47,16 @@ function App() {
     <>
       {/* 0. NAVBAR */}
       <nav className="navbar">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1280px' }}>
           <div 
             className="logo-container" 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
           >
-            <span style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--title-marinho)', letterSpacing: '-0.5px' }}>AuraVie</span>
-            <span style={{ fontSize: '1.8rem', fontWeight: 400, color: '#C8A97E', marginLeft: '6px' }}>Concept</span>
+            <span style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--title-marinho)', letterSpacing: '-0.5px' }}>AuraVie</span>
+            <span style={{ fontSize: '1.45rem', fontWeight: 400, color: '#C8A97E', marginLeft: '6px' }}>Concept</span>
           </div>
-          <div className="nav-links">
+          <div className="nav-links" style={{ gap: '1.2rem', whiteSpace: 'nowrap' }}>
             <a href="#problema" onClick={(e) => { e.preventDefault(); scrollTo('problema'); }} className="nav-link">Por que AuraVie?</a>
             <a href="#medico" onClick={(e) => { e.preventDefault(); scrollTo('medico'); }} className="nav-link">O Médico</a>
             <a href="#jornada" onClick={(e) => { e.preventDefault(); scrollTo('jornada'); }} className="nav-link">A Jornada</a>
