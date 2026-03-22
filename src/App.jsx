@@ -74,12 +74,12 @@ function App() {
           </p>
           <div className="cards-grid">
             <div className="info-card">
-              <BatteryCharging size={32} color="var(--gold-bronze)" style={{ marginBottom: '1rem' }} />
+              <BatteryCharging size={32} color="var(--gold-champagne)" style={{ marginBottom: '1rem' }} />
               <h3>Falta de Energia e Fadiga</h3>
               <p>Desbalanços hormonais e deficiências invisíveis nos exames comuns podem ser os sabotadores da sua rotina produtiva.</p>
             </div>
             <div className="info-card">
-              <Brain size={32} color="var(--gold-bronze)" style={{ marginBottom: '1rem' }} />
+              <Brain size={32} color="var(--gold-champagne)" style={{ marginBottom: '1rem' }} />
               <h3>Dificuldade de Perder Peso</h3>
               <p>O achismo e dietas padrão ignoram sua assinatura metabólica. A nutrição baseada e orientada por IA química corta o abismo para o resultado.</p>
             </div>
