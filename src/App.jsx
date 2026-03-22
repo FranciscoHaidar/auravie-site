@@ -254,8 +254,16 @@ function App() {
               <p style={{ fontSize: '0.9rem', color: 'var(--text-grafite)'}}>Modulação de biogênese muscular com suporte hormonal e nutrição cirúrgica.</p>
             </div>
             <div className="info-card" style={{ borderTopColor: 'var(--gold-bronze)'}}>
+              <h3>Lipedema</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-grafite)'}}>Abordagem metabólica e anti-inflamatória profunda para regressão de volume e alívio do lipedema.</p>
+            </div>
+            <div className="info-card" style={{ borderTopColor: 'var(--gold-bronze)'}}>
               <h3>Reposição Hormonal</h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--text-grafite)'}}>Restauração clínica de testosterona, estradiol, e eixos tireoidianos desgastados.</p>
+            </div>
+            <div className="info-card" style={{ borderTopColor: 'var(--gold-bronze)'}}>
+              <h3>Menopausa & Climatério</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-grafite)'}}>Modulação fisiológica fina para anular os sintomas, blindar massa óssea e devolver a vitalidade.</p>
             </div>
             <div className="info-card" style={{ borderTopColor: 'var(--gold-bronze)'}}>
               <h3>Disbiose Intestinal</h3>
