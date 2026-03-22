@@ -1,9 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, CheckCircle2, Phone, MapPin, Instagram, Brain, BatteryCharging, HeartPulse, Stethoscope, ChevronDown, Check, Award } from 'lucide-react';
+import { ChevronRight, CheckCircle2, Phone, MapPin, Instagram, Brain, BatteryCharging, HeartPulse, Stethoscope, ChevronDown, Check, Award, X } from 'lucide-react';
 import { supabase } from './supabase';
 import './index.css';
 
 function App() {
+  const [activeModal, setActiveModal] = useState(null);
+
+  const modalData = {
+    essential: {
+      title: "BioARch Essential & Essential + (O Reset Metabólico - 3 Meses)",
+      foco: "Ideal para quem precisa de um choque de realidade no metabolismo, corrigir deficiências agudas e iniciar o processo de emagrecimento ou hipertrofia com base médica sólida.",
+      vivencia: "3 meses de acompanhamento intenso (3 consultas + 3 exames de bioimpedância analítica).",
+      diferencial: "Acesso estratégico aos nossos protocolos de medicamentos injetáveis (IM), acelerando a absorção de nutrientes e a resposta do seu corpo ao tratamento.",
+      whatsappPlan: "Essential ou Essential +"
+    },
+    prime: {
+      title: "BioARch Prime & Prime + (A Consolidação - 6 Meses)",
+      foco: "Para quem busca transformações profundas e a consolidação de um novo estilo de vida. O tempo ideal para estabilizar hormônios, mudar a composição corporal de forma visível e garantir que os resultados sejam definitivos.",
+      vivencia: "6 meses de parceria médica (6 consultas + 6 exames de bioimpedância analítica), garantindo ajustes finos ao longo de todo o semestre.",
+      diferencial: "Inclui o poder da via injetável (IM) durante os 6 meses, maximizando a performance física e mental de forma contínua.",
+      whatsappPlan: "Prime ou Prime +"
+    },
+    black: {
+      title: "BioARch Black (O Ápice da Performance - 12 Meses)",
+      foco: "O nível máximo de exclusividade da AuraVie Concept. Desenhado para pacientes exigentes que tratam a saúde como seu maior ativo e desejam um médico \"concierge\" focado na sua longevidade, estética e performance o ano inteiro.",
+      vivencia: "1 ano completo de blindagem metabólica (12 consultas + 12 reavaliações + 12 bioimpedâncias). Acompanhamento irrestrito para quem não aceita nada menos que a excelência contínua.",
+      whatsappPlan: "Black"
+    }
+  };
+
   const [siteConfig, setSiteConfig] = useState({
     hero_title: 'Muito além da estética: redefinindo a sua qualidade de vida com inteligência médica.',
     hero_subtitle: 'Descubra o método BioARch para otimização metabólica e envelhecimento saudável.',
@@ -216,7 +241,7 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Bioimpedância analítica</li>
                 <li><Check size={14} className="check-icon" /> Acompanhamento por 3 meses</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Essential')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-essential">SABER MAIS</a>
+              <button onClick={() => setActiveModal('essential')} className="btn-plan btn-plan-essential" style={{cursor: 'pointer'}}>SABER MAIS</button>
             </div>
 
             {/* Essential + */}
@@ -228,7 +253,7 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Retorno de validação a cada 30 dias</li>
                 <li><Check size={14} className="check-icon" /> Medicamentos IM personalizados para o objetivo</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Essential +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-essential-plus">SABER MAIS</a>
+              <button onClick={() => setActiveModal('essential')} className="btn-plan btn-plan-essential-plus" style={{cursor: 'pointer'}}>SABER MAIS</button>
             </div>
 
             {/* Prime */}
@@ -240,7 +265,7 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Exames Laboratoriais aprofundados</li>
                 <li><Check size={14} className="check-icon" /> Acompanhamento por 6 meses</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Prime')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-prime">SABER MAIS</a>
+              <button onClick={() => setActiveModal('prime')} className="btn-plan btn-plan-prime" style={{cursor: 'pointer'}}>SABER MAIS</button>
             </div>
 
             {/* Prime + */}
@@ -252,7 +277,7 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Protocolos de Injetáveis IM/EV personalizado</li>
                 <li><Check size={14} className="check-icon" /> Concierge WhatsApp Direto</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Prime +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-prime-plus">SABER MAIS</a>
+              <button onClick={() => setActiveModal('prime')} className="btn-plan btn-plan-prime-plus" style={{cursor: 'pointer'}}>SABER MAIS</button>
             </div>
 
             {/* Black */}
@@ -265,7 +290,7 @@ function App() {
                 <li><Award size={14} className="check-icon-gold" /> Controle de Longevidade Anti-aging</li>
                 <li><Award size={14} className="check-icon-gold" /> Acompanhamento a cada 15 dias</li>
               </ul>
-              <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-black">SABER MAIS</a>
+              <button onClick={() => setActiveModal('black')} className="btn-plan btn-plan-black" style={{cursor: 'pointer'}}>SABER MAIS</button>
             </div>
           </div>
         </div>
@@ -377,6 +402,37 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* MODAL PLANOS */}
+      {activeModal && (
+        <div className="modal-overlay" onClick={() => setActiveModal(null)}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setActiveModal(null)}><X size={24} /></button>
+            <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', color: 'var(--title-marinho)', paddingRight: '2rem', lineHeight: '1.3' }}>
+              {modalData[activeModal].title}
+            </h3>
+            <div style={{ marginBottom: '1.5rem', lineHeight: '1.6', color: '#444' }}>
+              <p style={{ marginBottom: '1rem', textAlign: 'justify' }}><strong style={{color: '#111'}}>Foco:</strong> {modalData[activeModal].foco}</p>
+              <p style={{ marginBottom: '1rem', textAlign: 'justify' }}><strong style={{color: '#111'}}>O que o paciente vive:</strong> {modalData[activeModal].vivencia}</p>
+              {modalData[activeModal].diferencial && (
+                <p style={{textAlign: 'justify'}}><strong style={{color: '#111'}}>Diferencial do {activeModal === 'essential' ? 'Essential +' : 'Prime +'}:</strong> {modalData[activeModal].diferencial}</p>
+              )}
+            </div>
+            <div style={{ marginTop: '2rem' }}>
+              <a 
+                href={getPlanWhatsAppLink(modalData[activeModal].whatsappPlan)} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-plan btn-solid-gold"
+                style={{ fontSize: '0.9rem', padding: '1rem' }}
+                onClick={() => setActiveModal(null)}
+              >
+                TENHO INTERESSE NESTE PLANO
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* FLOATING ACTIONS */}
       <div className="floating-actions">
