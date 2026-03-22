@@ -146,7 +146,10 @@ function App() {
             <p style={{ opacity: 0.9, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
               {siteConfig.about_text_p2}
             </p>
-            <p style={{ fontWeight: 600, color: 'var(--gold-champagne)' }}>CRM: Médico Nutrólogo Especialista</p>
+            <div style={{ marginTop: '1.5rem' }}>
+              <span style={{ fontWeight: 600, color: 'var(--gold-champagne)', display: 'block', fontSize: '1.1rem' }}>CRM/RS 57907</span>
+              <span style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', fontStyle: 'italic', display: 'block', marginTop: '0.3rem', lineHeight: '1.4' }}>Médico com pós-graduação em nutrologia, não especialista</span>
+            </div>
           </div>
         </div>
       </section>
