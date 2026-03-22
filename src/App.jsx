@@ -233,7 +233,7 @@ function App() {
           
           <div className="plans-grid">
             {/* Essential */}
-            <div className="plan-card" style={{ borderTop: '4px solid #333', backgroundColor: '#f9f9f9' }}>
+            <div className="plan-card" style={{ borderTop: '4px solid #333', backgroundColor: '#f9f9f9', cursor: 'pointer' }} onClick={() => setActiveModal('essential')}>
               <span className="plan-subtitle">ACESSO BASE</span>
               <h3 style={{ color: '#333' }}>Essential</h3>
               <ul>
@@ -241,11 +241,11 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Bioimpedância analítica</li>
                 <li><Check size={14} className="check-icon" /> Acompanhamento por 3 meses</li>
               </ul>
-              <button onClick={() => setActiveModal('essential')} className="btn-plan btn-plan-essential" style={{cursor: 'pointer'}}>SABER MAIS</button>
+              <a href={getPlanWhatsAppLink('Essential')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-essential" onClick={(e) => e.stopPropagation()}>SABER MAIS</a>
             </div>
 
             {/* Essential + */}
-            <div className="plan-card" style={{ borderTop: '4px solid #888', backgroundColor: '#fff' }}>
+            <div className="plan-card" style={{ borderTop: '4px solid #888', backgroundColor: '#fff', cursor: 'pointer' }} onClick={() => setActiveModal('essential')}>
               <span className="plan-subtitle">PERFORMANCE</span>
               <h3 style={{ color: '#888' }}>Essential +</h3>
               <ul>
@@ -253,11 +253,11 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Retorno de validação a cada 30 dias</li>
                 <li><Check size={14} className="check-icon" /> Protocolo IM personalizado para o seu objetivo</li>
               </ul>
-              <button onClick={() => setActiveModal('essential')} className="btn-plan btn-plan-essential-plus" style={{cursor: 'pointer'}}>SABER MAIS</button>
+              <a href={getPlanWhatsAppLink('Essential +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-essential-plus" onClick={(e) => e.stopPropagation()}>SABER MAIS</a>
             </div>
 
             {/* Prime */}
-            <div className="plan-card plan-featured" style={{ borderTop: '4px solid var(--gold-champagne)', backgroundColor: '#fff' }}>
+            <div className="plan-card plan-featured" style={{ borderTop: '4px solid var(--gold-champagne)', backgroundColor: '#fff', cursor: 'pointer' }} onClick={() => setActiveModal('prime')}>
               <span className="plan-subtitle" style={{ color: 'var(--gold-champagne)' }}>PREMIUM</span>
               <h3 style={{ color: 'var(--gold-champagne)' }}>Prime</h3>
               <ul>
@@ -265,11 +265,11 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Exames Laboratoriais aprofundados</li>
                 <li><Check size={14} className="check-icon" /> Acompanhamento por 6 meses</li>
               </ul>
-              <button onClick={() => setActiveModal('prime')} className="btn-plan btn-plan-prime" style={{cursor: 'pointer'}}>SABER MAIS</button>
+              <a href={getPlanWhatsAppLink('Prime')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-prime" onClick={(e) => e.stopPropagation()}>SABER MAIS</a>
             </div>
 
             {/* Prime + */}
-            <div className="plan-card" style={{ borderTop: '4px solid #B87333', backgroundColor: '#fff' }}>
+            <div className="plan-card" style={{ borderTop: '4px solid #B87333', backgroundColor: '#fff', cursor: 'pointer' }} onClick={() => setActiveModal('prime')}>
               <span className="plan-subtitle">ADVANCED</span>
               <h3 style={{ color: '#B87333' }}>Prime +</h3>
               <ul>
@@ -277,11 +277,11 @@ function App() {
                 <li><Check size={14} className="check-icon" /> Protocolos de Injetáveis IM/EV personalizado</li>
                 <li><Check size={14} className="check-icon" /> Concierge WhatsApp Direto</li>
               </ul>
-              <button onClick={() => setActiveModal('prime')} className="btn-plan btn-plan-prime-plus" style={{cursor: 'pointer'}}>SABER MAIS</button>
+              <a href={getPlanWhatsAppLink('Prime +')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-prime-plus" onClick={(e) => e.stopPropagation()}>SABER MAIS</a>
             </div>
 
             {/* Black */}
-            <div className="plan-card plan-black" style={{ borderTop: 'none', backgroundColor: '#0a0a0a', color: '#fff' }}>
+            <div className="plan-card plan-black" style={{ borderTop: 'none', backgroundColor: '#0a0a0a', color: '#fff', cursor: 'pointer' }} onClick={() => setActiveModal('black')}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: '#000' }}></div>
               <span className="plan-subtitle" style={{ color: 'var(--gold-bronze)' }}>ELITE EXCLUSIVE</span>
               <h3 style={{ color: '#FFD700' }}>Black</h3>
@@ -290,7 +290,7 @@ function App() {
                 <li><Award size={14} className="check-icon-gold" /> Controle de Longevidade Anti-aging</li>
                 <li><Award size={14} className="check-icon-gold" /> Acompanhamento a cada 15 dias</li>
               </ul>
-              <button onClick={() => setActiveModal('black')} className="btn-plan btn-plan-black" style={{cursor: 'pointer'}}>SABER MAIS</button>
+              <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-black" onClick={(e) => e.stopPropagation()}>SABER MAIS</a>
             </div>
           </div>
         </div>
@@ -418,13 +418,13 @@ function App() {
                 <p style={{textAlign: 'justify'}}><strong style={{color: '#111'}}>Diferencial do {activeModal === 'essential' ? 'Essential +' : 'Prime +'}:</strong> {modalData[activeModal].diferencial}</p>
               )}
             </div>
-            <div style={{ marginTop: '2rem' }}>
+            <div style={{ marginTop: '2rem', textAlign: 'center' }}>
               <a 
                 href={getPlanWhatsAppLink(modalData[activeModal].whatsappPlan)} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="btn-plan btn-solid-gold"
-                style={{ fontSize: '0.9rem', padding: '1rem' }}
+                className="btn btn-primary"
+                style={{ fontSize: '1rem', padding: '1rem', display: 'block', width: '100%', textAlign: 'center', boxSizing: 'border-box' }}
                 onClick={() => setActiveModal(null)}
               >
                 TENHO INTERESSE NESTE PLANO
