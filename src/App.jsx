@@ -91,11 +91,12 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="hero-image-wrapper">
+          <div className="hero-image-wrapper" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
              <img 
                 src="/logo.png" 
                 className="hero-logo-large" 
                 alt="AuraVie Concept" 
+                style={{ width: '100%', maxWidth: '360px' }}
              />
           </div>
         </div>
