@@ -281,8 +281,7 @@ function App() {
             </div>
 
             {/* Black */}
-            <div className="plan-card plan-black" style={{ borderTop: 'none', backgroundColor: '#0a0a0a', color: '#fff', cursor: 'pointer' }} onClick={() => setActiveModal('black')}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: '#000' }}></div>
+            <div className="plan-card plan-black" style={{ borderTop: '4px solid #FFD700', backgroundColor: '#0a0a0a', color: '#fff', cursor: 'pointer' }} onClick={() => setActiveModal('black')}>
               <span className="plan-subtitle" style={{ color: 'var(--gold-bronze)' }}>ELITE EXCLUSIVE</span>
               <h3 style={{ color: '#FFD700' }}>Black</h3>
               <ul>
