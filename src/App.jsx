@@ -42,7 +42,7 @@ function App() {
   const scrollTo = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 80;
+      const headerOffset = 130;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - headerOffset;
   
