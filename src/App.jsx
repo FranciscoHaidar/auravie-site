@@ -50,9 +50,9 @@ function App() {
         <div className="container">
           <div className="logo-container">
             <img 
-              src="https://storage.googleapis.com/antigravity-images-test/fdd420a400a40e94af7d78a87b6408db/a7ed7efd752dd3082a5a513754245ccb.png" 
+              src="/logo.png" 
               alt="Logo AuraVie" 
-              style={{ height: '45px'}}
+              style={{ height: '55px'}}
             />
           </div>
           <div className="nav-links">
@@ -89,7 +89,7 @@ function App() {
           </div>
           <div className="hero-image-wrapper">
              <img 
-                src="https://storage.googleapis.com/antigravity-images-test/fdd420a400a40e94af7d78a87b6408db/8447831f240fc40c4ce27b0b7593c207.png" 
+                src="/logo.png" 
                 className="hero-logo-large" 
                 alt="AuraVie Concept" 
              />
@@ -301,11 +301,11 @@ function App() {
             
             <div>
               <img 
-                src="https://storage.googleapis.com/antigravity-images-test/fdd420a400a40e94af7d78a87b6408db/a7ed7efd752dd3082a5a513754245ccb.png" 
+                src="/logo.png" 
                 alt="AuraVie Concept" 
-                style={{ height: '60px', marginBottom: '1.5rem', filter: 'brightness(0) invert(1)' }}
+                style={{ height: '70px', marginBottom: '1.5rem' }}
               />
-              <p style={{ opacity: 0.8, fontSize: '0.9rem' }}>Redefinindo paradigmas em qualidade de vida, imunidade e hipertrofia em um ecossistema clínico premium.</p>
+              <p style={{ opacity: 0.8, fontSize: '0.9rem' }}>Redefinindo paradigmas em qualidade de vida</p>
             </div>
             
             <div>
