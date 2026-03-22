@@ -284,14 +284,17 @@ h1, h2, h3, h4 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  background: #1A1A1A; /* Unified deep graphite */
-  color: #FFFFFF;
+  background: #FFFFFF;
+  color: #363636;
+  border: 1px solid #EBEBEB;
   border-top: 4px solid transparent; /* overriden by specific plan */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   transition: transform 0.3s ease;
 }
 
 .plan-card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .plan-card h3 {
@@ -303,7 +306,7 @@ h1, h2, h3, h4 {
   opacity: 0.9;
   font-size: 0.95rem;
   margin-bottom: 2rem;
-  color: #FFFFFF;
+  color: #363636;
 }
 
 .plan-card ul {
@@ -318,15 +321,15 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
-  color: #FFFFFF;
+  color: #363636;
 }
 
 /* Individual Plan Metallic Overrides */
 .plan-essential { border-top-color: #A9A9A9; }
 .plan-essential h3, .plan-essential p.tier-name, .plan-essential .btn-plan, .plan-essential li svg { color: #A9A9A9 !important; }
 
-.plan-essential-plus { border-top-color: #8C8C8C; }
-.plan-essential-plus h3, .plan-essential-plus p.tier-name, .plan-essential-plus .btn-plan, .plan-essential-plus li svg { color: #8C8C8C !important; }
+.plan-essential-plus { border-top-color: #5C5C5C; }
+.plan-essential-plus h3, .plan-essential-plus p.tier-name, .plan-essential-plus .btn-plan, .plan-essential-plus li svg { color: #5C5C5C !important; }
 
 .plan-prime { border-top-color: #E5D3B3; }
 .plan-prime h3, .plan-prime p.tier-name, .plan-prime .btn-plan, .plan-prime li svg { color: #E5D3B3 !important; }
@@ -334,9 +337,15 @@ h1, h2, h3, h4 {
 .plan-prime-plus { border-top-color: #B87333; }
 .plan-prime-plus h3, .plan-prime-plus p.tier-name, .plan-prime-plus .btn-plan, .plan-prime-plus li svg { color: #B87333 !important; }
 
-.plan-black { border-top-color: #FFDF00; }
+/* The Black Plan overrides the base card */
+.plan-black { 
+  background: #1A1A1A !important; 
+  border-color: #1A1A1A !important;
+  border-top-color: #FFDF00 !important; 
+}
+.plan-black p, .plan-black ul li { color: #FFFFFF !important; }
 .plan-black h3, .plan-black p.tier-name, .plan-black li svg { color: #FFDF00 !important; }
-.plan-black .btn-plan { background: #FFDF00 !important; color: #1A1A1A !important; border-color: #FFDF00 !important; }
+.plan-black .btn-plan { background: #FFDF00 !important; color: #363636 !important; border-color: #FFDF00 !important; }
 
 .btn-plan {
   margin-top: auto;
