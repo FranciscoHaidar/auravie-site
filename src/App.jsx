@@ -28,10 +28,14 @@ function App() {
             <a href="#especialidades" onClick={(e) => { e.preventDefault(); scrollTo('especialidades'); }} className="nav-link">Especialidades</a>
             <a href="#metodo" onClick={(e) => { e.preventDefault(); scrollTo('metodo'); }} className="nav-link">Método AuraVie</a>
             <a href="#sobre" onClick={(e) => { e.preventDefault(); scrollTo('sobre'); }} className="nav-link">O Doutor</a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+            <a href="https://www.instagram.com/drfranciscohaidar/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-main)', display: 'flex', alignItems: 'center' }}>
+              <Instagram size={22} />
+            </a>
+            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem' }}>
+              Agendar Consulta
+            </a>
           </div>
-          <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem' }}>
-            Agendar Consulta
-          </a>
         </div>
       </nav>
 
@@ -176,8 +180,8 @@ function App() {
             
             <div>
               <h4>Contato VIP</h4>
-              <a href={WHATSAPP_LINK}><Phone size={16} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'middle' }}/> WhatsApp Clínica</a>
-              <a href="#"><Instagram size={16} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'middle' }}/> @dr.franciscohaidar</a>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"><Phone size={16} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'middle' }}/> WhatsApp Clínica</a>
+              <a href="https://www.instagram.com/drfranciscohaidar/" target="_blank" rel="noopener noreferrer"><Instagram size={16} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'middle' }}/> @drfranciscohaidar</a>
             </div>
 
             <div>
