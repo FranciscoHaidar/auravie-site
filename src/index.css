@@ -322,11 +322,11 @@ h1, h2, h3, h4 {
 }
 
 /* Individual Plan Metallic Overrides */
-.plan-essential { border-top-color: #A9A9A9; }
-.plan-essential h3, .plan-essential p.tier-name, .plan-essential .btn-plan, .plan-essential li svg { color: #A9A9A9 !important; }
+.plan-essential { border-top-color: #8C8C8C; }
+.plan-essential h3, .plan-essential p.tier-name, .plan-essential .btn-plan, .plan-essential li svg { color: #8C8C8C !important; }
 
-.plan-essential-plus { border-top-color: #5C5C5C; }
-.plan-essential-plus h3, .plan-essential-plus p.tier-name, .plan-essential-plus .btn-plan, .plan-essential-plus li svg { color: #5C5C5C !important; }
+.plan-essential-plus { border-top-color: #A9A9A9; }
+.plan-essential-plus h3, .plan-essential-plus p.tier-name, .plan-essential-plus .btn-plan, .plan-essential-plus li svg { color: #A9A9A9 !important; }
 
 .plan-prime { border-top-color: #E5D3B3; }
 .plan-prime h3, .plan-prime p.tier-name, .plan-prime .btn-plan, .plan-prime li svg { color: #E5D3B3 !important; }

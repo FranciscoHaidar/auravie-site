@@ -184,7 +184,7 @@ function App() {
           <div className="plans-grid">
             <div className="plan-card plan-essential">
               <h3>Essential</h3>
-              <p className="tier-name">Prata Fosco / Aço Escovado</p>
+              <p className="tier-name">Grafite Metálico / Aço Escuro</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Consulta clínica completa</li>
                 <li><CheckCircle2 size={16} /> Bioimpedância analítica</li>
@@ -195,7 +195,7 @@ function App() {
 
             <div className="plan-card plan-essential-plus">
               <h3>Essential +</h3>
-              <p className="tier-name">Grafite Metálico / Aço Escuro</p>
+              <p className="tier-name">Prata Fosco / Aço Escovado</p>
               <ul>
                 <li><CheckCircle2 size={16} /> Tudo do Essential</li>
                 <li><CheckCircle2 size={16} /> Retorno de validação em 30d</li>
