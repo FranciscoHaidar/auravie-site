@@ -14,6 +14,7 @@ const Planos = lazy(() => import('./components/Planos').then(m => ({ default: m.
 const Atuacao = lazy(() => import('./components/Atuacao').then(m => ({ default: m.Atuacao })));
 const Faq = lazy(() => import('./components/Faq').then(m => ({ default: m.Faq })));
 const Contato = lazy(() => import('./components/Contato'));
+const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'));
 
 function App() {
   const [siteConfig, setSiteConfig] = useState({
@@ -59,6 +60,7 @@ function App() {
         <Contato />
         <Atuacao />
         <Faq />
+        <ExitIntentPopup />
       </Suspense>
 
       <Footer instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
