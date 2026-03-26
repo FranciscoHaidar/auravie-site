@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { supabase } from './supabase';
 import './index.css';
 
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Problema } from './components/Problema';
-import { Medico } from './components/Medico';
-import { Jornada } from './components/Jornada';
-import { Planos } from './components/Planos';
-import { Atuacao } from './components/Atuacao';
-import { Faq } from './components/Faq';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
+
+const Problema = lazy(() => import('./components/Problema').then(m => ({ default: m.Problema })));
+const Medico = lazy(() => import('./components/Medico').then(m => ({ default: m.Medico })));
+const Jornada = lazy(() => import('./components/Jornada').then(m => ({ default: m.Jornada })));
+const Planos = lazy(() => import('./components/Planos').then(m => ({ default: m.Planos })));
+const Atuacao = lazy(() => import('./components/Atuacao').then(m => ({ default: m.Atuacao })));
+const Faq = lazy(() => import('./components/Faq').then(m => ({ default: m.Faq })));
+const Contato = lazy(() => import('./components/Contato'));
 
 function App() {
   const [siteConfig, setSiteConfig] = useState({
@@ -48,12 +50,17 @@ function App() {
     <>
       <Navbar instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
       <Hero siteConfig={siteConfig} whatsappLink={WHATSAPP_LINK} />
-      <Problema />
-      <Medico siteConfig={siteConfig} />
-      <Jornada />
-      <Planos whatsappNumber={siteConfig.whatsapp_number} />
-      <Atuacao />
-      <Faq />
+      
+      <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh', color: 'var(--dourado)' }}>Buscando conteúdo institucional...</div>}>
+        <Problema />
+        <Medico siteConfig={siteConfig} />
+        <Jornada />
+        <Planos whatsappNumber={siteConfig.whatsapp_number} />
+        <Contato />
+        <Atuacao />
+        <Faq />
+      </Suspense>
+
       <Footer instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
       <FloatingActions instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
     </>
