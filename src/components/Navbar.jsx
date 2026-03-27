@@ -20,6 +20,7 @@ export function Navbar({ instagramLink, whatsappLink }) {
           <a href="#jornada" onClick={(e) => { e.preventDefault(); scrollTo('jornada'); }} className="nav-link">A Jornada</a>
           <a href="#planos" onClick={(e) => { e.preventDefault(); scrollTo('planos'); }} className="nav-link">Planos</a>
           <a href="#atuacao" onClick={(e) => { e.preventDefault(); scrollTo('atuacao'); }} className="nav-link">Áreas de Atuação</a>
+          <a href="#pilulas-conhecimento" onClick={(e) => { e.preventDefault(); scrollTo('pilulas-conhecimento'); }} className="nav-link">Artigos</a>
           <a href="#faq" onClick={(e) => { e.preventDefault(); scrollTo('faq'); }} className="nav-link">FAQ</a>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>

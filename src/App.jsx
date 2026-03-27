@@ -14,6 +14,7 @@ const QuizBioARch = lazy(() => import('./components/QuizBioARch'));
 const Planos = lazy(() => import('./components/Planos').then(m => ({ default: m.Planos })));
 const Atuacao = lazy(() => import('./components/Atuacao').then(m => ({ default: m.Atuacao })));
 const Faq = lazy(() => import('./components/Faq').then(m => ({ default: m.Faq })));
+const ArtigosRecentes = lazy(() => import('./components/ArtigosRecentes').then(m => ({ default: m.ArtigosRecentes })));
 const Contato = lazy(() => import('./components/Contato'));
 const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'));
 
@@ -61,6 +62,7 @@ function App() {
         <Planos whatsappNumber={siteConfig.whatsapp_number} />
         <Contato />
         <Atuacao />
+        <ArtigosRecentes />
         <Faq />
         <ExitIntentPopup />
       </Suspense>
