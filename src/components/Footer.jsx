@@ -32,6 +32,20 @@ export function Footer({ whatsappLink, instagramLink }) {
             </div>
           </div>
           
+          <div style={{ width: '100%', height: '100%', minHeight: '200px' }}>
+             <h4 style={{ color: 'var(--gold-champagne)', marginBottom: '1.5rem' }}>Como Chegar</h4>
+             <iframe 
+                src="https://maps.google.com/maps?q=Rua+Santa+Teresinha,+205+-+Sala+D+-+Centro,+Campo+Bom+-+RS&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="200" 
+                style={{ border: 0, borderRadius: '12px' }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps AuraVie Concept"
+             ></iframe>
+          </div>
+          
         </div>
         <div style={{ textAlign: 'center', opacity: 0.6, fontSize: '0.8rem' }}>
           &copy; {new Date().getFullYear()} Dr. Francisco Haidar - AuraVie Concept. Política de Privacidade aplicada.
