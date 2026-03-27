@@ -145,8 +145,8 @@ export const ArtigosRecentes = () => {
 
         {/* Modal Apparition */}
         {artigoAberto && (
-          <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(27, 39, 69, 0.7)', backdropFilter: 'blur(8px)', zIndex: 9999, padding: '4rem 2rem', overflowY: 'auto' }} onClick={() => setArtigoAberto(null)}>
-            <div style={{ display: 'flex', minHeight: '100%', width: '100%', alignItems: 'flex-start', justifyContent: 'center' }}>
+          <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(27, 39, 69, 0.7)', backdropFilter: 'blur(8px)', zIndex: 9999, margin: 0, padding: 0, overflowY: 'auto' }} onClick={() => setArtigoAberto(null)}>
+            <div style={{ display: 'flex', minHeight: '100%', width: '100%', alignItems: 'flex-start', justifyContent: 'center', padding: '4rem 2rem', boxSizing: 'border-box' }}>
               <div className="modal-content" style={{ background: 'white', width: '100%', maxWidth: '1050px', borderRadius: '24px', position: 'relative', padding: '3rem', boxShadow: '0 25px 50px rgba(0,0,0,0.25)', margin: 'auto' }} onClick={e => e.stopPropagation()}>
 
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '2rem', marginBottom: '2rem' }}>
