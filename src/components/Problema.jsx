@@ -22,7 +22,7 @@ export function Problema() {
   ];
 
   return (
-    <section id="problema" className="section bg-offwhite" style={{ paddingTop: '3.5rem', paddingBottom: '6rem' }}>
+    <section id="problema" className="section bg-offwhite" style={{ paddingTop: '3rem', paddingBottom: '6rem' }}>
       <div className="container" style={{ maxWidth: '1200px' }}>
         <motion.div 
           style={{ textAlign: 'center', marginBottom: '4rem' }}
