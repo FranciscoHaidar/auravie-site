@@ -312,7 +312,7 @@ h1, h2, h3, h4 {
 /* === PLANOS === */
 #planos .container { max-width: 1350px; width: 98%; padding: 0 1rem; }
 .plans-grid { display: flex; justify-content: center; align-items: stretch; gap: 1rem; flex-wrap: nowrap; margin-top: 3rem; overflow-x: visible; padding-bottom: 3rem; background: transparent; }
-.plan-card { flex: 1; min-width: 0; background: white; border-radius: 12px; padding: 2.5rem 1rem; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #eaeaea; position: relative; display: flex; flex-direction: column; overflow: hidden; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.plan-card { flex: 1; min-width: 0; border-radius: 12px; padding: 2.5rem 1rem; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.06); position: relative; display: flex; flex-direction: column; overflow: hidden; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
 .plan-card:hover { transform: scale(1.04) translateY(-8px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); z-index: 10; border-color: transparent; }
 .plan-card.plan-featured { box-shadow: 0 15px 35px rgba(29, 41, 81, 0.08); transform: scale(1.02); z-index: 2; border: none; }
 .plan-card.plan-featured:hover { transform: scale(1.06) translateY(-8px); box-shadow: 0 30px 60px rgba(29, 41, 81, 0.15); z-index: 11; }

@@ -46,8 +46,12 @@ export function Planos({ whatsappNumber }) {
   };
 
   return (
-    <section id="planos" className="section bg-offwhite">
-      <div className="container">
+    <section id="planos" className="section" style={{ position: 'relative', overflow: 'hidden', backgroundColor: '#fafafa' }}>
+      {/* Decorative Orbs for Glassmorphism Effect */}
+      <div style={{ position: 'absolute', top: '10%', left: '-5%', width: '400px', height: '400px', background: 'var(--gold-champagne)', borderRadius: '50%', filter: 'blur(100px)', opacity: 0.2, zIndex: 0 }} />
+      <div style={{ position: 'absolute', bottom: '-10%', right: '-5%', width: '500px', height: '500px', background: 'var(--primary)', borderRadius: '50%', filter: 'blur(120px)', opacity: 0.15, zIndex: 0 }} />
+
+      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <motion.h2 
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
@@ -166,7 +170,7 @@ export function Planos({ whatsappNumber }) {
           {/* Black */}
           <motion.div 
             className="plan-card plan-black glass-panel" 
-            style={{ borderTop: '4px solid #FFD700', backgroundColor: 'rgba(10, 10, 10, 0.85)', color: '#fff', cursor: 'pointer' }} 
+            style={{ borderTop: '4px solid #FFD700', backgroundColor: 'rgba(20, 20, 20, 0.75)', color: '#fff', cursor: 'pointer' }} 
             onClick={() => setActiveModal('black')}
             role="button"
             tabIndex={0}
