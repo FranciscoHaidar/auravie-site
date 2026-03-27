@@ -146,9 +146,9 @@ export const ArtigosRecentes = () => {
 
         {/* Modal Apparition (REACT PORTAL) */}
         {artigoAberto && typeof window !== 'undefined' && createPortal(
-            <div onClick={() => setArtigoAberto(null)} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.7)', zIndex: 999999, margin: 0, padding: 0, overflowY: 'auto', backdropFilter: 'blur(5px)' }}>
-                <div style={{ display: 'flex', minHeight: '100%', width: '100%', alignItems: 'flex-start', justifyContent: 'center', margin: 0, padding: '4rem 2rem', boxSizing: 'border-box' }}>
-                    <div onClick={e => e.stopPropagation()} style={{ background: '#ffffff', width: '100%', maxWidth: '1050px', position: 'relative', borderRadius: '24px', padding: '3rem', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', margin: 'auto', isolation: 'isolate', border: 'none' }}>
+            <div onClick={() => setArtigoAberto(null)} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.7)', zIndex: 999999, overflowY: 'auto', backdropFilter: 'blur(5px)' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem 2rem' }}>
+                    <div onClick={e => e.stopPropagation()} style={{ background: '#ffffff', width: '100%', maxWidth: '1050px', position: 'relative', borderRadius: '24px', padding: '3rem', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', isolation: 'isolate', border: 'none' }}>
                         
                         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '2rem', marginBottom: '1.5rem' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -167,7 +167,7 @@ export const ArtigosRecentes = () => {
                             </button>
                         </div>
                         
-                        <div style={{ background: '#F8FAFC', padding: '1.5rem', borderRadius: '12px', marginBottom: '1.5rem', borderLeft: '4px solid var(--dourado)' }}>
+                        <div style={{ background: '#F8FAFC', padding: '1.5rem', borderRadius: '12px', marginBottom: '1.5rem', borderLeft: '4px solid #1B2745' }}>
                             <p style={{ color: '#1B2745', fontSize: '1.05rem', margin: 0, fontWeight: 500, lineHeight: 1.5 }}>{artigoAberto.resumo}</p>
                         </div>
 
