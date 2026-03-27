@@ -6,6 +6,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
+import { PreFooterCTA } from './components/PreFooterCTA';
 
 const Problema = lazy(() => import('./components/Problema').then(m => ({ default: m.Problema })));
 const Medico = lazy(() => import('./components/Medico').then(m => ({ default: m.Medico })));
@@ -74,6 +75,7 @@ function App() {
         <ExitIntentPopup />
       </Suspense>
 
+      <PreFooterCTA whatsappLink={WHATSAPP_LINK} />
       <Footer instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
       <FloatingActions instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
     </>
