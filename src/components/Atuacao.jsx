@@ -1,12 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Flame, Dumbbell, HeartPulse, Activity, Sparkles, Brain } from 'lucide-react';
+import { Flame, Dumbbell, Activity, Sparkles, Brain } from 'lucide-react';
+
+const LegsIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M8 3h8" /> {/* Cintura */}
+    <path d="M6 8c0 4 2 6 2 13" /> {/* Perna Esq */}
+    <path d="M18 8c0 4-2 6-2 13" /> {/* Perna Dir */}
+    <path d="M12 10v11" /> {/* Divisão central */}
+    <path d="M6 8c-1-2-1-5 2-5" /> {/* Quadril Esq */}
+    <path d="M18 8c1-2 1-5-2-5" /> {/* Quadril Dir */}
+  </svg>
+);
 
 export function Atuacao() {
   const areas = [
     { title: "Emagrecimento", text: "Perda de gordura com preservação de massa magra por otimização enzimática.", icon: Flame },
     { title: "Hipertrofia", text: "Modulação de biogênese muscular com suporte hormonal e nutrição cirúrgica.", icon: Dumbbell },
-    { title: "Lipedema", text: "Abordagem metabólica e anti-inflamatória profunda para regressão de volume e alívio do lipedema.", icon: HeartPulse },
+    { title: "Lipedema", text: "Abordagem metabólica e anti-inflamatória profunda para regressão de volume e alívio do lipedema.", icon: LegsIcon },
     { title: "Reposição Hormonal", text: "Restauração clínica de testosterona, estradiol, e eixos tireoidianos desgastados.", icon: Activity },
     { title: "Menopausa & Climatério", text: "Modulação fisiológica fina para anular os sintomas, blindar massa óssea e devolver a vitalidade.", icon: Sparkles },
     { title: "Disbiose Intestinal", text: "Tratamento da inflamação da microbiota intestinal para cura sistêmica e absortiva.", icon: Brain }
