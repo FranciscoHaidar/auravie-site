@@ -30,19 +30,19 @@ const Contato = () => {
   };
 
   return (
-    <section className="bg-marinho py-20" id="contato">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <section id="contato" style={{ backgroundColor: '#1D2951', padding: '80px 20px' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          style={{ textAlign: 'center', marginBottom: '40px' }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-dourado mb-6 title-font">
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#E5D3B3', marginBottom: '20px' }}>
             Dê o Primeiro Passo
           </h2>
-          <p className="text-white/80 text-lg">
+          <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '1.1rem', lineHeight: '1.6' }}>
             Deixe seu nome e WhatsApp. Nossa equipe de concierge entrará em contato para agendar sua avaliação e formatar um plano exclusivo.
           </p>
         </motion.div>
@@ -52,38 +52,78 @@ const Contato = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white/5 rounded-2xl p-8 backdrop-blur-sm border border-dourado/20"
+          style={{ 
+            backgroundColor: 'rgba(255, 255, 255, 0.05)', 
+            borderRadius: '20px', 
+            padding: '40px', 
+            backdropFilter: 'blur(10px)', 
+            border: '1px solid rgba(229, 211, 179, 0.2)' 
+          }}
         >
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div>
-              <label className="block text-white/90 mb-2 font-medium">Seu Nome Completo</label>
+              <label style={{ display: 'block', color: 'rgba(255, 255, 255, 0.9)', marginBottom: '8px', fontWeight: '500' }}>Seu Nome Completo</label>
               <input
                 type="text"
                 required
-                className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-dourado transition-colors"
                 placeholder="Ex: João da Silva"
                 value={formData.nome}
                 onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+                style={{
+                  width: '100%',
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: '12px',
+                  padding: '14px 18px',
+                  color: '#fff',
+                  fontSize: '1rem',
+                  outline: 'none'
+                }}
               />
             </div>
             <div>
-              <label className="block text-white/90 mb-2 font-medium">WhatsApp com DDD</label>
-              <div className="relative">
-                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" size={20} />
+              <label style={{ display: 'block', color: 'rgba(255, 255, 255, 0.9)', marginBottom: '8px', fontWeight: '500' }}>WhatsApp com DDD</label>
+              <div style={{ position: 'relative' }}>
+                <Phone style={{ position: 'absolute', left: '15px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255, 255, 255, 0.5)' }} size={20} />
                 <input
                   type="tel"
                   required
-                  className="w-full bg-white/10 border border-white/20 rounded-xl pl-12 pr-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-dourado transition-colors"
                   placeholder="(11) 99999-9999"
                   value={formData.whatsapp}
                   onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                  style={{
+                    width: '100%',
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    borderRadius: '12px',
+                    padding: '14px 18px 14px 45px',
+                    color: '#fff',
+                    fontSize: '1rem',
+                    outline: 'none'
+                  }}
                 />
               </div>
             </div>
             <button
               type="submit"
               disabled={loading}
-              className="bg-dourado text-marinho font-bold py-4 rounded-xl mt-4 flex items-center justify-center gap-2 hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+              style={{
+                backgroundColor: '#D4AF37',
+                color: '#1D2951',
+                fontWeight: '700',
+                padding: '16px',
+                borderRadius: '12px',
+                marginTop: '15px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px',
+                border: 'none',
+                cursor: loading ? 'not-allowed' : 'pointer',
+                opacity: loading ? 0.7 : 1,
+                fontSize: '1.1rem',
+                transition: 'background 0.3s'
+              }}
             >
               {loading ? 'Enviando sua solicitação...' : (
                 <>

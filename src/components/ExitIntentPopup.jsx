@@ -12,16 +12,22 @@ const ExitIntentPopup = () => {
 
   useEffect(() => {
     const handleMouseLeave = (e) => {
-      // Dispara apenas se o mouse sair da tela em direção ao topo (fechar aba)
-      // e se o popup não tiver sido aberto nesta sessão
-      if (e.clientY <= 0 && !sessionStorage.getItem('exitIntentShown')) {
-        setIsVisible(true);
-        sessionStorage.setItem('exitIntentShown', 'true');
+      // Dispara quando o mouse sai da janela por cima (direção X/abas)
+      if (e.clientY <= 20) {
+        if (!sessionStorage.getItem('exitIntentShown')) {
+          setIsVisible(true);
+          sessionStorage.setItem('exitIntentShown', 'true');
+        }
       }
     };
 
     document.addEventListener('mouseleave', handleMouseLeave);
-    return () => document.removeEventListener('mouseleave', handleMouseLeave);
+    
+    // Fallback: se o usuário ficar muito tempo na página inativo 
+    // ou fizer scroll muito rápido pra cima
+    return () => {
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    };
   }, []);
 
   const handleSubmit = async (e) => {
@@ -40,7 +46,7 @@ const ExitIntentPopup = () => {
       setTimeout(() => setIsVisible(false), 3000);
     } catch (err) {
       console.error(err);
-      toast.error('Erro ao enviar dados. Por favor, clique no botão flutuante de WhatsApp.');
+      toast.error('Erro ao enviar dados. Por favor, utilize o botão do WhatsApp.');
     } finally {
       setLoading(false);
     }
@@ -54,58 +60,130 @@ const ExitIntentPopup = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+        style={{
+          position: 'fixed',
+          top: 0, left: 0, right: 0, bottom: 0,
+          zIndex: 99999,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: 'rgba(0, 0, 0, 0.75)',
+          backdropFilter: 'blur(5px)',
+          padding: '20px'
+        }}
         onClick={() => setIsVisible(false)}
       >
         <motion.div
-          initial={{ scale: 0.9, y: 20 }}
+          initial={{ scale: 0.8, y: 30 }}
           animate={{ scale: 1, y: 0 }}
-          exit={{ scale: 0.9, y: 20 }}
-          className="bg-marinho w-full max-w-lg rounded-2xl p-8 relative border border-dourado/30 shadow-2xl"
+          exit={{ scale: 0.8, y: 30 }}
+          style={{
+            backgroundColor: '#1D2951', // var(--title-marinho)
+            width: '100%',
+            maxWidth: '500px',
+            borderRadius: '20px',
+            padding: '40px 30px',
+            position: 'relative',
+            border: '1px solid rgba(229, 211, 179, 0.3)', // dourado
+            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+            color: '#fff'
+          }}
           onClick={(e) => e.stopPropagation()}
         >
           <button 
             onClick={() => setIsVisible(false)}
-            className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
+            style={{
+              position: 'absolute',
+              top: '15px',
+              right: '15px',
+              background: 'transparent',
+              border: 'none',
+              color: 'rgba(255, 255, 255, 0.6)',
+              cursor: 'pointer'
+            }}
           >
             <X size={24} />
           </button>
 
           {!submitted ? (
-            <>
-              <h3 className="text-3xl font-bold text-dourado mb-4 title-font leading-tight text-center">
+            <div style={{ textAlign: 'center' }}>
+              <h3 style={{ 
+                fontSize: '2rem', 
+                fontWeight: '700', 
+                color: '#D4AF37', // var(--gold-bronze)
+                marginBottom: '10px',
+                lineHeight: 1.2
+              }}>
                 Ainda com dúvidas?
               </h3>
-              <p className="text-white/80 mb-6 text-center text-lg">
+              <p style={{ 
+                color: 'rgba(255, 255, 255, 0.8)', 
+                marginBottom: '25px', 
+                fontSize: '1.1rem' 
+              }}>
                 Não vá ainda! Deixe seu contato e nosso concierge tira todas as suas dúvidas sobre o método BioARch na hora.
               </p>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                 <div>
                   <input
                     type="text"
                     required
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-dourado transition-colors"
                     placeholder="Seu Nome Completo"
                     value={formData.nome}
                     onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+                    style={{
+                      width: '100%',
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      borderRadius: '12px',
+                      padding: '14px 18px',
+                      color: '#fff',
+                      fontSize: '1rem',
+                      outline: 'none'
+                    }}
                   />
                 </div>
-                <div className="relative">
-                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" size={20} />
+                <div style={{ position: 'relative' }}>
+                  <Phone style={{ position: 'absolute', left: '15px', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255, 255, 255, 0.5)' }} size={20} />
                   <input
                     type="tel"
                     required
-                    className="w-full bg-white/10 border border-white/20 rounded-xl pl-12 pr-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-dourado transition-colors"
                     placeholder="WhatsApp com DDD"
                     value={formData.whatsapp}
                     onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                    style={{
+                      width: '100%',
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      borderRadius: '12px',
+                      padding: '14px 18px 14px 45px',
+                      color: '#fff',
+                      fontSize: '1rem',
+                      outline: 'none'
+                    }}
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-dourado text-marinho font-bold py-4 rounded-xl mt-2 flex items-center justify-center gap-2 hover:bg-white transition-colors disabled:opacity-50 text-lg"
+                  style={{
+                    backgroundColor: '#D4AF37',
+                    color: '#1D2951',
+                    fontWeight: '700',
+                    padding: '16px',
+                    borderRadius: '12px',
+                    marginTop: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    border: 'none',
+                    cursor: loading ? 'not-allowed' : 'pointer',
+                    opacity: loading ? 0.7 : 1,
+                    fontSize: '1.1rem',
+                    transition: 'background 0.3s'
+                  }}
                 >
                   {loading ? 'Aguarde um momento...' : (
                     <>
@@ -114,14 +192,22 @@ const ExitIntentPopup = () => {
                   )}
                 </button>
               </form>
-            </>
+            </div>
           ) : (
-            <div className="text-center py-8">
-              <div className="w-16 h-16 rounded-full bg-green-500/20 text-green-400 mx-auto flex items-center justify-center mb-4">
-                <Send size={32} />
+            <div style={{ textAlign: 'center', padding: '30px 0' }}>
+              <div style={{ 
+                width: '70px', height: '70px', borderRadius: '50%', 
+                backgroundColor: 'rgba(74, 222, 128, 0.2)', 
+                color: '#4ade80', 
+                margin: '0 auto 20px', 
+                display: 'flex', alignItems: 'center', justifyContent: 'center' 
+              }}>
+                <Send size={35} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Tudo certo!</h3>
-              <p className="text-white/70">Nossa equipe já recebeu e vai te chamar em minutos.</p>
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#fff', marginBottom: '10px' }}>Tudo certo!</h3>
+              <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.1rem' }}>
+                Nossa equipe já recebeu e vai te chamar em minutos.
+              </p>
             </div>
           )}
         </motion.div>
