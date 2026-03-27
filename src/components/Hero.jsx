@@ -5,7 +5,7 @@ import { scrollTo } from '../utils/scroll';
 
 export function Hero({ siteConfig, whatsappLink }) {
   return (
-    <section className="hero" style={{ paddingTop: '5.5rem', paddingBottom: '6rem' }}>
+    <section className="hero" style={{ paddingTop: '5.8rem', paddingBottom: '6rem' }}>
       <div className="container hero-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -22,7 +22,7 @@ export function Hero({ siteConfig, whatsappLink }) {
              style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 1.2rem', background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '50px', color: '#D4AF37', fontWeight: 600, fontSize: '0.85rem', marginBottom: '1.5rem', letterSpacing: '1px', textTransform: 'uppercase' }}
            >
              <Sparkles size={16} strokeWidth={2.5} style={{ marginRight: '6px' }} />
-             Alta Performance Metabólica
+             Excelência em Saúde e Qualidade de Vida
            </motion.div>
            <h1 style={{ fontSize: 'clamp(2.3rem, 4.2vw, 3.4rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '1.2rem', letterSpacing: '-1px', color: '#1B2745' }}>
             {(() => {
