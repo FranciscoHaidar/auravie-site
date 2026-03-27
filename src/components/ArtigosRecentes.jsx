@@ -3,6 +3,17 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { BookOpen, ChevronRight, X, Brain, Activity, BatteryCharging, HeartPulse, Scale, ExternalLink, Dumbbell } from 'lucide-react';
 
+const LegsIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M8 3h8" />
+    <path d="M6 8c0 4 2 6 2 13" />
+    <path d="M18 8c0 4-2 6-2 13" />
+    <path d="M12 10v11" />
+    <path d="M6 8c-1-2-1-5 2-5" />
+    <path d="M18 8c1-2 1-5-2-5" />
+  </svg>
+);
+
 const artigosData = [
   {
     id: 1,
@@ -30,7 +41,7 @@ const artigosData = [
     artigoOriginal: "Lipedema: A clinical challenge and an update",
     fonte: "Journal of Clinical Medicine",
     linkOriginal: "https://pubmed.ncbi.nlm.nih.gov/?term=lipedema+treatment+update",
-    icone: HeartPulse,
+    icone: LegsIcon,
     resumo: "Se as dietas e os exercícios nunca funcionam para as suas pernas e elas estão sempre doloridas, pode ser Lipedema.",
     conteudo: "O Lipedema é uma doença crônica, progressiva e inflamatória que causa acúmulo desproporcional de gordura nas extremidades, poupando mãos e pés. Diferente da obesidade comum, essa gordura é resistente a dietas tradicionais. O tratamento correto envolve controle inflamatório, dieta especializada, terapia compressiva e, em alguns casos, cirurgia."
   },
