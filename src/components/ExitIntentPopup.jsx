@@ -11,19 +11,33 @@ const ExitIntentPopup = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const handleMouseOut = (e) => {
-      // Se o mouse sair pelo topo (clientY menor que 50px)
-      // Usaremos mouseout no document e checaremos relatedTarget
-      if (e.clientY < 50 || (e.relatedTarget === null && e.clientY < 100)) {
+    let triggered = false;
+
+    const handleTrigger = () => {
+      if (!triggered) {
         setIsVisible(true);
-        // Removido o sessionStorage temporariamente para facilitar os testes infinitos
+        triggered = true;
       }
     };
 
-    document.addEventListener('mouseout', handleMouseOut);
+    const handleMouseMove = (e) => {
+      // Assim que o mouse encostar nos 20px superiores da tela
+      if (e.clientY <= 20) {
+        handleTrigger();
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Fallback Garantido: Mostra o Pop-up automaticamente após 10 segundos 
+    // lendo a página, para capturar inclusive quem estiver no Celular!!
+    const timer = setTimeout(() => {
+      handleTrigger();
+    }, 10000);
     
     return () => {
-      document.removeEventListener('mouseout', handleMouseOut);
+      window.removeEventListener('mousemove', handleMouseMove);
+      clearTimeout(timer);
     };
   }, []);
 
