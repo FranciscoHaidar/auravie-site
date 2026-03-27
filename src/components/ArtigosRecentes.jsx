@@ -187,11 +187,9 @@ export const ArtigosRecentes = () => {
                             </a>
                         </div>
                     </div>
-                </div>
-            </div>, document.body
-        )}
-      </div>
+                </div>, document.body
+            )}
+        </div>
     </section>
   );
 };
-```
