@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { BookOpen, ChevronRight, X, Brain, Activity, BatteryCharging, HeartPulse, Scale, ExternalLink, Dumbbell } from 'lucide-react';
 
 const artigosData = [
@@ -143,56 +144,52 @@ export const ArtigosRecentes = () => {
           })}
         </div>
 
-        {/* Modal Apparition */}
-        {artigoAberto && (
-          <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(27, 39, 69, 0.7)', backdropFilter: 'blur(8px)', zIndex: 9999, margin: 0, padding: 0, overflowY: 'auto' }} onClick={() => setArtigoAberto(null)}>
-            <div style={{ display: 'flex', minHeight: '100%', width: '100%', alignItems: 'flex-start', justifyContent: 'center', padding: '4rem 2rem', boxSizing: 'border-box' }}>
-              <div className="modal-content" style={{ background: 'white', width: '100%', maxWidth: '1050px', borderRadius: '24px', position: 'relative', padding: '3rem', boxShadow: '0 25px 50px rgba(0,0,0,0.25)', margin: 'auto' }} onClick={e => e.stopPropagation()}>
+        {/* Modal Apparition (REACT PORTAL) */}
+        {artigoAberto && typeof window !== 'undefined' && createPortal(
+            <div onClick={() => setArtigoAberto(null)} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.7)', zIndex: 999999, margin: 0, padding: 0, overflowY: 'auto', backdropFilter: 'blur(5px)' }}>
+                <div style={{ display: 'flex', minHeight: '100%', width: '100%', alignItems: 'flex-start', justifyContent: 'center', margin: 0, padding: '4rem 2rem', boxSizing: 'border-box' }}>
+                    <div onClick={e => e.stopPropagation()} style={{ background: '#ffffff', width: '100%', maxWidth: '1050px', position: 'relative', borderRadius: '24px', padding: '3rem', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', margin: 'auto', isolation: 'isolate', border: 'none' }}>
+                        
+                        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '2rem', marginBottom: '1.5rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                <div style={{ background: 'rgba(212,175,55,0.1)', padding: '1rem', borderRadius: '16px', color: 'var(--dourado)', flexShrink: 0 }}>
+                                    <artigoAberto.icone size={32} />
+                                </div>
+                                <h2 style={{ margin: 0, color: '#1B2745', fontSize: '1.6rem', lineHeight: 1.3, fontWeight: 800 }}>{artigoAberto.titulo}</h2>
+                            </div>
+                            <button 
+                                onClick={() => setArtigoAberto(null)}
+                                style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, opacity: 0.6, transition: 'opacity 0.2s' }}
+                                onMouseEnter={e => e.currentTarget.style.opacity = 1}
+                                onMouseLeave={e => e.currentTarget.style.opacity = 0.6}
+                            >
+                                <X size={26} color="#1B2745" />
+                            </button>
+                        </div>
+                        
+                        <div style={{ background: '#F8FAFC', padding: '1.5rem', borderRadius: '12px', marginBottom: '1.5rem', borderLeft: '4px solid var(--dourado)' }}>
+                            <p style={{ color: '#1B2745', fontSize: '1.05rem', margin: 0, fontWeight: 500, lineHeight: 1.5 }}>{artigoAberto.resumo}</p>
+                        </div>
 
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '2rem', marginBottom: '2rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                    <div style={{ color: 'var(--dourado)', background: 'rgba(212,175,55,0.1)', padding: '1.2rem', borderRadius: '16px', flexShrink: 0 }}>
-                      <artigoAberto.icone size={36} />
+                        <div style={{ color: '#444444', lineHeight: 1.8, fontSize: '1.05rem', marginBottom: '2rem' }}>
+                            {artigoAberto.conteudo}
+                        </div>
+                        
+                        {/* Referência da Origem */}
+                        <div style={{ background: '#F8FAFC', padding: '1.5rem', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+                            <h4 style={{ margin: '0 0 0.5rem 0', color: '#1B2745', fontSize: '1.05rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                               <BookOpen size={20}/> Referência Científica
+                            </h4>
+                            <p style={{ margin: '0 0 1rem 0', color: '#64748B', fontSize: '0.95rem', fontStyle: 'italic', lineHeight: 1.5 }}>
+                              Tópico ou base do estudo: <strong>{artigoAberto.artigoOriginal}</strong>
+                            </p>
+                            <a href={artigoAberto.linkOriginal} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--dourado)', fontWeight: 600, textDecoration: 'none', fontSize: '0.95rem' }}>
+                               Pesquisar indexação completa em: {artigoAberto.fonte} <ExternalLink size={18} />
+                            </a>
+                        </div>
                     </div>
-                    <h2 style={{ margin: 0, color: '#1B2745', fontSize: '1.8rem', lineHeight: 1.3, fontWeight: 800 }}>
-                      {artigoAberto.titulo}
-                    </h2>
-                  </div>
-                  <button
-                    onClick={() => setArtigoAberto(null)}
-                    style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, opacity: 0.6, transition: 'opacity 0.2s' }}
-                    onMouseEnter={e => e.currentTarget.style.opacity = 1}
-                    onMouseLeave={e => e.currentTarget.style.opacity = 0.6}
-                  >
-                    <X size={24} color="#1B2745" />
-                  </button>
                 </div>
-
-                <div style={{ background: 'rgba(212,175,55,0.05)', padding: '1.5rem 2rem', borderRadius: '12px', borderLeft: '4px solid var(--dourado)', marginBottom: '2rem' }}>
-                  <p style={{ margin: 0, fontSize: '1.15rem', color: '#333', fontWeight: 600, lineHeight: 1.5 }}>
-                    {artigoAberto.resumo}
-                  </p>
-                </div>
-
-                <div style={{ fontSize: '1.1rem', color: '#444', lineHeight: 1.8, marginBottom: '2.5rem' }}>
-                  {artigoAberto.conteudo}
-                </div>
-
-                {/* Fonte e Artigo Original */}
-                <div style={{ background: '#FAF9F6', padding: '1.5rem 2rem', borderRadius: '16px', border: '1px solid rgba(212,175,55,0.2)' }}>
-                  <h4 style={{ margin: '0 0 0.5rem 0', color: '#1B2745', fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700 }}>
-                    <BookOpen size={20} /> Referência Científica
-                  </h4>
-                  <p style={{ margin: '0 0 1rem 0', color: '#555', fontSize: '1rem', fontStyle: 'italic', lineHeight: 1.5 }}>
-                    Estudo base para aprofundamento:<br /> <strong>{artigoAberto.artigoOriginal}</strong>
-                  </p>
-                  <a href={artigoAberto.linkOriginal} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--dourado)', fontWeight: 600, textDecoration: 'none', fontSize: '1rem', transition: 'all 0.2s ease', borderBottom: '1px solid transparent' }} onMouseEnter={e => e.currentTarget.style.borderBottom = '1px solid var(--dourado)'} onMouseLeave={e => e.currentTarget.style.borderBottom = '1px solid transparent'}>
-                    Pesquisar assunto indexado em: {artigoAberto.fonte} <ExternalLink size={18} />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+            </div>, document.body
         )}
       </div>
     </section>
