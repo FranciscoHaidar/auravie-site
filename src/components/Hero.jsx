@@ -5,7 +5,7 @@ import { scrollTo } from '../utils/scroll';
 
 export function Hero({ siteConfig, whatsappLink }) {
   return (
-    <section className="hero" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+    <section className="hero" style={{ paddingTop: '5.5rem', paddingBottom: '6rem' }}>
       <div className="container hero-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -90,8 +90,8 @@ export function Hero({ siteConfig, whatsappLink }) {
                  <Activity size={26} strokeWidth={2} />
                </div>
                <div>
-                 <span style={{ display: 'block', fontWeight: 800, color: '#1D2951', fontSize: '1.3rem', lineHeight: 1 }}>Protocolo</span>
-                 <span style={{ fontSize: '0.85rem', color: '#666', fontWeight: 700, letterSpacing: '1px', textTransform: 'uppercase' }}>BioARch Exclusivo</span>
+                 <span style={{ display: 'block', fontWeight: 700, color: '#666', fontSize: '0.85rem', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '2px' }}>Protocolo</span>
+                 <span style={{ display: 'block', fontSize: '1.4rem', color: 'var(--gold-bronze)', fontWeight: 900, letterSpacing: '-0.5px', lineHeight: 1 }}>BIOARCH</span>
                </div>
              </motion.div>
            </div>
