@@ -200,6 +200,12 @@ export default function QuizBioARch({ whatsappNumber }) {
           )}
 
         </motion.div>
+
+        <div style={{ marginTop: '3rem', textAlign: 'center', padding: '0 1.5rem' }}>
+          <p style={{ fontSize: '0.85rem', color: '#94a3b8', lineHeight: '1.6', margin: 0, borderTop: '1px solid #e2e8f0', paddingTop: '1.5rem' }}>
+            <strong style={{ color: '#64748b' }}>Aviso Médico Obrigatório (CFM):</strong> O resultado deste Mapeamento Interativo é gerado por autoavaliação e possui propósitos estritamente educativos e preventivos. Esta análise digital <strong>não possui validade de diagnóstico clínico e não substitui, em hipótese alguma, uma consulta médica formal.</strong> A interpretação final de sintomas e a prescrição de tratamentos são atos exclusivos de médicos presenciais ou via telemedicina legalizada.
+          </p>
+        </div>
       </div>
     </section>
   );
