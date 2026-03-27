@@ -54,7 +54,12 @@ function App() {
       <Navbar instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
       <Hero siteConfig={siteConfig} whatsappLink={WHATSAPP_LINK} />
       
-      <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20vh', color: 'var(--dourado)' }}>Buscando conteúdo institucional...</div>}>
+      <Suspense fallback={
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '15vh', gap: '1rem', marginTop: '2rem' }}>
+          <div className="spinner" style={{ width: '36px', height: '36px', border: '3px solid rgba(212,175,55,0.2)', borderTopColor: 'var(--dourado)' }}></div>
+          <span style={{ color: 'var(--primary-dark)', fontSize: '0.85rem', fontWeight: 600, opacity: 0.6, letterSpacing: '2px', textTransform: 'uppercase' }}>Otimizando Componentes...</span>
+        </div>
+      }>
         <Problema />
         <Medico siteConfig={siteConfig} />
         <Jornada />

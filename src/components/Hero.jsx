@@ -12,7 +12,7 @@ export function Hero({ siteConfig, whatsappLink }) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="hero-content" 
-          style={{ flex: '1 1 450px' }}
+          style={{ flex: '1 1 450px', willChange: 'transform, opacity' }}
         >
            <h1 style={{ fontSize: 'clamp(2.3rem, 4.2vw, 3.4rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '1.2rem', letterSpacing: '-1px' }}>
             {siteConfig.hero_title}
@@ -41,6 +41,7 @@ export function Hero({ siteConfig, whatsappLink }) {
            <img 
               src="/hero-photo.jpg" 
               alt="Dr. Francisco Haidar - AuraVie Concept" 
+              fetchPriority="high"
               style={{ width: '100%', maxWidth: '360px', borderRadius: '20px', boxShadow: '0 25px 50px rgba(29, 41, 81, 0.15)', objectFit: 'cover' }}
            />
         </motion.div>
