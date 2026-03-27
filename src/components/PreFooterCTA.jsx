@@ -71,7 +71,7 @@ export function PreFooterCTA({ whatsappLink }) {
               }}
             >
               <Share2 size={20} />
-              Compartilhar Página
+              Indicar a um Amigo
             </button>
           </div>
         </motion.div>
