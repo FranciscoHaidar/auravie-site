@@ -10,6 +10,16 @@ const ExitIntentPopup = () => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  const formatPhone = (val) => {
+    let v = val.replace(/\D/g, '');
+    if (v.length > 11) v = v.substring(0, 11);
+    if (!v) return '';
+    if (v.length <= 2) return `(${v}`;
+    if (v.length <= 3) return `(${v.substring(0,2)}) ${v.substring(2)}`;
+    if (v.length <= 7) return `(${v.substring(0,2)}) ${v.substring(2,3)} ${v.substring(3)}`;
+    return `(${v.substring(0,2)}) ${v.substring(2,3)} ${v.substring(3,7)}-${v.substring(7,11)}`;
+  };
+
   useEffect(() => {
     let triggered = false;
 
@@ -162,7 +172,8 @@ const ExitIntentPopup = () => {
                     required
                     placeholder="WhatsApp com DDD"
                     value={formData.whatsapp}
-                    onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                    onChange={(e) => setFormData({ ...formData, whatsapp: formatPhone(e.target.value) })}
+                    maxLength="16"
                     style={{
                       width: '100%',
                       backgroundColor: 'rgba(255, 255, 255, 0.1)',
