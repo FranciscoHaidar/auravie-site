@@ -52,12 +52,12 @@ export function AntesDepois() {
         >
           {/* Imagem Pós-Tratamento (Fundo) */}
           <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
-            {/* Imagem Provisória Royalty-Free: Textura/Saúde/Fitness */}
+            {/* Foto Real de Resultado */}
             <img 
-               src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=2000&auto=format&fit=crop" 
+               src="/depois-bioarch.jpg" 
                alt="Resultado After"
                draggable="false"
-               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
             />
             <div style={{ position: 'absolute', top: '24px', right: '24px', background: 'rgba(212,175,55,0.95)', color: '#fff', padding: '8px 16px', borderRadius: '50px', fontWeight: 700, fontSize: '0.9rem', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Resultado BioARch</div>
           </div>
@@ -72,10 +72,10 @@ export function AntesDepois() {
             clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)` 
           }}>
             <img 
-               src="https://images.unsplash.com/photo-1579684453423-f84349ef60b0?q=80&w=2000&auto=format&fit=crop" 
+               src="/antes-bioarch.jpg" 
                alt="Estado Before"
                draggable="false"
-               style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(50%) contrast(80%) brightness(1.1) blur(2px)' }}
+               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
             />
             <div style={{ position: 'absolute', top: '24px', left: '24px', background: 'rgba(27,39,69,0.95)', color: '#fff', padding: '8px 16px', borderRadius: '50px', fontWeight: 700, fontSize: '0.9rem', boxShadow: '0 4px 15px rgba(0,0,0,0.4)' }}>Antes do Protocolo</div>
           </div>
