@@ -68,7 +68,7 @@ export default function QuizBioARch({ whatsappNumber }) {
 
   const getWhatsappLink = () => {
     const deficit = calculateDeficit();
-    const text = `Olá! Acabei de fazer o mapeamento metabólico interativo no site e o diagnóstico apontou que estou perdendo cerca de ${deficit}% do meu potencial biológico diário. Gostaria de agendar uma avaliação com o Dr. Francisco Haidar para reverter isso pelo Método BioARch.`;
+    const text = `Olá! Acabei de fazer o mapeamento metabólico interativo no site e a análise apontou que estou perdendo cerca de ${deficit}% do meu potencial biológico diário. Gostaria de agendar uma avaliação com o Dr. Francisco Haidar para reverter isso pelo Método BioARch.`;
     return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
   };
 
