@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://auravieconcept.com.br/sitemap.xml

@@ -69,8 +69,8 @@ export function Planos({ whatsappNumber }) {
         <div className="plans-grid">
           {/* Essential */}
           <motion.div 
-            className="plan-card" 
-            style={{ borderTop: '4px solid #333', backgroundColor: '#f9f9f9', cursor: 'pointer' }} 
+            className="plan-card glass-panel" 
+            style={{ borderTop: '4px solid #333', cursor: 'pointer' }} 
             onClick={() => setActiveModal('essential')}
             role="button"
             tabIndex={0}
@@ -93,8 +93,8 @@ export function Planos({ whatsappNumber }) {
 
           {/* Essential + */}
           <motion.div 
-            className="plan-card" 
-            style={{ borderTop: '4px solid #888', backgroundColor: '#fff', cursor: 'pointer' }} 
+            className="plan-card glass-panel" 
+            style={{ borderTop: '4px solid #888', cursor: 'pointer' }} 
             onClick={() => setActiveModal('essential')}
             role="button"
             tabIndex={0}
@@ -117,8 +117,8 @@ export function Planos({ whatsappNumber }) {
 
           {/* Prime */}
           <motion.div 
-            className="plan-card plan-featured" 
-            style={{ borderTop: '4px solid var(--gold-champagne)', backgroundColor: '#fff', cursor: 'pointer' }} 
+            className="plan-card plan-featured glass-panel-light" 
+            style={{ borderTop: '4px solid var(--gold-champagne)', cursor: 'pointer' }} 
             onClick={() => setActiveModal('prime')}
             role="button"
             tabIndex={0}
@@ -141,8 +141,8 @@ export function Planos({ whatsappNumber }) {
 
           {/* Prime + */}
           <motion.div 
-            className="plan-card" 
-            style={{ borderTop: '4px solid #B87333', backgroundColor: '#fff', cursor: 'pointer' }} 
+            className="plan-card glass-panel" 
+            style={{ borderTop: '4px solid #B87333', cursor: 'pointer' }} 
             onClick={() => setActiveModal('prime')}
             role="button"
             tabIndex={0}
@@ -165,8 +165,8 @@ export function Planos({ whatsappNumber }) {
 
           {/* Black */}
           <motion.div 
-            className="plan-card plan-black" 
-            style={{ borderTop: '4px solid #FFD700', backgroundColor: '#0a0a0a', color: '#fff', cursor: 'pointer' }} 
+            className="plan-card plan-black glass-panel" 
+            style={{ borderTop: '4px solid #FFD700', backgroundColor: 'rgba(10, 10, 10, 0.85)', color: '#fff', cursor: 'pointer' }} 
             onClick={() => setActiveModal('black')}
             role="button"
             tabIndex={0}
