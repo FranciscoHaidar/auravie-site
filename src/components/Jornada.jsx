@@ -7,25 +7,25 @@ export function Jornada() {
     { 
       num: "01", 
       title: "Mapeamento Metabólico", 
-      text: "Avaliação clínica presencial, anamnese detalhada e coleta da sua biografia metabólica.",
+      text: "Avaliação clínica presencial ou online, anamnese detalhada e coleta da sua biografia metabólica.",
       icon: ClipboardList
     },
     { 
       num: "02", 
       title: "Bioimpedância e Laboratório", 
-      text: "Leitura de composição corporal segmentada e mapeamento sanguíneo extenso de ultra-precisão.",
+      text: "Leitura de composição corporal segmentada e mapeamento sanguíneo.",
       icon: Microscope
     },
     { 
       num: "03", 
       title: "Plano Terapêutico BioARch", 
-      text: "Desenho da engenharia hormonal, suplementos e infusões injetáveis para ação ultrarrápida.",
+      text: "Desenho da engenharia hormonal, suplementos e infusões injetáveis para ação mais rápida.",
       icon: Pill
     },
     { 
       num: "04", 
       title: "Hipertrofia e Manutenção", 
-      text: "Monitoramento milimétrico do ganho de massa, evolução clínica e readaptações constantes de dose.",
+      text: "Monitoramento de ganho de massa, evolução clínica e readaptações constantes de dose.",
       icon: TrendingUp
     }
   ];
