@@ -263,6 +263,11 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-hover);
 }
 
+.info-card-glow:hover {
+  box-shadow: 0 25px 50px rgba(212, 175, 55, 0.18) !important;
+  transform: translateY(-10px);
+}
+
 .info-card h3 {
   font-size: 1.35rem;
   margin-bottom: 1rem;
@@ -417,9 +422,22 @@ h1, h2, h3, h4 {
   color: white;
 }
 
+@keyframes pulse-whatsapp {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
 .float-whatsapp {
   background: #25D366;
   box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+  animation: pulse-whatsapp 2s infinite;
+}
+
+.float-whatsapp:hover {
+  animation: none;
+  transform: scale(1.1);
+  box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
 }
 
 .float-instagram {

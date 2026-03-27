@@ -98,19 +98,24 @@ const Contato = () => {
                 <input
                   type="tel"
                   required
-                  placeholder="(11) 99999-9999"
+                  placeholder="(11) 9 9999-9999"
                   value={formData.whatsapp}
                   onChange={(e) => setFormData({ ...formData, whatsapp: formatPhone(e.target.value) })}
                   maxLength="16"
+                  minLength="16"
+                  title="Telefone deve conter DDD + 9 dígitos"
                   style={{
                     width: '100%',
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    backgroundColor: formData.whatsapp.length === 16 ? 'rgba(74, 222, 128, 0.1)' : 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid',
+                    borderColor: formData.whatsapp.length === 16 ? '#4ade80' : (formData.whatsapp.length > 0 ? '#fbbf24' : 'rgba(255, 255, 255, 0.2)'),
+                    boxShadow: formData.whatsapp.length === 16 ? '0 0 0 4px rgba(74, 222, 128, 0.15)' : 'none',
                     borderRadius: '12px',
                     padding: '14px 18px 14px 45px',
                     color: '#fff',
-                    fontSize: '1rem',
-                    outline: 'none'
+                    fontSize: '1.05rem',
+                    outline: 'none',
+                    transition: 'all 0.3s ease'
                   }}
                 />
               </div>

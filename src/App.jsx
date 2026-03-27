@@ -15,6 +15,7 @@ const Planos = lazy(() => import('./components/Planos').then(m => ({ default: m.
 const Atuacao = lazy(() => import('./components/Atuacao').then(m => ({ default: m.Atuacao })));
 const Faq = lazy(() => import('./components/Faq').then(m => ({ default: m.Faq })));
 const ArtigosRecentes = lazy(() => import('./components/ArtigosRecentes').then(m => ({ default: m.ArtigosRecentes })));
+const Depoimentos = lazy(() => import('./components/Depoimentos').then(m => ({ default: m.Depoimentos })));
 const Contato = lazy(() => import('./components/Contato'));
 const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'));
 
@@ -68,6 +69,7 @@ function App() {
         <Contato />
         <Atuacao />
         <ArtigosRecentes />
+        <Depoimentos />
         <Faq />
         <ExitIntentPopup />
       </Suspense>
