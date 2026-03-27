@@ -4,7 +4,7 @@ import { scrollTo } from '../utils/scroll';
 
 export function Hero({ siteConfig, whatsappLink }) {
   return (
-    <section className="hero" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+    <section className="hero" style={{ paddingTop: '4rem', paddingBottom: '6rem' }}>
       <div className="container hero-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
