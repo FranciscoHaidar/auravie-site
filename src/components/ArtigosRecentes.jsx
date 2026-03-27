@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BookOpen, ChevronRight, X, Brain, Activity, BatteryCharging, HeartPulse, Scale, ExternalLink } from 'lucide-react';
+import { BookOpen, ChevronRight, X, Brain, Activity, BatteryCharging, HeartPulse, Scale, ExternalLink, Dumbbell } from 'lucide-react';
 
 const artigosData = [
   {
@@ -51,6 +51,16 @@ const artigosData = [
       icone: Activity,
       resumo: "Esqueça as dietas genéricas de gaveta. O futuro é se alimentar de acordo com seu próprio DNA.",
       conteudo: "Com a nutrigenômica, deixamos de apenas 'tratar a doença' e passamos à nutroprevenção. Analisando seu perfil genético, descobrimos quais tendências a doenças você tem e prescrevemos compostos bioativos específicos para 'silenciar' esses genes ruins e ativar os bons, promovendo uma longevidade com muito mais qualidade."
+  },
+  {
+      id: 6,
+      titulo: "O Segredo da Hipertrofia: Por que você treina e não cresce?",
+      artigoOriginal: "Nutritional interventions to augment resistance training-induced muscle hypertrophy",
+      fonte: "PubMed / Sports Medicine",
+      linkOriginal: "https://pubmed.ncbi.nlm.nih.gov/?term=muscle+hypertrophy+protein+synthesis",
+      icone: Dumbbell,
+      resumo: "A nutrição correta dita o crescimento muscular. O músculo se constrói no descanso e no prato, não apenas no treino.",
+      conteudo: "Para ocorrer a hipertrofia real, a Síntese de Proteína Muscular (MPS) precisa superar a quebra. Isso depende de um pilar inegociável: ingestão adequada de aminoácidos essenciais, especialmente a Leucina. Fracionar o consumo de proteínas de alto valor biológico (30 a 40g por refeição) otimiza imediatamente a via mTORC1, principal sinalizadora do crescimento. Sem esse ambiente nutricional favorável, o esforço brutal na academia pode gerar apenas catabolismo."
   }
 ];
 
