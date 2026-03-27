@@ -4,8 +4,8 @@ import { Phone, Instagram, MapPin } from 'lucide-react';
 export function Footer({ whatsappLink, instagramLink }) {
   return (
     <footer className="section bg-marinho" style={{ paddingBottom: '2rem' }}>
-      <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '3rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '3rem', marginBottom: '2rem' }}>
+      <div className="container" style={{ maxWidth: '1300px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '3rem', marginBottom: '2rem' }}>
           
           <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <img 
