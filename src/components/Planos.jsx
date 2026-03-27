@@ -170,7 +170,7 @@ export function Planos({ whatsappNumber }) {
           {/* Black */}
           <motion.div 
             className="plan-card plan-black glass-panel" 
-            style={{ borderTop: '4px solid #FFD700', backgroundColor: 'rgba(5, 5, 5, 0.45)', color: '#fff', cursor: 'pointer', backdropFilter: 'blur(20px)' }} 
+            style={{ borderTop: '4px solid #FFD700', backgroundColor: '#050505', color: '#fff', cursor: 'pointer' }} 
             onClick={() => setActiveModal('black')}
             role="button"
             tabIndex={0}
