@@ -132,7 +132,7 @@ export const ArtigosRecentes = () => {
         {/* Modal Apparition */}
         {artigoAberto && (
           <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(27, 39, 69, 0.7)', backdropFilter: 'blur(8px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }} onClick={() => setArtigoAberto(null)}>
-            <div className="modal-content" style={{ background: 'white', width: '100%', maxWidth: '900px', maxHeight: '90vh', overflowY: 'auto', borderRadius: '24px', position: 'relative', padding: '3rem', boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }} onClick={e => e.stopPropagation()}>
+            <div className="modal-content" style={{ background: 'white', width: '100%', maxWidth: '1050px', maxHeight: '90vh', overflowY: 'auto', borderRadius: '24px', position: 'relative', padding: '3rem', boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }} onClick={e => e.stopPropagation()}>
               <button 
                 onClick={() => setArtigoAberto(null)}
                 style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: '#F0F0F0', border: 'none', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'background 0.2s' }}
@@ -174,22 +174,7 @@ export const ArtigosRecentes = () => {
                 </a>
               </div>
               
-              <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-                <button 
-                  onClick={() => setArtigoAberto(null)} 
-                  style={{ background: '#1B2745', color: 'white', border: 'none', padding: '1rem 3rem', borderRadius: '50px', fontSize: '1.1rem', fontWeight: 600, cursor: 'pointer', boxShadow: '0 4px 15px rgba(27,39,69,0.2)', transition: 'all 0.2s ease' }}
-                  onMouseEnter={e => {
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                      e.currentTarget.style.boxShadow = '0 6px 20px rgba(27,39,69,0.3)';
-                  }}
-                  onMouseLeave={e => {
-                      e.currentTarget.style.transform = 'none';
-                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(27,39,69,0.2)';
-                  }}
-                >
-                  Fechar Leitura
-                </button>
-              </div>
+              {/* Footer empty to remove scroll impact */}
             </div>
           </div>
         )}
