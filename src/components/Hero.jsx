@@ -6,6 +6,33 @@ import { scrollTo } from '../utils/scroll';
 export function Hero({ siteConfig, whatsappLink }) {
   return (
     <section className="hero" style={{ paddingTop: '5.5rem', paddingBottom: '6rem' }}>
+      <style>{`
+        .hero-glass-badge {
+          position: absolute;
+          bottom: -25px;
+          left: -40px;
+          background: rgba(255, 255, 255, 0.85);
+          backdrop-filter: blur(12px);
+          padding: 1.2rem;
+          border-radius: 20px;
+          box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          border: 1px solid rgba(255,255,255,0.6);
+          z-index: 10;
+        }
+        @media (max-width: 480px) {
+          .hero-glass-badge {
+            left: 5%;
+            right: 5%;
+            width: 90%;
+            bottom: -35px;
+            justify-content: center;
+            padding: 1rem;
+          }
+        }
+      `}</style>
       <div className="container hero-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -66,25 +93,11 @@ export function Hero({ siteConfig, whatsappLink }) {
              
              {/* Badge Flutuante Glassmorphism sobre a foto */}
              <motion.div 
+               className="hero-glass-badge"
                initial={{ opacity: 0, x: -30 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.6, duration: 0.8, type: 'spring' }}
-               style={{ 
-                 position: 'absolute', 
-                 bottom: '-25px', 
-                 left: '-40px', 
-                 background: 'rgba(255, 255, 255, 0.85)', 
-                 backdropFilter: 'blur(12px)', 
-                 padding: '1.2rem', 
-                 borderRadius: '20px', 
-                 boxShadow: '0 15px 35px rgba(0,0,0,0.1)', 
-                 display: 'flex', 
-                 alignItems: 'center', 
-                 gap: '15px', 
-                 border: '1px solid rgba(255,255,255,0.6)', 
-                 zIndex: 10 
-               }}
              >
                <div style={{ background: '#1D2951', borderRadius: '50%', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#D4AF37' }}>
                  <Activity size={26} strokeWidth={2} />
