@@ -24,7 +24,7 @@ export function Atuacao() {
   ];
 
   return (
-    <section id="atuacao" className="section" style={{ paddingTop: '3rem' }}>
+    <section id="atuacao" className="section" style={{ paddingTop: '2.5rem' }}>
       <div className="container">
         <motion.h2 
           className="section-title text-petroleo"
