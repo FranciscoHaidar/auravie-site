@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export function Medico({ siteConfig }) {
   return (
-    <section id="medico" className="section bg-marinho">
+    <section id="medico" className="section bg-marinho" style={{ paddingTop: '3rem' }}>
       <div className="container about-grid">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

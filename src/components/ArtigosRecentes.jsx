@@ -84,7 +84,7 @@ export const ArtigosRecentes = () => {
   }, [artigoAberto]);
 
   return (
-    <section id="pilulas-conhecimento" style={{ padding: '6rem 5%', backgroundColor: '#FAF9F6' }}>
+    <section id="pilulas-conhecimento" style={{ padding: '3rem 5% 6rem 5%', backgroundColor: '#FAF9F6' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2 style={{ fontSize: '2.8rem', color: '#1B2745', marginBottom: '1rem', fontWeight: 800 }}>Pílulas de Conhecimento</h2>

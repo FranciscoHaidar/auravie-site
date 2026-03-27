@@ -31,7 +31,7 @@ export function Jornada() {
   ];
 
   return (
-    <section id="jornada" style={{ padding: '8rem 5%', backgroundColor: '#1B2745', position: 'relative', overflow: 'hidden' }}>
+    <section id="jornada" style={{ padding: '3rem 5% 8rem 5%', backgroundColor: '#1B2745', position: 'relative', overflow: 'hidden' }}>
       {/* Luzes de Fundo (Glow Ambient) */}
       <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(27,39,69,0) 70%)', filter: 'blur(50px)', zIndex: 0 }} />
       <div style={{ position: 'absolute', bottom: '-10%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(212,175,55,0.1) 0%, rgba(27,39,69,0) 70%)', filter: 'blur(50px)', zIndex: 0 }} />
