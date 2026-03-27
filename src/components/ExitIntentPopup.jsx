@@ -11,22 +11,19 @@ const ExitIntentPopup = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const handleMouseLeave = (e) => {
-      // Dispara quando o mouse sai da janela por cima (direção X/abas)
-      if (e.clientY <= 20) {
-        if (!sessionStorage.getItem('exitIntentShown')) {
-          setIsVisible(true);
-          sessionStorage.setItem('exitIntentShown', 'true');
-        }
+    const handleMouseOut = (e) => {
+      // Se o mouse sair pelo topo (clientY menor que 50px)
+      // Usaremos mouseout no document e checaremos relatedTarget
+      if (e.clientY < 50 || (e.relatedTarget === null && e.clientY < 100)) {
+        setIsVisible(true);
+        // Removido o sessionStorage temporariamente para facilitar os testes infinitos
       }
     };
 
-    document.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mouseout', handleMouseOut);
     
-    // Fallback: se o usuário ficar muito tempo na página inativo 
-    // ou fizer scroll muito rápido pra cima
     return () => {
-      document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mouseout', handleMouseOut);
     };
   }, []);
 
