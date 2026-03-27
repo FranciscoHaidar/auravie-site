@@ -68,7 +68,7 @@ function App() {
         <Jornada />
         <QuizBioARch whatsappNumber={siteConfig.whatsapp_number} />
         <Planos whatsappNumber={siteConfig.whatsapp_number} />
-        <Contato />
+        <Contato siteConfig={siteConfig} />
         <Atuacao />
         <ArtigosRecentes />
         <Depoimentos />

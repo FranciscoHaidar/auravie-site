@@ -5,22 +5,7 @@ import { scrollTo } from '../utils/scroll';
 
 export function Hero({ siteConfig, whatsappLink }) {
   return (
-    <section className="hero" style={{ position: 'relative', overflow: 'hidden', paddingTop: '8.5rem', paddingBottom: '9rem' }}>
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        poster="/hero-photo.jpg"
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-      >
-        {/* Usaremos um link local pois a Pexels bloqueia streaming remoto (CORS). Coloque um 'video-clinica.mp4' na pasta public. */}
-        <source src="/video-clinica.mp4" type="video/mp4" />
-        {/* Fallback open-source funcional caso não tenha vídeo local na pasta: */}
-        <source src="https://cdn.coverr.co/videos/coverr-laboratory-research-2541/1080p.mp4" type="video/mp4" />
-      </video>
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(90deg, #1B2745 0%, rgba(27, 39, 69, 0.85) 45%, rgba(27, 39, 69, 0.2) 100%)', zIndex: 1 }} />
-
+    <section className="hero" style={{ paddingTop: '5.5rem', paddingBottom: '6rem' }}>
       <style>{`
         .hero-glass-badge {
           position: absolute;
@@ -48,7 +33,7 @@ export function Hero({ siteConfig, whatsappLink }) {
           }
         }
       `}</style>
-      <div className="container hero-grid" style={{ position: 'relative', zIndex: 2, display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
+      <div className="container hero-grid" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +51,7 @@ export function Hero({ siteConfig, whatsappLink }) {
              <Sparkles size={16} strokeWidth={2.5} style={{ marginRight: '6px' }} />
              Excelência em Saúde e Qualidade de Vida
            </motion.div>
-           <h1 style={{ fontSize: 'clamp(2.3rem, 4.2vw, 3.4rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '1.2rem', letterSpacing: '-1px', color: '#FFFFFF' }}>
+           <h1 style={{ fontSize: 'clamp(2.3rem, 4.2vw, 3.4rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '1.2rem', letterSpacing: '-1px', color: '#1B2745' }}>
             {(() => {
               const words = siteConfig.hero_title.split(' ');
               const lastTwo = words.splice(-2).join(' ');
@@ -77,14 +62,14 @@ export function Hero({ siteConfig, whatsappLink }) {
               );
             })()}
           </h1>
-          <p style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)', color: 'rgba(255,255,255,0.85)', marginBottom: '2.5rem', lineHeight: 1.6, maxWidth: '95%' }}>
+          <p style={{ fontSize: 'clamp(1rem, 1.8vw, 1.25rem)', color: 'var(--text-grafite)', opacity: 0.85, marginBottom: '2.5rem', lineHeight: 1.6, maxWidth: '95%' }}>
             {siteConfig.hero_subtitle}
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn" style={{ background: '#D4AF37', color: '#1B2745', fontWeight: 700, padding: '1rem 1.4rem', flex: '1 1 200px', textAlign: 'center', fontSize: '1rem', borderRadius: '50px', boxShadow: '0 4px 15px rgba(212,175,55,0.3)' }}>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '0.9rem 1rem', flex: '1 1 200px', textAlign: 'center', fontSize: '1rem' }}>
               Iniciar Minha Transformação
             </a>
-            <button onClick={() => scrollTo('planos')} className="btn" style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.3)', padding: '1rem 1.4rem', flex: '1 1 180px', textAlign: 'center', fontWeight: 600, borderRadius: '50px' }}>
+            <button onClick={() => scrollTo('planos')} className="btn btn-outline" style={{ padding: '0.9rem 1.4rem', flex: '1 1 180px', textAlign: 'center' }}>
               Conhecer os Planos
             </button>
           </div>
@@ -96,34 +81,30 @@ export function Hero({ siteConfig, whatsappLink }) {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="hero-image-wrapper" 
-          style={{ flex: '1 1 350px', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '350px' }}
+          style={{ flex: '1 1 350px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         >
-           <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <div style={{ position: 'relative' }}>
+             <img 
+                src="/hero-photo.jpg" 
+                alt="Dr. Francisco Haidar - AuraVie Concept" 
+                fetchPriority="high"
+                style={{ width: '100%', maxWidth: '380px', borderRadius: '24px', boxShadow: '0 25px 50px rgba(29, 41, 81, 0.15)', objectFit: 'cover', zIndex: 1, position: 'relative' }}
+             />
              
-             {/* Badge Flutuante Glassmorphism Centralizado pois a Foto foi removida pelo Fundo */}
+             {/* Badge Flutuante Glassmorphism sobre a foto */}
              <motion.div 
-               style={{
-                  background: 'rgba(27, 39, 69, 0.75)',
-                  backdropFilter: 'blur(16px)',
-                  padding: '1.5rem 2rem',
-                  borderRadius: '24px',
-                  boxShadow: '0 25px 50px rgba(0,0,0,0.3)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '20px',
-                  border: '1px solid rgba(212,175,55,0.4)',
-               }}
-               initial={{ opacity: 0, scale: 0.8 }}
-               whileInView={{ opacity: 1, scale: 1 }}
+               className="hero-glass-badge"
+               initial={{ opacity: 0, x: -30 }}
+               whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.6, duration: 0.8, type: 'spring' }}
              >
-               <div style={{ background: 'rgba(212,175,55,0.15)', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#D4AF37' }}>
-                 <Activity size={32} strokeWidth={2} />
+               <div style={{ background: '#1D2951', borderRadius: '50%', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#D4AF37' }}>
+                 <Activity size={26} strokeWidth={2} />
                </div>
                <div>
-                 <span style={{ display: 'block', fontWeight: 700, color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '4px' }}>Exclusividade</span>
-                 <span style={{ display: 'block', fontSize: '1.8rem', color: '#D4AF37', fontWeight: 900, letterSpacing: '-0.5px', lineHeight: 1 }}>BIOARCH</span>
+                 <span style={{ display: 'block', fontWeight: 700, color: '#666', fontSize: '0.85rem', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '2px' }}>Protocolo</span>
+                 <span style={{ display: 'block', fontSize: '1.4rem', color: 'var(--gold-bronze)', fontWeight: 900, letterSpacing: '-0.5px', lineHeight: 1 }}>BIOARCH</span>
                </div>
              </motion.div>
            </div>

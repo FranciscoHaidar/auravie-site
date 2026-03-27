@@ -4,27 +4,51 @@ import { supabase } from '../supabase';
 import { Send, Phone, Calendar as CalendarIcon, Clock, ChevronRight, CheckCircle2 } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 
-const Contato = () => {
+const Contato = ({ siteConfig }) => {
   const [formData, setFormData] = useState({ nome: '', whatsapp: '' });
   const [loading, setLoading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
 
+  // Dinâmica Global: 
+  // 'agenda_horarios' é um JSON configurável direto no Supabase. Exemplo de valor na Tabela:
+  // {"1": ["09:00", "14:00"], "3": ["15:00"], "6": ["08:00"]} (Dias: 1=Seg..6=Sab, 0=Dom)
+  const agendaData = siteConfig?.agenda_horarios || null;
+  const useFallback = !agendaData || Object.keys(agendaData).length === 0;
+
   const getNextAvailableDays = () => {
     const days = [];
     let d = new Date();
-    while (days.length < 5) {
+    let lookAheadCount = 0;
+    while (days.length < 5 && lookAheadCount < 30) {
       d.setDate(d.getDate() + 1);
-      const dayOfWeek = d.getDay();
-      if (dayOfWeek !== 0) { // Pula Domingo
-         days.push(new Date(d));
+      const dayOfWeek = d.getDay(); 
+      // Ignora domingo por padrão se usar fallback
+      if (useFallback) {
+         if (dayOfWeek !== 0) days.push(new Date(d));
+      } else {
+         const dayKey = dayOfWeek.toString();
+         if (agendaData[dayKey] && agendaData[dayKey].length > 0) {
+            days.push(new Date(d));
+         }
       }
+      lookAheadCount++;
     }
     return days;
   };
 
+  // Avalia as datas disponíveis na inicialização do componente
   const [availableDays] = useState(getNextAvailableDays());
-  const fakeTimes = ['09:30', '11:00', '14:30', '16:00', '17:30'];
+  const fallbackTimes = ['09:30', '11:00', '14:30', '16:00', '17:30'];
+
+  const getTimesForDate = (date) => {
+     if (!date) return [];
+     if (!useFallback) {
+         const dayKey = date.getDay().toString();
+         return agendaData[dayKey] || [];
+     }
+     return fallbackTimes;
+  };
 
   const formatPhone = (val) => {
     let v = val.replace(/\D/g, '');
@@ -188,36 +212,43 @@ const Contato = () => {
              <h3 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                  <CalendarIcon size={22} color="#D4AF37"/> Escolha o Melhor Dia
              </h3>
-             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px', marginBottom: '30px' }}>
-                {availableDays.map((date, i) => {
-                   const isSelected = selectedDate && selectedDate.toDateString() === date.toDateString();
-                   const dayLabel = date.toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '').substring(0,3);
-                   const numLabel = date.getDate();
-                   return (
-                     <button
-                        key={i}
-                        type="button"
-                        onClick={() => { setSelectedDate(date); setSelectedTime(null); }}
-                        style={{
-                           padding: '12px 5px',
-                           borderRadius: '12px',
-                           background: isSelected ? '#D4AF37' : 'rgba(255,255,255,0.05)',
-                           border: `1px solid ${isSelected ? '#D4AF37' : 'rgba(255,255,255,0.1)'}`,
-                           display: 'flex',
-                           flexDirection: 'column',
-                           alignItems: 'center',
-                           cursor: 'pointer',
-                           color: isSelected ? '#1B2745' : '#fff',
-                           transition: 'all 0.2s',
-                           boxShadow: isSelected ? '0 4px 15px rgba(212,175,55,0.4)' : 'none'
-                        }}
-                     >
-                       <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600, opacity: isSelected ? 0.9 : 0.6 }}>{dayLabel}</span>
-                       <span style={{ fontSize: '1.2rem', fontWeight: 800 }}>{numLabel}</span>
-                     </button>
-                   );
-                })}
-             </div>
+             
+             {availableDays.length === 0 ? (
+                <div style={{ padding: '20px', background: 'rgba(255,255,255,0.05)', borderRadius: '12px', textAlign: 'center', color: '#fff' }}>
+                  A agenda direta encontra-se fechada ou sem janelas esta semana. Por favor, envie seus dados à esquerda para entrar na fila de espera com o Concierge.
+                </div>
+             ) : (
+                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px', marginBottom: '30px' }}>
+                    {availableDays.map((date, i) => {
+                       const isSelected = selectedDate && selectedDate.toDateString() === date.toDateString();
+                       const dayLabel = date.toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '').substring(0,3);
+                       const numLabel = date.getDate();
+                       return (
+                         <button
+                            key={i}
+                            type="button"
+                            onClick={() => { setSelectedDate(date); setSelectedTime(null); }}
+                            style={{
+                               padding: '12px 5px',
+                               borderRadius: '12px',
+                               background: isSelected ? '#D4AF37' : 'rgba(255,255,255,0.05)',
+                               border: `1px solid ${isSelected ? '#D4AF37' : 'rgba(255,255,255,0.1)'}`,
+                               display: 'flex',
+                               flexDirection: 'column',
+                               alignItems: 'center',
+                               cursor: 'pointer',
+                               color: isSelected ? '#1B2745' : '#fff',
+                               transition: 'all 0.2s',
+                               boxShadow: isSelected ? '0 4px 15px rgba(212,175,55,0.4)' : 'none'
+                            }}
+                         >
+                           <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 600, opacity: isSelected ? 0.9 : 0.6 }}>{dayLabel}</span>
+                           <span style={{ fontSize: '1.2rem', fontWeight: 800 }}>{numLabel}</span>
+                         </button>
+                       );
+                    })}
+                 </div>
+             )}
 
              <AnimatePresence>
              {selectedDate && (
@@ -226,8 +257,12 @@ const Contato = () => {
                        <Clock size={20} color="#D4AF37"/> Janelas Livres ({selectedDate.toLocaleDateString('pt-BR', { weekday: 'long' })})
                     </h3>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))', gap: '10px' }}>
-                       {fakeTimes.map((time, j) => {
-                           if ((selectedDate.getDate() % 2 === 0 && j === 1) || (selectedDate.getDate() % 3 === 0 && j === 3)) return null;
+                       {getTimesForDate(selectedDate).map((time, j) => {
+                           // Lógica de sorteio para omitir horas em modo Fallback (Simulação Aleatória de lotação)
+                           if (useFallback) {
+                               if ((selectedDate.getDate() % 2 === 0 && j === 1) || (selectedDate.getDate() % 3 === 0 && j === 3)) return null;
+                           }
+                           
                            const isSelTime = selectedTime === time;
                            return (
                              <button
@@ -261,7 +296,7 @@ const Contato = () => {
                 </motion.div>
              )}
              </AnimatePresence>
-             {!selectedDate && (
+             {!selectedDate && availableDays.length > 0 && (
                  <div style={{ padding: '30px', textAlign: 'center', color: 'rgba(255,255,255,0.4)', fontSize: '0.9rem', border: '1px dashed rgba(255,255,255,0.2)', borderRadius: '12px' }}>
                     <div style={{ marginBottom: '10px' }}><CalendarIcon size={32} opacity={0.5} style={{ margin: '0 auto'}}/></div>
                     Toque numa data acima para escanear a agenda médica real.
