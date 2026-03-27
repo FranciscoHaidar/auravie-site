@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import { BookOpen, ChevronRight, X, Brain, Activity, BatteryCharging, HeartPulse, Scale } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { BookOpen, ChevronRight, X, Brain, Activity, BatteryCharging, HeartPulse, Scale, ExternalLink } from 'lucide-react';
 
 const artigosData = [
   {
       id: 1,
       titulo: "Como os hormônios ditam sua performance no trabalho",
+      artigoOriginal: "The impact of hormone replacement therapy on cognitive performance and mood",
+      fonte: "PubMed",
+      linkOriginal: "https://pubmed.ncbi.nlm.nih.gov/?term=hormone+replacement+therapy+cognitive+performance",
       icone: BatteryCharging,
       resumo: "Cansaço excessivo, névoa mental e variações de humor podem não ser apenas estresse, mas sim um desbalanço hormonal.",
       conteudo: "A Terapia de Reposição Hormonal (TRH) não é apenas para fogachos. Hormônios como testosterona e estrogênio em níveis otimizados são responsáveis diretos pela nossa capacidade de foco, de tomar decisões e de gerar energia no dia a dia. Se você sente que sua performance caiu, o problema pode estar na sua química interna."
@@ -12,6 +15,9 @@ const artigosData = [
   {
       id: 2,
       titulo: "O intestino é o seu segundo cérebro (A verdade sobre a Disbiose)",
+      artigoOriginal: "Gut microbiota, intestinal permeability, and systemic inflammation",
+      fonte: "PubMed / SciELO",
+      linkOriginal: "https://pubmed.ncbi.nlm.nih.gov/?term=intestinal+dysbiosis+inflammation",
       icone: Brain,
       resumo: "Você sabia que a maior parte da sua serotonina é produzida no intestino? Entenda como as bactérias controlam sua saúde.",
       conteudo: "A disbiose intestinal é o desequilíbrio das bactérias no seu trato digestivo. Isso causa não apenas inchaço e má digestão, mas também ansiedade, depressão e ganho de peso. Ao modularmos a microbiota através do 'Protocolo dos 4 R\\'s' (Remover, Recolocar, Reinocular e Reparar), conseguimos tratar a raiz de várias doenças inflamatórias."
@@ -19,6 +25,9 @@ const artigosData = [
   {
       id: 3,
       titulo: "Por que você não perde peso nas pernas? Conheça o Lipedema",
+      artigoOriginal: "Lipedema: A clinical challenge and an update",
+      fonte: "Journal of Clinical Medicine",
+      linkOriginal: "https://pubmed.ncbi.nlm.nih.gov/?term=lipedema+treatment+update",
       icone: HeartPulse,
       resumo: "Se as dietas e os exercícios nunca funcionam para as suas pernas e elas estão sempre doloridas, pode ser Lipedema.",
       conteudo: "O Lipedema é uma doença crônica, progressiva e inflamatória que causa acúmulo desproporcional de gordura nas extremidades, poupando mãos e pés. Diferente da obesidade comum, essa gordura é resistente a dietas tradicionais. O tratamento correto envolve controle inflamatório, dieta especializada, terapia compressiva e, em alguns casos, cirurgia."
@@ -26,6 +35,9 @@ const artigosData = [
   {
       id: 4,
       titulo: "Mounjaro: A nova era no tratamento da Obesidade",
+      artigoOriginal: "Tirzepatide Once Weekly for the Treatment of Obesity (SURMOUNT)",
+      fonte: "The New England Journal of Medicine",
+      linkOriginal: "https://pubmed.ncbi.nlm.nih.gov/?term=tirzepatide+surmount+obesity",
       icone: Scale,
       resumo: "Conheça o agonista duplo (GLP-1 e GIP) que está revolucionando o emagrecimento, com resultados próximos à bariátrica.",
       conteudo: "A Tirzepatida (Mounjaro) atua diretamente no centro de saciedade do cérebro e no controle da insulina. Estudos mostram perdas de até 25% do peso corporal. Porém, o acompanhamento nutrológico é vital: sem a dieta correta e exercícios supervisionados, pode ocorrer a perda perigosa de massa magra (sarcopenia)."
@@ -33,6 +45,9 @@ const artigosData = [
   {
       id: 5,
       titulo: "Nutrição de Precisão: Como seus genes escolhem sua dieta",
+      artigoOriginal: "Nutrigenomics and personalized nutrition: science and practice",
+      fonte: "Nature Reviews",
+      linkOriginal: "https://pubmed.ncbi.nlm.nih.gov/?term=nutrigenomics+personalized+nutrition",
       icone: Activity,
       resumo: "Esqueça as dietas genéricas de gaveta. O futuro é se alimentar de acordo com seu próprio DNA.",
       conteudo: "Com a nutrigenômica, deixamos de apenas 'tratar a doença' e passamos à nutroprevenção. Analisando seu perfil genético, descobrimos quais tendências a doenças você tem e prescrevemos compostos bioativos específicos para 'silenciar' esses genes ruins e ativar os bons, promovendo uma longevidade com muito mais qualidade."
@@ -41,6 +56,17 @@ const artigosData = [
 
 export const ArtigosRecentes = () => {
   const [artigoAberto, setArtigoAberto] = useState(null);
+
+  useEffect(() => {
+    if (artigoAberto) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [artigoAberto]);
 
   return (
     <section id="pilulas-conhecimento" style={{ padding: '6rem 5%', backgroundColor: '#FAF9F6' }}>
@@ -96,7 +122,7 @@ export const ArtigosRecentes = () => {
                   {artigo.resumo}
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--dourado)', fontWeight: 600, marginTop: '1.5rem', fontSize: '1rem' }}>
-                  Ler mais <ChevronRight size={18} />
+                  Saber mais <ChevronRight size={18} />
                 </div>
               </div>
             );
@@ -106,7 +132,7 @@ export const ArtigosRecentes = () => {
         {/* Modal Apparition */}
         {artigoAberto && (
           <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(27, 39, 69, 0.7)', backdropFilter: 'blur(8px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }} onClick={() => setArtigoAberto(null)}>
-            <div className="modal-content" style={{ background: 'white', width: '100%', maxWidth: '650px', maxHeight: '90vh', overflowY: 'auto', borderRadius: '24px', position: 'relative', padding: '3rem', boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }} onClick={e => e.stopPropagation()}>
+            <div className="modal-content" style={{ background: 'white', width: '100%', maxWidth: '900px', maxHeight: '90vh', overflowY: 'auto', borderRadius: '24px', position: 'relative', padding: '3rem', boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }} onClick={e => e.stopPropagation()}>
               <button 
                 onClick={() => setArtigoAberto(null)}
                 style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: '#F0F0F0', border: 'none', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'background 0.2s' }}
@@ -131,8 +157,21 @@ export const ArtigosRecentes = () => {
                 </p>
               </div>
 
-              <div style={{ fontSize: '1.1rem', color: '#444', lineHeight: 1.8 }}>
+              <div style={{ fontSize: '1.1rem', color: '#444', lineHeight: 1.8, marginBottom: '2.5rem' }}>
                 {artigoAberto.conteudo}
+              </div>
+
+              {/* Fonte e Artigo Original */}
+              <div style={{ background: '#FAF9F6', padding: '1.5rem 2rem', borderRadius: '16px', border: '1px solid rgba(212,175,55,0.2)' }}>
+                <h4 style={{ margin: '0 0 0.5rem 0', color: '#1B2745', fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700 }}>
+                   <BookOpen size={20}/> Referência Científica
+                </h4>
+                <p style={{ margin: '0 0 1rem 0', color: '#555', fontSize: '1rem', fontStyle: 'italic', lineHeight: 1.5 }}>
+                  Estudo base para aprofundamento:<br/> <strong>{artigoAberto.artigoOriginal}</strong>
+                </p>
+                <a href={artigoAberto.linkOriginal} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--dourado)', fontWeight: 600, textDecoration: 'none', fontSize: '1rem', transition: 'all 0.2s ease', borderBottom: '1px solid transparent' }} onMouseEnter={e => e.currentTarget.style.borderBottom = '1px solid var(--dourado)'} onMouseLeave={e => e.currentTarget.style.borderBottom = '1px solid transparent'}>
+                   Pesquisar assunto indexado em: {artigoAberto.fonte} <ExternalLink size={18} />
+                </a>
               </div>
               
               <div style={{ marginTop: '3rem', textAlign: 'center' }}>
@@ -148,7 +187,7 @@ export const ArtigosRecentes = () => {
                       e.currentTarget.style.boxShadow = '0 4px 15px rgba(27,39,69,0.2)';
                   }}
                 >
-                  Entendido!
+                  Fechar Leitura
                 </button>
               </div>
             </div>
