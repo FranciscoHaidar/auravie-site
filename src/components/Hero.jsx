@@ -11,10 +11,13 @@ export function Hero({ siteConfig, whatsappLink }) {
         loop 
         muted 
         playsInline 
+        poster="/hero-photo.jpg"
         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
       >
-        {/* Usando vídeo HD demonstrativo de estética de luxo para causar 1a impressão (Mãos de médico / clínica clara) */}
-        <source src="https://videos.pexels.com/video-files/6129618/6129618-hd_1920_1080_25fps.mp4" type="video/mp4" />
+        {/* Usaremos um link local pois a Pexels bloqueia streaming remoto (CORS). Coloque um 'video-clinica.mp4' na pasta public. */}
+        <source src="/video-clinica.mp4" type="video/mp4" />
+        {/* Fallback open-source funcional caso não tenha vídeo local na pasta: */}
+        <source src="https://cdn.coverr.co/videos/coverr-laboratory-research-2541/1080p.mp4" type="video/mp4" />
       </video>
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(90deg, #1B2745 0%, rgba(27, 39, 69, 0.85) 45%, rgba(27, 39, 69, 0.2) 100%)', zIndex: 1 }} />
 
