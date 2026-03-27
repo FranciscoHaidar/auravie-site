@@ -10,6 +10,7 @@ import { FloatingActions } from './components/FloatingActions';
 const Problema = lazy(() => import('./components/Problema').then(m => ({ default: m.Problema })));
 const Medico = lazy(() => import('./components/Medico').then(m => ({ default: m.Medico })));
 const Jornada = lazy(() => import('./components/Jornada').then(m => ({ default: m.Jornada })));
+const QuizBioARch = lazy(() => import('./components/QuizBioARch'));
 const Planos = lazy(() => import('./components/Planos').then(m => ({ default: m.Planos })));
 const Atuacao = lazy(() => import('./components/Atuacao').then(m => ({ default: m.Atuacao })));
 const Faq = lazy(() => import('./components/Faq').then(m => ({ default: m.Faq })));
@@ -56,6 +57,7 @@ function App() {
         <Problema />
         <Medico siteConfig={siteConfig} />
         <Jornada />
+        <QuizBioARch whatsappNumber={siteConfig.whatsapp_number} />
         <Planos whatsappNumber={siteConfig.whatsapp_number} />
         <Contato />
         <Atuacao />
