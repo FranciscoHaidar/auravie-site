@@ -134,28 +134,27 @@ export const ArtigosRecentes = () => {
 
         {/* Modal Apparition */}
         {artigoAberto && (
-          <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(27, 39, 69, 0.7)', backdropFilter: 'blur(8px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }} onClick={() => setArtigoAberto(null)}>
-            <div className="modal-content" style={{ background: 'white', width: '100%', maxWidth: '1050px', maxHeight: '90vh', borderRadius: '24px', position: 'relative', display: 'flex', flexDirection: 'column', boxShadow: '0 25px 50px rgba(0,0,0,0.25)', overflow: 'hidden' }} onClick={e => e.stopPropagation()}>
-              
-              <div style={{ padding: '1.5rem', display: 'flex', justifyContent: 'flex-end', background: 'white', zIndex: 10 }}>
-                <button 
-                  onClick={() => setArtigoAberto(null)}
-                  style={{ background: '#F0F0F0', border: 'none', borderRadius: '50%', width: '40px', height: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'background 0.2s' }}
-                  onMouseEnter={e => e.currentTarget.style.background = '#E0E0E0'}
-                  onMouseLeave={e => e.currentTarget.style.background = '#F0F0F0'}
-                >
-                  <X size={20} color="#1B2745" />
-                </button>
-              </div>
-
-              <div style={{ padding: '0 3rem 3rem 3rem', overflowY: 'auto' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '2rem' }}>
-                  <div style={{ color: 'var(--dourado)', background: 'rgba(212,175,55,0.1)', padding: '1.2rem', borderRadius: '16px' }}>
-                    <artigoAberto.icone size={36} />
+          <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(27, 39, 69, 0.7)', backdropFilter: 'blur(8px)', zIndex: 9999, padding: '2rem', overflowY: 'auto' }} onClick={() => setArtigoAberto(null)}>
+            <div style={{ display: 'flex', minHeight: '100%', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
+              <div className="modal-content" style={{ background: 'white', width: '100%', maxWidth: '1050px', borderRadius: '24px', position: 'relative', padding: '3rem', boxShadow: '0 25px 50px rgba(0,0,0,0.25)' }} onClick={e => e.stopPropagation()}>
+                
+                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '2rem', marginBottom: '2rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                    <div style={{ color: 'var(--dourado)', background: 'rgba(212,175,55,0.1)', padding: '1.2rem', borderRadius: '16px', flexShrink: 0 }}>
+                      <artigoAberto.icone size={36} />
+                    </div>
+                    <h2 style={{ margin: 0, color: '#1B2745', fontSize: '1.8rem', lineHeight: 1.3, fontWeight: 800 }}>
+                      {artigoAberto.titulo}
+                    </h2>
                   </div>
-                  <h2 style={{ margin: 0, color: '#1B2745', fontSize: '1.8rem', lineHeight: 1.3, fontWeight: 800 }}>
-                    {artigoAberto.titulo}
-                  </h2>
+                  <button 
+                    onClick={() => setArtigoAberto(null)}
+                    style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, opacity: 0.6, transition: 'opacity 0.2s' }}
+                    onMouseEnter={e => e.currentTarget.style.opacity = 1}
+                    onMouseLeave={e => e.currentTarget.style.opacity = 0.6}
+                  >
+                    <X size={24} color="#1B2745" />
+                  </button>
                 </div>
                 
                 <div style={{ background: 'rgba(212,175,55,0.05)', padding: '1.5rem 2rem', borderRadius: '12px', borderLeft: '4px solid var(--dourado)', marginBottom: '2rem' }}>
