@@ -25,8 +25,8 @@ export function Footer({ whatsappLink, instagramLink }) {
           <div>
             <h4 style={{ color: 'var(--gold-champagne)', marginBottom: '1.5rem' }}>AuraVie Concept</h4>
             <p style={{ opacity: 0.8, fontSize: '0.9rem', marginBottom: '0.5rem' }}><MapPin size={16} style={{ display: 'inline', marginRight: '8px', verticalAlign: 'middle' }}/> Rua Santa Teresinha, 205 - Sala D - Centro</p>
-            <p style={{ opacity: 0.8, fontSize: '0.9rem', marginBottom: '0.5rem', paddingLeft: '28px' }}>Campo Bom/RS</p>
-            <div style={{ paddingLeft: '28px', marginTop: '1rem' }}>
+            <p style={{ opacity: 0.8, fontSize: '0.9rem', marginBottom: '0.5rem' }}>Campo Bom/RS</p>
+            <div style={{ marginTop: '1rem' }}>
               <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', padding: '0.4rem 0.8rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: 600, marginBottom: '0.5rem' }}>CRM/RS 57907</span>
               <p style={{ opacity: 0.7, fontSize: '0.75rem', marginTop: '0.2rem', lineHeight: '1.4' }}>Médico com pós-graduação em nutrologia, não especialista</p>
             </div>
