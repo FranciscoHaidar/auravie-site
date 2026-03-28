@@ -15,10 +15,10 @@ const LegsIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
 
 const IntestineIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
-    {/* Contorno Externo (Cólon com curvas haustrais externas) */}
-    <path d="M 5 22 C 3 17, 3 14, 5 11 C 3 7, 6 5, 9 5 C 12 7, 12 7, 15 5 C 18 5, 21 7, 19 11 C 21 14, 21 17, 19 22" />
-    {/* Contorno Interno Liso em U (Oco, mas com haustrações espelhadas seguindo a referência visual final) */}
-    <path d="M 9 22 C 10.5 17, 10.5 14, 9 11 C 9 9.5, 9.5 9, 10.5 9 C 12 10.5, 12 10.5, 13.5 9 C 14.5 9, 15 9.5, 15 11 C 13.5 14, 13.5 17, 15 22" />
+    {/* Contorno Externo (Cólon Mais Largo) */}
+    <path d="M 3 22 C 1 17, 1 14, 3 11 C 1 7, 4 5, 7 5 C 12 7, 12 7, 17 5 C 20 5, 23 7, 21 11 C 23 14, 23 17, 21 22" />
+    {/* Contorno Interno Liso em U */}
+    <path d="M 7 22 C 8.5 17, 8.5 14, 7 11 C 7 9.5, 7.5 9, 8.5 9 C 12 10.5, 12 10.5, 15.5 9 C 16.5 9, 17 9.5, 17 11 C 15.5 14, 15.5 17, 17 22" />
   </svg>
 );
 
