@@ -13,6 +13,7 @@ const Problema = lazy(() => import('./components/Problema').then(m => ({ default
 const Medico = lazy(() => import('./components/Medico').then(m => ({ default: m.Medico })));
 const Jornada = lazy(() => import('./components/Jornada').then(m => ({ default: m.Jornada })));
 const QuizBioARch = lazy(() => import('./components/QuizBioARch'));
+const QuizVitalidade = lazy(() => import('./components/QuizVitalidade'));
 const Planos = lazy(() => import('./components/Planos').then(m => ({ default: m.Planos })));
 const Atuacao = lazy(() => import('./components/Atuacao').then(m => ({ default: m.Atuacao })));
 const Faq = lazy(() => import('./components/Faq').then(m => ({ default: m.Faq })));
@@ -71,6 +72,7 @@ function App() {
         <Planos whatsappNumber={siteConfig.whatsapp_number} />
         <Contato siteConfig={siteConfig} />
         <Atuacao />
+        <QuizVitalidade whatsappNumber={siteConfig.whatsapp_number} />
         <ArtigosRecentes />
         <Depoimentos />
         <AntesDepois />
