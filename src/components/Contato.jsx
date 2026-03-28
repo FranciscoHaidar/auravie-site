@@ -218,7 +218,7 @@ const Contato = ({ siteConfig }) => {
                   A agenda direta encontra-se fechada ou sem janelas esta semana. Por favor, envie seus dados à esquerda para entrar na fila de espera com o Concierge.
                 </div>
              ) : (
-                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px', marginBottom: '30px' }}>
+                 <div style={{ display: 'flex', flexWrap: 'nowrap', overflowX: 'auto', gap: '10px', marginBottom: '30px', paddingBottom: '5px', WebkitOverflowScrolling: 'touch' }}>
                     {availableDays.map((date, i) => {
                        const isSelected = selectedDate && selectedDate.toDateString() === date.toDateString();
                        const dayLabel = date.toLocaleDateString('pt-BR', { weekday: 'short' }).replace('.', '').substring(0,3);
@@ -229,6 +229,8 @@ const Contato = ({ siteConfig }) => {
                             type="button"
                             onClick={() => { setSelectedDate(date); setSelectedTime(null); }}
                             style={{
+                               flexShrink: 0,
+                               minWidth: '65px',
                                padding: '12px 5px',
                                borderRadius: '12px',
                                background: isSelected ? '#D4AF37' : 'rgba(255,255,255,0.05)',
