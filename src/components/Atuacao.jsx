@@ -15,13 +15,12 @@ const LegsIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
 
 const IntestineIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
-    {/* Intestino Grosso (Moldura externa em ferradura) */}
-    <path d="M17 18V8a3 3 0 0 0-3-3H10a3 3 0 0 0-3 3v10" />
-    <path d="M15 18H9c-1 0-2 .5-2 1.5S8 21 9 21h2" />
+    {/* Intestino Grosso (Cólon com dobras anatômicas) */}
+    <path d="M7.5 20 a 2.5 2.5 0 0 1 0 -5 a 2.5 2.5 0 0 0 0 -5 a 3 3 0 0 1 3.5 -3 h 2 a 3 3 0 0 1 3.5 3 a 2.5 2.5 0 0 0 0 5 a 2.5 2.5 0 0 1 0 5" />
     
-    {/* Intestino Delgado (Voltas internas) */}
-    <path d="M10 15h4a2 2 0 0 0 0-4h-4a2 2 0 0 1 0-4h3" />
-    <path d="M12 7v4" />
+    {/* Intestino Delgado (Convoluções internas) */}
+    <path d="M10 13.5 c 1.5 -2.5 4.5 -2.5 4.5 0 c 0 2 -4 1.5 -4 3.5 c 0 2 3 2 4.5 0" />
+    <path d="M10 17 c 1.5 2 3.5 2 3 0" />
   </svg>
 );
 
