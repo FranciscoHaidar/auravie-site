@@ -334,7 +334,8 @@ h1, h2, h3, h4 {
 .btn-plan-prime { background: var(--gold-champagne); color: var(--title-marinho); border: none; }
 .btn-plan-prime-plus { background: #B87333; color: white; border: none; }
 .btn-plan-black { background: #FFD700; color: #000; border: none; }
-.plan-black { background: #0a0a0a; border: none; box-shadow: 0 15px 45px rgba(0,0,0,0.3); }
+.plan-black { background: #0a0a0a; border: none; box-shadow: 0 15px 45px rgba(0,0,0,0.3); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.plan-black:hover { transform: scale(1.06) translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.4); z-index: 12; }
 .plan-black p, .plan-black ul li { color: rgba(255,255,255,0.75); }
 .plan-black h3 { color: #fff; }
 
