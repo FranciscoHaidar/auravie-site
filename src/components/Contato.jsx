@@ -104,11 +104,11 @@ const Contato = ({ siteConfig }) => {
            transition={{ duration: 0.6 }}
            style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))',
               gap: '40px',
               backgroundColor: 'rgba(255, 255, 255, 0.05)', 
               borderRadius: '24px', 
-              padding: '40px', 
+              padding: 'clamp(20px, 5vw, 40px)', 
               backdropFilter: 'blur(10px)', 
               border: '1px solid rgba(229, 211, 179, 0.2)',
               boxShadow: '0 30px 60px rgba(0,0,0,0.2)'
@@ -208,7 +208,7 @@ const Contato = ({ siteConfig }) => {
           </div>
 
           {/* Lado Direito - Calendário Interativo Glassmorphism */}
-          <div style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '16px', padding: '25px', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '16px', padding: 'clamp(15px, 4vw, 25px)', border: '1px solid rgba(255,255,255,0.08)' }}>
              <h3 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 600 }}>
                  <CalendarIcon size={22} color="#D4AF37"/> Escolha o Melhor Dia
              </h3>
