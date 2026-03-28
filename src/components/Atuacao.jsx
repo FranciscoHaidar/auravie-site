@@ -13,20 +13,12 @@ const LegsIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
   </svg>
 );
 
-const IntestineIcon = ({ size = 24, strokeWidth = 1.5, color = "currentColor" }) => (
+const IntestineIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
-    {/* Contorno completo do Cólon (Ascendente, Transverso, Descendente e Sigmóide) */}
-    <path d="M 5 20 C 3 17, 3 15, 5 13 C 3 10, 5 7, 8 7 C 10 7, 11 9, 12 9 C 13 9, 14 7, 16 7 C 19 7, 21 10, 19 13 C 21 15, 21 18, 19 20 C 18 21, 15 22, 14 23 H 11 C 12 22, 15 21, 16 20 C 18 18, 18 16, 17 14 C 18 12, 17 10, 15 10 C 14 11, 13 11, 12 11 C 11 11, 10 11, 9 10 C 7 10, 6 12, 7 14 C 8 16, 8 18, 7 20 Z" />
-    
-    {/* Dobras Haustrais (Marcadores Internos para dar o efeito "gominhos" do intestino) */}
-    <path d="M 5 13 C 5.5 13, 6.5 13.5, 7 14" />
-    <path d="M 19 13 C 18.5 13, 17.5 13.5, 17 14" />
-    <path d="M 8 7 C 8.5 8, 8.5 9, 9 10" />
-    <path d="M 16 7 C 15.5 8, 15.5 9, 15 10" />
-
-    {/* Intestino Delgado (Alças centrais estilizadas) */}
-    <path d="M 10 14 C 11 11.5, 14 11.5, 13 14 C 12 16, 15 16, 14 18" />
-    <path d="M 10 16 C 11.5 17, 9 18, 11 19" />
+    {/* Contorno Externo (Cólon com curvas haustrais suaves - seguindo o rascunho simplificado) */}
+    <path d="M 5 22 C 3 17, 3 14, 5 11 C 3 7, 6 5, 9 5 C 12 7, 12 7, 15 5 C 18 5, 21 7, 19 11 C 21 14, 21 17, 19 22" />
+    {/* Contorno Interno Liso em U (Totalmente Oco por dentro) */}
+    <path d="M 9 22 V 12 A 3 3 0 0 1 15 12 V 22" />
   </svg>
 );
 
