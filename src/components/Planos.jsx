@@ -182,8 +182,8 @@ export function Planos({ whatsappNumber }) {
             transition={{ delay: 0.5 }}
           >
             {/* Coroa d'agua como no ERP */}
-            <div style={{ position: 'absolute', top: '-15px', right: '-15px', opacity: 0.03, transform: 'rotate(15deg)', pointerEvents: 'none', zIndex: 0 }}>
-               <Crown size={160} style={{ color: '#fff' }} />
+            <div style={{ position: 'absolute', top: '-15px', right: '-15px', opacity: 0.08, transform: 'rotate(15deg)', pointerEvents: 'none', zIndex: 0 }}>
+               <Crown size={160} style={{ color: '#FFD700' }} />
             </div>
             
             <div style={{ position: 'relative', zIndex: 1 }}>
