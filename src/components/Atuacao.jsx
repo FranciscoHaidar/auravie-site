@@ -13,6 +13,18 @@ const LegsIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
   </svg>
 );
 
+const IntestineIcon = ({ size = 24, strokeWidth = 2, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+    {/* Intestino Grosso (Moldura externa em ferradura) */}
+    <path d="M17 18V8a3 3 0 0 0-3-3H10a3 3 0 0 0-3 3v10" />
+    <path d="M15 18H9c-1 0-2 .5-2 1.5S8 21 9 21h2" />
+    
+    {/* Intestino Delgado (Voltas internas) */}
+    <path d="M10 15h4a2 2 0 0 0 0-4h-4a2 2 0 0 1 0-4h3" />
+    <path d="M12 7v4" />
+  </svg>
+);
+
 export function Atuacao() {
   const areas = [
     { title: "Emagrecimento", text: "Perda de gordura com preservação de massa magra por otimização enzimática.", icon: Flame },
@@ -20,7 +32,7 @@ export function Atuacao() {
     { title: "Lipedema", text: "Abordagem metabólica e anti-inflamatória profunda para regressão de volume e alívio do lipedema.", icon: LegsIcon },
     { title: "Reposição Hormonal", text: "Restauração clínica de testosterona, estradiol, e eixos tireoidianos desgastados.", icon: Activity },
     { title: "Menopausa & Climatério", text: "Modulação fisiológica fina para anular os sintomas, blindar massa óssea e devolver a vitalidade.", icon: Sparkles },
-    { title: "Disbiose Intestinal", text: "Tratamento da inflamação da microbiota intestinal para cura sistêmica e absortiva.", icon: Brain }
+    { title: "Disbiose Intestinal", text: "Tratamento da inflamação da microbiota intestinal para cura sistêmica e absortiva.", icon: IntestineIcon }
   ];
 
   return (
