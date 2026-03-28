@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Award, X } from 'lucide-react';
+import { Check, Award, X, Crown } from 'lucide-react';
 
 export function Planos({ whatsappNumber }) {
   const [activeModal, setActiveModal] = useState(null);
@@ -170,7 +170,7 @@ export function Planos({ whatsappNumber }) {
           {/* Black */}
           <motion.div 
             className="plan-card plan-black glass-panel" 
-            style={{ borderTop: '4px solid #FFD700', backgroundColor: '#050505', color: '#fff', cursor: 'pointer' }} 
+            style={{ borderTop: '4px solid #FFD700', backgroundColor: '#050505', color: '#fff', cursor: 'pointer', position: 'relative', overflow: 'hidden' }} 
             onClick={() => setActiveModal('black')}
             role="button"
             tabIndex={0}
@@ -181,14 +181,22 @@ export function Planos({ whatsappNumber }) {
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            <span className="plan-subtitle" style={{ color: 'var(--gold-bronze)' }}>ELITE EXCLUSIVE</span>
-            <h3 style={{ color: '#FFD700' }}>Black</h3>
-            <ul>
+            {/* Coroa d'agua como no ERP */}
+            <div style={{ position: 'absolute', top: '-15px', right: '-15px', opacity: 0.03, transform: 'rotate(15deg)', pointerEvents: 'none', zIndex: 0 }}>
+               <Crown size={160} style={{ color: '#fff' }} />
+            </div>
+            
+            <div style={{ position: 'relative', zIndex: 1 }}>
+                <span className="plan-subtitle" style={{ color: 'var(--gold-bronze)' }}>ELITE EXCLUSIVE</span>
+                <h3 style={{ color: '#FFD700', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Crown size={20} style={{ color: '#FFD700' }}/> Black</h3>
+            </div>
+            
+            <ul style={{ position: 'relative', zIndex: 1 }}>
               <li><Award size={14} className="check-icon-gold" /> Consultoria Médica Full-Year</li>
               <li><Award size={14} className="check-icon-gold" /> Controle Anti-aging</li>
               <li><Award size={14} className="check-icon-gold" /> Acompanhamento a cada 15 dias</li>
             </ul>
-            <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-black" onClick={(e) => e.stopPropagation()}>SABER MAIS</a>
+            <a href={getPlanWhatsAppLink('Black')} target="_blank" rel="noopener noreferrer" className="btn-plan btn-plan-black" style={{ position: 'relative', zIndex: 1 }} onClick={(e) => e.stopPropagation()}>SABER MAIS</a>
           </motion.div>
         </div>
       </div>
