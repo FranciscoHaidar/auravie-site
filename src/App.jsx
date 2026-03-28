@@ -7,6 +7,7 @@ import { Hero } from './components/Hero';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
 import { PreFooterCTA } from './components/PreFooterCTA';
+import { StickyMobileCTA } from './components/StickyMobileCTA';
 
 const Problema = lazy(() => import('./components/Problema').then(m => ({ default: m.Problema })));
 const Medico = lazy(() => import('./components/Medico').then(m => ({ default: m.Medico })));
@@ -80,6 +81,7 @@ function App() {
       <PreFooterCTA whatsappLink={WHATSAPP_LINK} />
       <Footer instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
       <FloatingActions instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
+      <StickyMobileCTA whatsappLink={WHATSAPP_LINK} />
     </>
   );
 }
