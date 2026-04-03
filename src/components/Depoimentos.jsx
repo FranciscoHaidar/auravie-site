@@ -11,7 +11,7 @@ const reviews = [
   {
     nome: "M. Oliveira",
     tratamento: "Modulação Hormonal e Longevidade",
-    texto: "Cheguei no consultório sem energia, com névoa mental e libido zero. Com o tratamento guiado, exames e terapias injetáveis, sinto que rejuvenesci uns 10 anos. Minha disposição no trabalho e na vida pessoal mudou da água pro vinho. Recomendo de olhos fechados."
+    texto: "Cheguei no consultório sem energia, com esquecimento e libido zero. Com o tratamento guiado, exames e terapias injetáveis, sinto que rejuvenesci uns 10 anos. Minha disposição no trabalho e na vida pessoal mudou da água pro vinho. Recomendo de olhos fechados."
   },
   {
     nome: "J. Costa",

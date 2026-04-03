@@ -85,7 +85,7 @@ export function Planos({ whatsappNumber }) {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <span className="plan-subtitle">ACESSO BASE</span>
+
             <h3 style={{ color: '#333' }}>Essential</h3>
             <ul>
               <li><Check size={14} className="check-icon" /> Consulta clínica completa</li>
@@ -109,7 +109,7 @@ export function Planos({ whatsappNumber }) {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <span className="plan-subtitle">PERFORMANCE</span>
+
             <h3 style={{ color: '#888' }}>Essential +</h3>
             <ul>
               <li><Check size={14} className="check-icon" /> Tudo do Essential</li>
@@ -133,7 +133,7 @@ export function Planos({ whatsappNumber }) {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <span className="plan-subtitle" style={{ color: 'var(--gold-champagne)' }}>PREMIUM</span>
+
             <h3 style={{ color: 'var(--gold-champagne)' }}>Prime</h3>
             <ul>
               <li><Check size={14} className="check-icon" /> Rota Metabólica Avançada</li>
@@ -157,7 +157,7 @@ export function Planos({ whatsappNumber }) {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <span className="plan-subtitle">ADVANCED</span>
+
             <h3 style={{ color: '#B87333' }}>Prime +</h3>
             <ul>
               <li><Check size={14} className="check-icon" /> Tudo do Prime</li>
@@ -187,7 +187,7 @@ export function Planos({ whatsappNumber }) {
             </div>
             
             <div style={{ position: 'relative', zIndex: 1 }}>
-                <span className="plan-subtitle" style={{ color: 'var(--gold-bronze)' }}>ELITE EXCLUSIVE</span>
+
                 <h3 style={{ color: '#FFD700', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Crown size={20} style={{ color: '#FFD700' }}/> Black</h3>
             </div>
             
