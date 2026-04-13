@@ -6,17 +6,17 @@ const reviews = [
   {
     nome: "A. Silva",
     tratamento: "Protocolo Lipedema",
-    texto: "Depois de anos tentando dietas que me deixavam fraca e frustrada, descobri que meu problema era inflamatório. Em 3 meses com a abordagem BioARch perdi volume nas pernas que eu achei que nunca mais perderia. É um alívio não sentir mais dores diárias."
+    texto: "Depois de anos tentando dietas que me deixavam fraca e frustrada, descobri que meu problema era inflamatório. Em 3 meses com o protocolo BioARch perdi volume nas pernas que eu achei que nunca mais perderia. É um alívio não sentir mais dores todo dia."
   },
   {
     nome: "M. Oliveira",
     tratamento: "Modulação Hormonal e Longevidade",
-    texto: "Cheguei no consultório sem energia, com esquecimento e libido zero. Com o tratamento guiado, exames e terapias injetáveis, sinto que rejuvenesci uns 10 anos. Minha disposição no trabalho e na vida pessoal mudou da água pro vinho. Recomendo de olhos fechados."
+    texto: "Cheguei no consultório sem energia, com esquecimento e libido zero. Com o tratamento, exames e terapias injetáveis, sinto que rejuvenesci uns 10 anos. Minha disposição no trabalho e na vida pessoal mudou da água pro vinho. Recomendo de olhos fechados."
   },
   {
     nome: "J. Costa",
     tratamento: "Emagrecimento de Alta Performance",
-    texto: "Perdi 18kg sem flacidez e no processo ganhei massa magra, incrível. A Bioimpedância detalhada e a inteligência nutricional da equipe fazem toda a diferença para acelerar o processo sem estresse absurdo."
+    texto: "Perdi 18kg sem flacidez e no processo ganhei massa magra, foi incrível. A Bioimpedância e a inteligência nutricional da equipe fazem toda a diferença para acelerar o processo sem um estresse absurdo."
   }
 ];
 
