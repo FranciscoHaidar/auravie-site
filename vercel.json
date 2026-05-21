@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "auravieconcept.vercel.app"
+        }
+      ],
+      "destination": "https://www.auravieconcept.com.br/:path*",
+      "permanent": true
+    }
+  ]
+}
