@@ -11,5 +11,14 @@
       "destination": "https://www.auravieconcept.com.br/:path*",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    { "source": "/nutrologia-novo-hamburgo", "destination": "/" },
+    { "source": "/emagrecimento-novo-hamburgo", "destination": "/" },
+    { "source": "/bioimpedancia", "destination": "/" },
+    { "source": "/reposicao-hormonal", "destination": "/" },
+    { "source": "/lipedema", "destination": "/" },
+    { "source": "/menopausa-climaterio", "destination": "/" },
+    { "source": "/protocolo-bioarch", "destination": "/" }
   ]
 }

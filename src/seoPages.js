@@ -1,0 +1,92 @@
+export const SITE_URL = 'https://www.auravieconcept.com.br';
+
+export const businessInfo = {
+  name: 'AuraVie Concept',
+  legalName: 'AuraVie Concept Nutrologia',
+  physician: 'Dr. Francisco Haidar',
+  crm: 'CRM/RS 57907',
+  phone: '+55 51 99735-3309',
+  whatsapp: '5551997353309',
+  instagram: 'https://www.instagram.com/drfranciscohaidar/',
+  streetAddress: 'Rua Santa Teresinha, 205 - Sala D - Centro',
+  city: 'Campo Bom',
+  region: 'RS',
+  country: 'BR',
+  areaServed: ['Campo Bom', 'Novo Hamburgo', 'Sapiranga', 'Vale dos Sinos', 'Porto Alegre'],
+};
+
+export const seoPages = [
+  {
+    path: '/nutrologia-novo-hamburgo',
+    title: 'Nutrologia em Novo Hamburgo e Vale dos Sinos | AuraVie Concept',
+    description: 'Avaliação nutrológica com foco em metabolismo, energia, composição corporal e longevidade para pacientes de Novo Hamburgo, Campo Bom e Vale dos Sinos.',
+    h1: 'Nutrologia em Novo Hamburgo e Vale dos Sinos',
+    eyebrow: 'Avaliação médica individualizada',
+    summary: 'A AuraVie Concept atende pacientes de Novo Hamburgo, Campo Bom e região com uma abordagem médica voltada a metabolismo, composição corporal, vitalidade e prevenção.',
+    focus: ['Avaliação clínica e metabólica', 'Bioimpedância e composição corporal', 'Estratégia de emagrecimento e preservação muscular', 'Acompanhamento de energia, sono e performance'],
+    cta: 'Agendar avaliação nutrológica',
+  },
+  {
+    path: '/emagrecimento-novo-hamburgo',
+    title: 'Emagrecimento em Novo Hamburgo | Protocolo BioARch AuraVie',
+    description: 'Programa médico para emagrecimento com avaliação metabólica, bioimpedância e plano personalizado para pacientes de Novo Hamburgo e região.',
+    h1: 'Emagrecimento com acompanhamento médico',
+    eyebrow: 'Protocolo BioARch',
+    summary: 'O foco não é apenas reduzir peso na balança, mas entender os bloqueios metabólicos, preservar massa magra e construir uma estratégia sustentável.',
+    focus: ['Mapeamento de composição corporal', 'Estratégia para perda de gordura', 'Preservação de massa magra', 'Acompanhamento da evolução metabólica'],
+    cta: 'Quero avaliar meu metabolismo',
+  },
+  {
+    path: '/bioimpedancia',
+    title: 'Bioimpedância e Composição Corporal | AuraVie Concept',
+    description: 'Avaliação de bioimpedância para acompanhar gordura corporal, massa magra, hidratação e evolução metabólica com leitura clínica.',
+    h1: 'Bioimpedância com leitura clínica',
+    eyebrow: 'Composição corporal',
+    summary: 'A bioimpedância ajuda a enxergar o que o peso sozinho não mostra: gordura, massa magra, hidratação e sinais de evolução real do protocolo.',
+    focus: ['Gordura corporal e massa magra', 'Hidratação e composição corporal', 'Comparação evolutiva', 'Relatório para acompanhamento clínico'],
+    cta: 'Agendar bioimpedância',
+  },
+  {
+    path: '/reposicao-hormonal',
+    title: 'Reposição Hormonal e Modulação Metabólica | AuraVie Concept',
+    description: 'Avaliação médica para investigar sintomas, metabolismo e possíveis desequilíbrios hormonais com conduta individualizada.',
+    h1: 'Avaliação hormonal e metabólica individualizada',
+    eyebrow: 'Energia, disposição e performance',
+    summary: 'Sintomas como fadiga, queda de disposição, alteração de composição corporal e piora de performance merecem avaliação médica completa antes de qualquer conduta.',
+    focus: ['Investigação clínica e laboratorial', 'Discussão de riscos e benefícios', 'Acompanhamento individualizado', 'Integração com composição corporal e rotina'],
+    cta: 'Conversar com a equipe',
+  },
+  {
+    path: '/lipedema',
+    title: 'Lipedema: Avaliação Metabólica e Nutrológica | AuraVie Concept',
+    description: 'Abordagem médica para pacientes com suspeita de lipedema, dor, inflamação e dificuldade de resposta em membros inferiores.',
+    h1: 'Avaliação metabólica para lipedema',
+    eyebrow: 'Inflamação, dor e composição corporal',
+    summary: 'O lipedema exige uma visão que diferencie gordura resistente, inflamação, dor e impacto metabólico, sempre com avaliação individualizada.',
+    focus: ['História clínica e sintomas', 'Composição corporal e medidas', 'Estratégia anti-inflamatória', 'Acompanhamento de evolução'],
+    cta: 'Avaliar suspeita de lipedema',
+  },
+  {
+    path: '/menopausa-climaterio',
+    title: 'Menopausa e Climatério | AuraVie Concept',
+    description: 'Acompanhamento médico para sintomas do climatério, mudanças de composição corporal, energia, sono e qualidade de vida.',
+    h1: 'Climatério e menopausa com visão metabólica',
+    eyebrow: 'Qualidade de vida feminina',
+    summary: 'Mudanças no sono, humor, disposição e composição corporal podem fazer parte do climatério e merecem avaliação cuidadosa.',
+    focus: ['Sintomas e qualidade de vida', 'Composição corporal', 'Exames e risco individual', 'Plano clínico personalizado'],
+    cta: 'Agendar avaliação',
+  },
+  {
+    path: '/protocolo-bioarch',
+    title: 'Protocolo BioARch | AuraVie Concept',
+    description: 'Conheça a lógica do método BioARch: mapeamento metabólico, bioimpedância, plano terapêutico e acompanhamento de evolução.',
+    h1: 'Protocolo BioARch',
+    eyebrow: 'Método AuraVie Concept',
+    summary: 'O BioARch organiza a jornada do paciente em etapas: avaliação, mapeamento, estratégia terapêutica e acompanhamento de resultados.',
+    focus: ['Mapeamento metabólico', 'Bioimpedância e exames', 'Plano terapêutico individualizado', 'Revisões e ajustes de evolução'],
+    cta: 'Conhecer o BioARch',
+  },
+];
+
+export const getSeoPageByPath = (pathname) =>
+  seoPages.find((page) => page.path === pathname.replace(/\/$/, ''));

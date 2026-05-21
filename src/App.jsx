@@ -8,6 +8,9 @@ import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
 import { PreFooterCTA } from './components/PreFooterCTA';
 import { StickyMobileCTA } from './components/StickyMobileCTA';
+import { SeoHead } from './components/SeoHead';
+import { ServiceLanding } from './components/ServiceLanding';
+import { getSeoPageByPath } from './seoPages';
 
 const Problema = lazy(() => import('./components/Problema').then(m => ({ default: m.Problema })));
 const Medico = lazy(() => import('./components/Medico').then(m => ({ default: m.Medico })));
@@ -53,6 +56,21 @@ function App() {
 
   const WHATSAPP_LINK = `https://wa.me/${siteConfig.whatsapp_number}?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+AuraVie+Concept.`;
   const INSTAGRAM_LINK = siteConfig.instagram_url;
+  const activeSeoPage = typeof window !== 'undefined' ? getSeoPageByPath(window.location.pathname) : null;
+
+  if (activeSeoPage) {
+    return (
+      <>
+        <SeoHead page={activeSeoPage} />
+        <ServiceLanding
+          page={activeSeoPage}
+          siteConfig={siteConfig}
+          whatsappLink={WHATSAPP_LINK}
+          instagramLink={INSTAGRAM_LINK}
+        />
+      </>
+    );
+  }
 
   return (
     <>
