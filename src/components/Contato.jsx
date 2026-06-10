@@ -9,12 +9,39 @@ const Contato = ({ siteConfig }) => {
   const [loading, setLoading] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
+  const [occupiedSlots, setOccupiedSlots] = useState([]);
 
   // Dinâmica Global: 
-  // 'agenda_horarios' é um JSON configurável direto no Supabase. Exemplo de valor na Tabela:
-  // {"1": ["09:00", "14:00"], "3": ["15:00"], "6": ["08:00"]} (Dias: 1=Seg..6=Sab, 0=Dom)
   const agendaData = siteConfig?.agenda_horarios || null;
+  const diasBloqueados = siteConfig?.dias_bloqueados || [];
+  const horariosBloqueados = siteConfig?.horarios_bloqueados || [];
   const useFallback = !agendaData || Object.keys(agendaData).length === 0;
+
+  React.useEffect(() => {
+    const fetchOcupacoes = async () => {
+      try {
+        const d = new Date();
+        const strToday = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        
+        const { data, error } = await supabase
+            .from('retornos')
+            .select('data_prevista, horario_previsto')
+            .neq('status', 'Cancelado')
+            .gte('data_prevista', strToday);
+            
+        if (!error && data) {
+            const slots = data.map(r => {
+                if (!r.horario_previsto) return null;
+                return `${String(r.data_prevista).split('T')[0]}T${r.horario_previsto.substring(0, 5)}`;
+            }).filter(Boolean);
+            setOccupiedSlots(slots);
+        }
+      } catch(e) {
+          console.error(e);
+      }
+    };
+    fetchOcupacoes();
+  }, []);
 
   const getNextAvailableDays = () => {
     const days = [];
@@ -23,14 +50,18 @@ const Contato = ({ siteConfig }) => {
     while (days.length < 5 && lookAheadCount < 30) {
       d.setDate(d.getDate() + 1);
       const dayOfWeek = d.getDay(); 
-      // Ignora domingo por padrão se usar fallback
-      if (useFallback) {
-         if (dayOfWeek !== 0) days.push(new Date(d));
-      } else {
-         const dayKey = dayOfWeek.toString();
-         if (agendaData[dayKey] && agendaData[dayKey].length > 0) {
-            days.push(new Date(d));
-         }
+      const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      
+      // Se a data inteira está na lista de bloqueios da clínica, pula este dia
+      if (!diasBloqueados.includes(dateStr)) {
+          if (useFallback) {
+             if (dayOfWeek !== 0) days.push(new Date(d));
+          } else {
+             const dayKey = dayOfWeek.toString();
+             if (agendaData[dayKey] && agendaData[dayKey].length > 0) {
+                days.push(new Date(d));
+             }
+          }
       }
       lookAheadCount++;
     }
@@ -43,11 +74,26 @@ const Contato = ({ siteConfig }) => {
 
   const getTimesForDate = (date) => {
      if (!date) return [];
+     
+     const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+     let availableSlots = [];
+     
      if (!useFallback) {
          const dayKey = date.getDay().toString();
-         return agendaData[dayKey] || [];
+         availableSlots = agendaData[dayKey] || [];
+     } else {
+         availableSlots = fallbackTimes;
      }
-     return fallbackTimes;
+     
+     // Filtrar as vagas checando ERP e Bloqueios Específicos
+     return availableSlots.filter(time => {
+         const slotKey = `${dateStr}T${time}`;
+         // Remove se o médico bloqueou o horário lá no painel ERP
+         if (horariosBloqueados.includes(slotKey)) return false;
+         // Remove se já tiver um paciente marcado na AgendaClinica do ERP
+         if (occupiedSlots.includes(slotKey)) return false;
+         return true;
+     });
   };
 
   const formatPhone = (val) => {
@@ -65,17 +111,23 @@ const Contato = ({ siteConfig }) => {
     setLoading(true);
     
     try {
-      const dbInsert = { nome: formData.nome, whatsapp: formData.whatsapp };
+      const dbInsert = { nome: formData.nome, whatsapp: formData.whatsapp.replace(/\D/g, '') };
+      
+      let dateStrFormat = '';
       if (selectedDate && selectedTime) {
-         dbInsert.whatsapp += ` | AGENDA VIP: ${selectedDate.toLocaleDateString('pt-BR')} às ${selectedTime}h`;
+         const ds = `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, '0')}-${String(selectedDate.getDate()).padStart(2, '0')}`;
+         dbInsert.data_agendada = ds;
+         dbInsert.horario_agendado = selectedTime;
+         dateStrFormat = selectedDate.toLocaleDateString('pt-BR');
       }
+      
       const { error } = await supabase.from('site_leads').insert([dbInsert]);
 
       if (error) throw error;
       
       let finalMsg = `Olá Concierge! Me chamo ${formData.nome}. `;
       if (selectedDate && selectedTime) {
-         finalMsg += `Vi pela Agenda VIP do App que há uma vaga hoje/amanhã na data *${selectedDate.toLocaleDateString('pt-BR')} às ${selectedTime}h* e gostaria de travar essa avaliação BioARch no meu nome. Como podemos seguir?`;
+         finalMsg += `Vi pela Agenda VIP do App que há uma vaga hoje/amanhã na data *${dateStrFormat} às ${selectedTime}h* e gostaria de travar essa avaliação BioARch no meu nome. Como podemos seguir?`;
       } else {
          finalMsg += `Gostaria de agendar uma avaliação e traçar meu protocolo na AuraVie!`;
       }
@@ -260,7 +312,6 @@ const Contato = ({ siteConfig }) => {
                     </h3>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))', gap: '10px' }}>
                        {getTimesForDate(selectedDate).map((time, j) => {
-                           // Lógica de sorteio para omitir horas em modo Fallback (Simulação Aleatória de lotação)
                            if (useFallback) {
                                if ((selectedDate.getDate() % 2 === 0 && j === 1) || (selectedDate.getDate() % 3 === 0 && j === 3)) return null;
                            }
