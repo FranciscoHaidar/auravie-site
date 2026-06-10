@@ -20,21 +20,11 @@ const Contato = ({ siteConfig }) => {
   React.useEffect(() => {
     const fetchOcupacoes = async () => {
       try {
-        const d = new Date();
-        const strToday = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-        
-        const { data, error } = await supabase
-            .from('retornos')
-            .select('data_prevista, horario_previsto')
-            .neq('status', 'Cancelado')
-            .gte('data_prevista', strToday);
-            
+        const { data, error } = await supabase.rpc('get_occupied_slots');
         if (!error && data) {
-            const slots = data.map(r => {
-                if (!r.horario_previsto) return null;
-                return `${String(r.data_prevista).split('T')[0]}T${r.horario_previsto.substring(0, 5)}`;
-            }).filter(Boolean);
-            setOccupiedSlots(slots);
+            setOccupiedSlots(data);
+        } else {
+            console.error("Erro RPC:", error);
         }
       } catch(e) {
           console.error(e);
