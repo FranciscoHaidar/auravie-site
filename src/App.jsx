@@ -10,6 +10,7 @@ import { PreFooterCTA } from './components/PreFooterCTA';
 import { StickyMobileCTA } from './components/StickyMobileCTA';
 import { SeoHead } from './components/SeoHead';
 import { ServiceLanding } from './components/ServiceLanding';
+import { PortalModal } from './components/PortalModal';
 import { getSeoPageByPath } from './seoPages';
 
 const Problema = lazy(() => import('./components/Problema').then(m => ({ default: m.Problema })));
@@ -18,6 +19,7 @@ const Jornada = lazy(() => import('./components/Jornada').then(m => ({ default: 
 const QuizBioARch = lazy(() => import('./components/QuizBioARch'));
 const QuizVitalidade = lazy(() => import('./components/QuizVitalidade'));
 const Planos = lazy(() => import('./components/Planos').then(m => ({ default: m.Planos })));
+const TecnologiaERP = lazy(() => import('./components/TecnologiaERP').then(m => ({ default: m.TecnologiaERP })));
 const Atuacao = lazy(() => import('./components/Atuacao').then(m => ({ default: m.Atuacao })));
 const Faq = lazy(() => import('./components/Faq').then(m => ({ default: m.Faq })));
 const ArtigosRecentes = lazy(() => import('./components/ArtigosRecentes').then(m => ({ default: m.ArtigosRecentes })));
@@ -27,9 +29,10 @@ const Contato = lazy(() => import('./components/Contato'));
 const ExitIntentPopup = lazy(() => import('./components/ExitIntentPopup'));
 
 function App() {
+  const [isPortalModalOpen, setIsPortalModalOpen] = useState(false);
   const [siteConfig, setSiteConfig] = useState({
     hero_title: 'Muito além da estética: redefinindo a sua qualidade de vida com inteligência médica.',
-    hero_subtitle: 'Descubra o método BioARch para otimização metabólica e envelhecimento saudável.',
+    hero_subtitle: 'Descubra o método BioARch para otimização metabólica e envelhecimento saudável com o Dr. Francisco Haidar.',
     whatsapp_number: '5551997353309',
     instagram_url: 'https://www.instagram.com/drfranciscohaidar/',
     about_text_p1: 'Sou fascinado pela máquina humana. Na AuraVie, criei o método BioARch porque compreendi que a maioria dos sintomas clássicos que destroem sua auto-estima e motivação podem ser mapeados e revertidos.',
@@ -39,7 +42,7 @@ function App() {
   useEffect(() => {
     const fetchConfig = async () => {
       try {
-        const { data, error } = await supabase
+        const { data } = await supabase
           .from('site_config')
           .select('*')
           .eq('id', 1)
@@ -67,20 +70,27 @@ function App() {
           siteConfig={siteConfig}
           whatsappLink={WHATSAPP_LINK}
           instagramLink={INSTAGRAM_LINK}
+          onOpenPortal={() => setIsPortalModalOpen(true)}
         />
+        <PortalModal isOpen={isPortalModalOpen} onClose={() => setIsPortalModalOpen(false)} />
       </>
     );
   }
 
   return (
     <>
-      <Navbar instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
+      <Navbar 
+        instagramLink={INSTAGRAM_LINK} 
+        whatsappLink={WHATSAPP_LINK} 
+        onOpenPortal={() => setIsPortalModalOpen(true)} 
+      />
+      
       <Hero siteConfig={siteConfig} whatsappLink={WHATSAPP_LINK} />
       
       <Suspense fallback={
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '15vh', gap: '1rem', marginTop: '2rem' }}>
           <div className="spinner" style={{ width: '36px', height: '36px', border: '3px solid rgba(212,175,55,0.2)', borderTopColor: 'var(--dourado)' }}></div>
-          <span style={{ color: 'var(--primary-dark)', fontSize: '0.85rem', fontWeight: 600, opacity: 0.6, letterSpacing: '2px', textTransform: 'uppercase' }}>Otimizando Componentes...</span>
+          <span style={{ color: 'var(--primary-dark)', fontSize: '0.85rem', fontWeight: 600, opacity: 0.6, letterSpacing: '2px', textTransform: 'uppercase' }}>Carregando Módulos...</span>
         </div>
       }>
         <Problema />
@@ -88,6 +98,7 @@ function App() {
         <Jornada />
         <QuizBioARch whatsappNumber={siteConfig.whatsapp_number} />
         <Planos whatsappNumber={siteConfig.whatsapp_number} />
+        <TecnologiaERP onOpenPortal={() => setIsPortalModalOpen(true)} />
         <Contato siteConfig={siteConfig} />
         <Atuacao />
         <QuizVitalidade whatsappNumber={siteConfig.whatsapp_number} />
@@ -102,6 +113,9 @@ function App() {
       <Footer instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
       <FloatingActions instagramLink={INSTAGRAM_LINK} whatsappLink={WHATSAPP_LINK} />
       <StickyMobileCTA whatsappLink={WHATSAPP_LINK} />
+
+      {/* Modal do Portal do Paciente integrado com o ERP */}
+      <PortalModal isOpen={isPortalModalOpen} onClose={() => setIsPortalModalOpen(false)} />
     </>
   );
 }

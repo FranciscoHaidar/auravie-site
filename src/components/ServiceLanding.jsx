@@ -6,13 +6,13 @@ import { Footer } from './Footer';
 import { FloatingActions } from './FloatingActions';
 import { StickyMobileCTA } from './StickyMobileCTA';
 
-export function ServiceLanding({ page, siteConfig, whatsappLink, instagramLink }) {
+export function ServiceLanding({ page, siteConfig, whatsappLink, instagramLink, onOpenPortal }) {
   const leadText = encodeURIComponent(`Olá! Vim pela página "${page.h1}" e gostaria de agendar uma avaliação na AuraVie Concept.`);
   const pageWhatsapp = `https://wa.me/${siteConfig.whatsapp_number || businessInfo.whatsapp}?text=${leadText}`;
 
   return (
     <>
-      <Navbar instagramLink={instagramLink} whatsappLink={pageWhatsapp} />
+      <Navbar instagramLink={instagramLink} whatsappLink={pageWhatsapp} onOpenPortal={onOpenPortal} />
       <main>
         <section style={{ padding: 'clamp(7rem, 12vw, 10rem) 5% 5rem', background: 'linear-gradient(135deg, #f8fafc 0%, #fff 55%, #f3ead7 100%)' }}>
           <div style={{ maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '3rem', alignItems: 'center' }}>

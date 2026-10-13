@@ -388,6 +388,10 @@ h1, h2, h3, h4 {
     display: none;
   }
   
+  .portal-text {
+    display: none;
+  }
+  
   .hero-content h1 {
     font-size: 2.5rem;
   }
