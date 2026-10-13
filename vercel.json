@@ -13,12 +13,36 @@
     }
   ],
   "rewrites": [
+    { "source": "/nutrologo-campo-bom", "destination": "/" },
+    { "source": "/nutrologia-campo-bom", "destination": "/" },
+    { "source": "/campo-bom-nutrologo", "destination": "/" },
+    { "source": "/emagrecimento-campo-bom", "destination": "/" },
+    { "source": "/nutrologo-sapiranga", "destination": "/" },
+    { "source": "/nutrologia-sapiranga", "destination": "/" },
+    { "source": "/sapiranga-nutrologo", "destination": "/" },
+    { "source": "/nutrologo-dois-irmaos", "destination": "/" },
+    { "source": "/nutrologia-dois-irmaos", "destination": "/" },
+    { "source": "/dois-irmaos-nutrologo", "destination": "/" },
+    { "source": "/nutrologo-estancia-velha", "destination": "/" },
+    { "source": "/nutrologia-estancia-velha", "destination": "/" },
+    { "source": "/estancia-velha-nutrologo", "destination": "/" },
+    { "source": "/nutrologo-ivoti", "destination": "/" },
+    { "source": "/nutrologia-ivoti", "destination": "/" },
+    { "source": "/ivoti-nutrologo", "destination": "/" },
+    { "source": "/nutrologo-portao", "destination": "/" },
+    { "source": "/nutrologia-portao", "destination": "/" },
+    { "source": "/portao-nutrologo", "destination": "/" },
+    { "source": "/nutrologo-sao-leopoldo", "destination": "/" },
+    { "source": "/nutrologia-sao-leopoldo", "destination": "/" },
+    { "source": "/sao-leopoldo-nutrologo", "destination": "/" },
     { "source": "/nutrologia-novo-hamburgo", "destination": "/" },
+    { "source": "/nutrologo-novo-hamburgo", "destination": "/" },
     { "source": "/emagrecimento-novo-hamburgo", "destination": "/" },
     { "source": "/bioimpedancia", "destination": "/" },
     { "source": "/reposicao-hormonal", "destination": "/" },
     { "source": "/lipedema", "destination": "/" },
     { "source": "/menopausa-climaterio", "destination": "/" },
-    { "source": "/protocolo-bioarch", "destination": "/" }
+    { "source": "/protocolo-bioarch", "destination": "/" },
+    { "source": "/(.*)", "destination": "/" }
   ]
 }

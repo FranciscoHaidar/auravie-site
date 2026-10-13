@@ -1,50 +1,253 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <!-- Home -->
    <url>
       <loc>https://www.auravieconcept.com.br/</loc>
-      <lastmod>2026-05-21</lastmod>
-      <changefreq>weekly</changefreq>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>daily</changefreq>
       <priority>1.0</priority>
+   </url>
+
+   <!-- 1. Nutrologia / Nutrólogo Regional -->
+   <url>
+      <loc>https://www.auravieconcept.com.br/nutrologo-campo-bom</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.95</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/nutrologia-campo-bom</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/nutrologo-sapiranga</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/nutrologo-novo-hamburgo</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
    </url>
    <url>
       <loc>https://www.auravieconcept.com.br/nutrologia-novo-hamburgo</loc>
-      <lastmod>2026-05-21</lastmod>
-      <changefreq>monthly</changefreq>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/nutrologo-dois-irmaos</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/nutrologo-estancia-velha</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/nutrologo-ivoti</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/nutrologo-portao</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/nutrologo-sao-leopoldo</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- 2. Emagrecimento Regional -->
+   <url>
+      <loc>https://www.auravieconcept.com.br/emagrecimento-campo-bom</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/emagrecimento-sapiranga</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>0.9</priority>
    </url>
    <url>
       <loc>https://www.auravieconcept.com.br/emagrecimento-novo-hamburgo</loc>
-      <lastmod>2026-05-21</lastmod>
-      <changefreq>monthly</changefreq>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>0.9</priority>
    </url>
    <url>
+      <loc>https://www.auravieconcept.com.br/emagrecimento-dois-irmaos</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/emagrecimento-estancia-velha</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/emagrecimento-ivoti</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/emagrecimento-portao</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/emagrecimento-sao-leopoldo</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- 3. Reposição Hormonal Regional -->
+   <url>
+      <loc>https://www.auravieconcept.com.br/reposicao-hormonal-campo-bom</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/reposicao-hormonal-sapiranga</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/reposicao-hormonal-novo-hamburgo</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/reposicao-hormonal-dois-irmaos</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/reposicao-hormonal-estancia-velha</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/reposicao-hormonal-ivoti</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/reposicao-hormonal-portao</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/reposicao-hormonal-sao-leopoldo</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- 4. Menopausa e Climatério Regional -->
+   <url>
+      <loc>https://www.auravieconcept.com.br/menopausa-campo-bom</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/menopausa-sapiranga</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/menopausa-novo-hamburgo</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/menopausa-dois-irmaos</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/menopausa-estancia-velha</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/menopausa-ivoti</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/menopausa-portao</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+   <url>
+      <loc>https://www.auravieconcept.com.br/menopausa-sao-leopoldo</loc>
+      <lastmod>2026-10-13</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
+   <!-- 5. Procedimentos e Métodos -->
+   <url>
       <loc>https://www.auravieconcept.com.br/bioimpedancia</loc>
-      <lastmod>2026-05-21</lastmod>
+      <lastmod>2026-10-13</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://www.auravieconcept.com.br/reposicao-hormonal</loc>
-      <lastmod>2026-05-21</lastmod>
+      <lastmod>2026-10-13</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://www.auravieconcept.com.br/lipedema</loc>
-      <lastmod>2026-05-21</lastmod>
+      <lastmod>2026-10-13</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://www.auravieconcept.com.br/menopausa-climaterio</loc>
-      <lastmod>2026-05-21</lastmod>
+      <lastmod>2026-10-13</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://www.auravieconcept.com.br/protocolo-bioarch</loc>
-      <lastmod>2026-05-21</lastmod>
+      <lastmod>2026-10-13</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
