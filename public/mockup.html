@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup Proposta Visual | AuraVie Concept - Dr. Francisco Haidar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --marinho-profundo: #0d1527;
+      --marinho-principal: #16223e;
+      --marinho-card: #1c2a4d;
+      --marinho-claro: #253866;
+      --dourado-ouro: #d4af37;
+      --dourado-champagne: #e5d3b3;
+      --dourado-claro: #f5eedf;
+      --grafite-texto: #334155;
+      --grafite-suave: #64748b;
+      --branco: #ffffff;
+      --cinza-bg: #f8fafc;
+      --borda-suave: rgba(212, 175, 55, 0.25);
+      --sombra-luxo: 0 20px 45px rgba(13, 21, 39, 0.08);
+      --sombra-card: 0 15px 35px rgba(13, 21, 39, 0.12);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--cinza-bg);
+      color: var(--grafite-texto);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* TOP BAR EXCLUSIVA DO MOCKUP */
+    .mockup-control-banner {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: linear-gradient(90deg, #0d1527 0%, #16223e 50%, #d4af37 100%);
+      color: white;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      border-bottom: 1px solid rgba(212,175,55,0.4);
+    }
+    .mockup-badge {
+      background: rgba(212,175,55,0.25);
+      border: 1px solid #d4af37;
+      color: #fce79a;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+    }
+    .mockup-nav-shortcuts {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .mockup-btn-shortcut {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .mockup-btn-shortcut:hover {
+      background: #d4af37;
+      color: #0d1527;
+      border-color: #d4af37;
+      font-weight: 600;
+    }
+
+    /* NAVBAR MODERNA COM GLASSMORPHISM */
+    .navbar {
+      position: sticky;
+      top: 42px;
+      z-index: 990;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(229, 211, 179, 0.45);
+      transition: all 0.3s ease;
+    }
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-symbol {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--marinho-principal), #0d1527);
+      border: 1px solid var(--dourado-ouro);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dourado-ouro);
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 12px rgba(212,175,55,0.2);
+    }
+    .logo-text-main {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--marinho-profundo);
+      letter-spacing: -0.5px;
+    }
+    .logo-text-sub {
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: #b59567;
+      margin-left: 4px;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: #334155;
+      font-size: 0.93rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: var(--dourado-ouro);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-patient-portal {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: rgba(22, 34, 62, 0.05);
+      border: 1px solid rgba(22, 34, 62, 0.15);
+      border-radius: 30px;
+      color: var(--marinho-principal);
+      font-size: 0.84rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-patient-portal:hover {
+      background: var(--marinho-principal);
+      color: white;
+      border-color: var(--marinho-principal);
+      transform: translateY(-1px);
+    }
+    .btn-cta-gold {
+      background: linear-gradient(135deg, #d4af37 0%, #b89326 100%);
+      color: #0d1527;
+      padding: 10px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(212,175,55,0.35);
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-cta-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212,175,55,0.5);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      padding: 70px 24px 80px;
+      background: radial-gradient(circle at 80% 20%, rgba(229,211,179,0.25) 0%, transparent 60%),
+                  linear-gradient(180deg, #ffffff 0%, #fbf9f5 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: #997514;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 4.2vw, 3.7rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--marinho-profundo);
+      letter-spacing: -1.2px;
+      margin-bottom: 20px;
+    }
+    .hero-title .destaque-dourado {
+      background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #996515 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-lead {
+      font-size: 1.18rem;
+      color: #475569;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      max-width: 580px;
+    }
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .btn-lg-primary {
+      background: var(--marinho-principal);
+      color: white;
+      padding: 15px 32px;
+      border-radius: 40px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(22, 34, 62, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+    }
+    .btn-lg-primary:hover {
+      background: #0d1527;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(22, 34, 62, 0.45);
+    }
+    .btn-lg-outline {
+      background: transparent;
+      color: var(--marinho-principal);
+      border: 2px solid var(--marinho-principal);
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .btn-lg-outline:hover {
+      background: rgba(22, 34, 62, 0.05);
+    }
+
+    /* BADGES DE AUTORIDADE MÉDICA (NOVO NO MOCKUP) */
+    .authority-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 20px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .chip-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .chip-icon {
+      width: 22px;
+      height: 22px;
+      background: rgba(212,175,55,0.18);
+      color: #a17812;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    /* HERO PHOTO COM COMPOSIÇÃO LUXUOSA */
+    .hero-photo-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .photo-frame {
+      position: relative;
+      border-radius: 28px;
+      padding: 8px;
+      background: linear-gradient(145deg, rgba(212,175,55,0.5), rgba(255,255,255,0.9), rgba(22,34,62,0.3));
+      box-shadow: 0 30px 60px rgba(13, 21, 39, 0.18);
+    }
+    .hero-img {
+      width: 100%;
+      max-width: 400px;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 24px;
+      display: block;
+    }
+    .floating-doctor-tag {
+      position: absolute;
+      bottom: -18px;
+      left: -20px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 14px 20px;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .doctor-tag-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--marinho-profundo);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dourado-ouro);
+    }
+    .doctor-tag-title {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+      color: #64748b;
+    }
+    .doctor-tag-sub {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--marinho-profundo);
+      letter-spacing: -0.3px;
+    }
+    .floating-stats-tag {
+      position: absolute;
+      top: 30px;
+      right: -25px;
+      background: var(--marinho-profundo);
+      color: white;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 12px 18px;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px rgba(13, 21, 39, 0.25);
+      text-align: center;
+    }
+    .stats-number {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #f7df8b;
+      line-height: 1;
+    }
+    .stats-label {
+      font-size: 0.72rem;
+      opacity: 0.85;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    /* BARRA DE PROVAS SOCIAIS */
+    .social-proof-bar {
+      background: var(--marinho-profundo);
+      color: white;
+      padding: 24px 20px;
+      border-top: 1px solid rgba(212,175,55,0.2);
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    .stat-item h3 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--dourado-ouro);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-item p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    /* NOVA SEÇÃO 1: COMO FUNCIONA SUA PRIMEIRA CONSULTA (PROPOSTA NO MOCKUP) */
+    .section-journey {
+      padding: 100px 24px;
+      background: #ffffff;
+      position: relative;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 60px;
+    }
+    .section-eyebrow {
+      color: #a88118;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.82rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      font-weight: 800;
+      color: var(--marinho-profundo);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 1.05rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .journey-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      position: relative;
+    }
+    .journey-card {
+      background: #fbfbfd;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 30px 22px;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .journey-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(22, 34, 62, 0.08);
+      border-color: rgba(212, 175, 55, 0.5);
+      background: #ffffff;
+    }
+    .journey-number {
+      width: 44px;
+      height: 44px;
+      background: var(--marinho-principal);
+      color: var(--dourado-ouro);
+      border-radius: 12px;
+      font-weight: 900;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+    .journey-card h4 {
+      font-size: 1.15rem;
+      color: var(--marinho-profundo);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .journey-card p {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* NOVA SEÇÃO 2: ATENDIMENTO PARTICULAR & REEMBOLSO (PROPOSTA NO MOCKUP) */
+    .reembolso-banner {
+      margin-top: 50px;
+      background: linear-gradient(135deg, #0d1527 0%, #16223e 100%);
+      border-radius: 24px;
+      padding: 40px;
+      color: white;
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 20px 50px rgba(13, 21, 39, 0.2);
+    }
+    .reembolso-content h3 {
+      font-size: 1.8rem;
+      color: #f7df8b;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+    .reembolso-content p {
+      font-size: 1rem;
+      color: #cbd5e1;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .reembolso-box-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .reembolso-tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #f1f5f9;
+    }
+    .reembolso-card-action {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(229, 211, 179, 0.2);
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+    }
+    .reembolso-card-action h5 {
+      color: white;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .reembolso-card-action p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+
+    /* NOVA SEÇÃO 3: PLANOS BIOARCH REDESENHADOS COM ESTILO DARK LUXURY */
+    .section-plans {
+      padding: 100px 24px;
+      background: #f8fafc;
+    }
+    .plans-container-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      align-items: stretch;
+      margin-top: 40px;
+    }
+    .plan-box {
+      border-radius: 24px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    /* PLANO ESSENTIAL */
+    .plan-essential {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    }
+    .plan-essential:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+    /* PLANO PRIME (DESTAQUE OURO) */
+    .plan-prime {
+      background: linear-gradient(180deg, #ffffff 0%, #fbf9f4 100%);
+      border: 2px solid #d4af37;
+      box-shadow: 0 25px 60px rgba(212, 175, 55, 0.18);
+      transform: scale(1.03);
+    }
+    .plan-prime:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 30px 70px rgba(212, 175, 55, 0.28);
+    }
+    .badge-pop {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #d4af37, #b8860b);
+      color: #0d1527;
+      font-weight: 800;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      padding: 5px 18px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
+    /* PLANO BLACK (CARBONO LUXO) */
+    .plan-black {
+      background: linear-gradient(145deg, #0d1527 0%, #16223e 100%);
+      color: white;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 20px 50px rgba(13, 21, 39, 0.3);
+    }
+    .plan-black:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 60px rgba(13, 21, 39, 0.4);
+      border-color: #d4af37;
+    }
+    .plan-black h3, .plan-black .plan-tagline {
+      color: #f1f5f9;
+    }
+    .plan-black .plan-feature-item {
+      color: #cbd5e1;
+    }
+
+    .plan-header {
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding-bottom: 20px;
+    }
+    .plan-black .plan-header {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .plan-duration {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #a17812;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .plan-black .plan-duration {
+      color: #f7df8b;
+    }
+    .plan-name {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--marinho-profundo);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .plan-black .plan-name {
+      color: white;
+    }
+    .plan-tagline {
+      font-size: 0.92rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .plan-features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 35px;
+      flex-grow: 1;
+    }
+    .plan-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.45;
+    }
+    .plan-feature-icon {
+      color: #d4af37;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .btn-plan-select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-plan-normal {
+      background: rgba(22,34,62,0.08);
+      color: var(--marinho-principal);
+    }
+    .btn-plan-normal:hover {
+      background: var(--marinho-principal);
+      color: white;
+    }
+    .btn-plan-gold {
+      background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+      color: #0d1527;
+      box-shadow: 0 4px 15px rgba(212,175,55,0.4);
+    }
+    .btn-plan-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212,175,55,0.6);
+    }
+    .btn-plan-black {
+      background: linear-gradient(135deg, #f7df8b 0%, #d4af37 100%);
+      color: #0d1527;
+      box-shadow: 0 4px 20px rgba(212,175,55,0.3);
+    }
+    .btn-plan-black:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(247, 223, 139, 0.5);
+    }
+
+    /* SEÇÃO 4: CONEXÃO COM O ERP DEMONSTRADA (NOVO NO MOCKUP) */
+    .section-erp-demo {
+      padding: 90px 24px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+    }
+    .erp-preview-card {
+      background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--sombra-luxo);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .erp-mockup-graphic {
+      background: #0d1527;
+      border-radius: 18px;
+      padding: 24px;
+      border: 1px solid rgba(212,175,55,0.3);
+      color: white;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+    .erp-mock-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      font-size: 0.85rem;
+    }
+    .mock-badge-online {
+      color: #4ade80;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 600;
+    }
+    .mock-patient-graph {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .mock-graph-bar {
+      height: 8px;
+      background: #334155;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .mock-graph-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #d4af37, #4ade80);
+      width: 74%;
+    }
+
+    /* FOOTER MODERNO */
+    .footer-luxo {
+      background: var(--marinho-profundo);
+      color: white;
+      padding: 80px 24px 30px;
+      border-top: 1px solid rgba(212,175,55,0.2);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .footer-col h4 {
+      color: var(--dourado-champagne);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .footer-col p, .footer-col a {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      color: var(--dourado-ouro);
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 25px;
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    /* MODAL INTERATIVO (TESTAR PORTAL DO PACIENTE) */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(13, 21, 39, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-card {
+      background: white;
+      border-radius: 24px;
+      max-width: 520px;
+      width: 100%;
+      padding: 35px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      position: relative;
+      animation: modalFadeIn 0.3s ease;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #f1f5f9;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-lead {
+        margin: 0 auto 30px;
+      }
+      .hero-cta-group {
+        justify-content: center;
+      }
+      .authority-chips {
+        justify-content: center;
+      }
+      .hero-photo-wrapper {
+        margin-top: 30px;
+      }
+      .floating-doctor-tag {
+        left: 5%;
+        right: 5%;
+        bottom: -25px;
+        justify-content: center;
+      }
+      .reembolso-banner {
+        grid-template-columns: 1fr;
+      }
+      .erp-preview-card {
+        grid-template-columns: 1fr;
+      }
+      .nav-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE CONTROLE EXCLUSIVA DO MOCKUP -->
+  <aside aria-label="Controle de Demonstração" class="mockup-control-banner">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="mockup-badge">Visualização de Demonstração</span>
+      <span><strong>AuraVie Concept</strong> • Demonstração Interativa das Propostas de Melhoria</span>
+    </div>
+    <div class="mockup-nav-shortcuts">
+      <a href="#primeira-consulta" class="mockup-btn-shortcut">📋 1ª Consulta</a>
+      <a href="#reembolso" class="mockup-btn-shortcut">💳 Reembolso</a>
+      <a href="#novos-planos" class="mockup-btn-shortcut">💎 Novos Planos</a>
+      <button onclick="openPortalModal()" class="mockup-btn-shortcut" style="background: #d4af37; color: #0d1527; font-weight: 700;">🔐 Testar Portal ERP</button>
+      <a href="/" class="mockup-btn-shortcut" style="background: rgba(255,255,255,0.2);">← Voltar ao Site Atual</a>
+    </div>
+  </aside>
+
+  <!-- NAVBAR LUXUOSA COM EFEITO VIDRO & PORTAL DO PACIENTE -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo-box">
+          <div class="logo-symbol">A</div>
+          <div>
+            <span class="logo-text-main">AuraVie</span>
+            <span class="logo-text-sub">Concept</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="#primeira-consulta" class="nav-link">1ª Consulta</a></li>
+          <li><a href="#novos-planos" class="nav-link">Programas BioARch</a></li>
+          <li><a href="#reembolso" class="nav-link">Convênios e Reembolso</a></li>
+          <li><a href="#tecnologia-erp" class="nav-link">Tecnologia Clínica</a></li>
+          <li><a href="#medico" class="nav-link">Dr. Francisco</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- BOTÃO INÉDITO CONECTADO AO ERP -->
+          <button onclick="openPortalModal()" class="btn-patient-portal" title="Acesse seus exames, bioimpedâncias e prescrições">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Portal do Paciente
+          </button>
+          
+          <a href="https://wa.me/5551997353309?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+AuraVie+Concept." target="_blank" class="btn-cta-gold">
+            Agendar Consulta
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION ULTRA-REFINADA -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-tag">
+          <span>✨</span> Otimização Metabólica & Emagrecimento Avançado
+        </div>
+        <h1 class="hero-title">
+          Muito além da estética: <br>
+          sua qualidade de vida com <span class="destaque-dourado">inteligência médica.</span>
+        </h1>
+        <p class="hero-lead">
+          Conheça o <strong>Método BioARch</strong> com o <strong>Dr. Francisco Haidar</strong>. Consulta médica individualizada, bioimpedância clínica de alta precisão e terapias integradas no Centro de Campo Bom para transformar sua saúde e vitalidade.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="https://wa.me/5551997353309?text=Ol%C3%A1%21+Gostaria+de+iniciar+minha+transforma%C3%A7%C3%A3o+com+o+Dr.+Francisco+Haidar." target="_blank" class="btn-lg-primary">
+            Iniciar Minha Transformação →
+          </a>
+          <a href="#primeira-consulta" class="btn-lg-outline">
+            Como Funciona a Consulta
+          </a>
+        </div>
+
+        <!-- SELOS DE AUTORIDADE MÉDICA -->
+        <div class="authority-chips">
+          <div class="chip-item">
+            <span class="chip-icon">✓</span>
+            <span>Dr. Francisco Haidar • <strong>CRM/RS 57907</strong></span>
+          </div>
+          <div class="chip-item">
+            <span class="chip-icon">✓</span>
+            <span>Bioimpedância Analítica no Consultório</span>
+          </div>
+          <div class="chip-item">
+            <span class="chip-icon">✓</span>
+            <span>Centro de Campo Bom (Rua Sta. Teresinha, 205)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTO DO MÉDICO COM BADGES FLUTUANTES -->
+      <div class="hero-photo-wrapper">
+        <div class="photo-frame">
+          <img src="/hero-photo.jpg" alt="Dr. Francisco Haidar - AuraVie Concept" class="hero-img">
+
+          <!-- Badge do Protocolo BioARch -->
+          <div class="floating-doctor-tag">
+            <div class="doctor-tag-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div>
+              <div class="doctor-tag-title">Protocolo Exclusivo</div>
+              <div class="doctor-tag-sub">BIOARCH Concept</div>
+            </div>
+          </div>
+
+          <!-- Badge de Resultados -->
+          <div class="floating-stats-tag">
+            <div class="stats-number">98%</div>
+            <div class="stats-label">Preservação Muscular</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BARRA DE IMPACTO / PROVAS SOCIAIS -->
+  <section class="social-proof-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>+1.200</h3>
+        <p>Bioimpedâncias e Mapeamentos Realizados</p>
+      </div>
+      <div class="stat-item">
+        <h3>1h a 1h30</h3>
+        <p>Duração Média da Consulta Médica Inicial</p>
+      </div>
+      <div class="stat-item">
+        <h3>5.0 ★</h3>
+        <p>Classificação Máxima de Satisfação Google</p>
+      </div>
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>Acompanhamento Médico Direto</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVA SEÇÃO: JORNADA DA PRIMEIRA CONSULTA (QUEBRA TODAS AS OBJEÇÕES) -->
+  <section id="primeira-consulta" class="section-journey">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Transparência Médica</span>
+        <h2 class="section-title">Como funciona a sua primeira consulta na AuraVie?</h2>
+        <p class="section-desc">
+          Entendemos que sua saúde é única. Por isso, abandonamos consultas de 15 minutos e criamos uma experiência médica completa, acolhedora e hiperpersonalizada.
+        </p>
+      </div>
+
+      <div class="journey-steps-grid">
+        <div class="journey-card">
+          <div class="journey-number">01</div>
+          <h4>Anamnese Detalhada</h4>
+          <p>Uma conversa aprofundada (sem pressa) para investigar seu estilo de vida, sono, digestão, nível de estresse, histórico de dietas e queixas principais.</p>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-number">02</div>
+          <h4>Bioimpedância Clínica</h4>
+          <p>Exame completo de composição corporal: peso exato de massa magra, gordura visceral, retenção de água e taxa metabólica basal no mesmo dia.</p>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-number">03</div>
+          <h4>Check-up Laboratorial</h4>
+          <p>Solicitação e leitura minuciosa de exames de sangue, analisando marcadores hormonais, vitaminas, minerais e inflamação crônica silenciosa.</p>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-number">04</div>
+          <h4>Plano Terapêutico BioARch</h4>
+          <p>Elaboração de uma estratégia sob medida com alimentação adaptada à sua rotina, suplementação estratégica e, quando indicado, terapias injetáveis.</p>
+        </div>
+
+        <div class="journey-card">
+          <div class="journey-number">05</div>
+          <h4>Acesso ao Portal Digital</h4>
+          <p>Você recebe acesso ao aplicativo do paciente AuraVie para acompanhar seus gráficos de evolução, receitas e falar diretamente com nossa equipe.</p>
+        </div>
+      </div>
+
+      <!-- CARD DE ESCLARECIMENTO SOBRE CONVÊNIOS E REEMBOLSO -->
+      <div id="reembolso" class="reembolso-banner">
+        <div class="reembolso-content">
+          <h3>Atendimento Particular com Reembolso pelo Plano de Saúde</h3>
+          <p>
+            Para garantir consultas aprofundadas de mais de 1 hora e atenção irrestrita, a AuraVie Concept opera em modelo <strong>particular</strong>. No entanto, fornecemos <strong>recibo e laudo médico detalhado</strong> para você solicitar o reembolso total ou parcial da consulta junto ao seu convênio.
+          </p>
+          <div class="reembolso-box-tags">
+            <span class="reembolso-tag">✓ Unimed</span>
+            <span class="reembolso-tag">✓ Bradesco Saúde</span>
+            <span class="reembolso-tag">✓ SulAmérica</span>
+            <span class="reembolso-tag">✓ Cassi</span>
+            <span class="reembolso-tag">✓ Amil</span>
+            <span class="reembolso-tag">✓ IPE Saúde (conforme plano)</span>
+          </div>
+        </div>
+        <div class="reembolso-card-action">
+          <h5>Dúvidas sobre reembolso?</h5>
+          <p>Nosso concierge orienta você em todo o passo a passo da documentação necessária para o seu convênio.</p>
+          <a href="https://wa.me/5551997353309?text=Ol%C3%A1%2C+gostaria+de+saber+como+funciona+o+reembolso+do+meu+plano+de+sa%C3%BAde+para+a+consulta+na+AuraVie." target="_blank" class="btn-cta-gold" style="width: 100%; justify-content: center;">
+            Tirar Dúvida via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVA SEÇÃO: PROGRAMAS CLÍNICOS BIOARCH COM DESIGN DARK LUXURY -->
+  <section id="novos-planos" class="section-plans">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Programas de Acompanhamento</span>
+        <h2 class="section-title">A Esteira Premium AuraVie Concept</h2>
+        <p class="section-desc">
+          Planos desenhados para cada estágio de transformação corporal, desde o destravamento metabólico até a alta performance contínua.
+        </p>
+      </div>
+
+      <div class="plans-container-grid">
+        <!-- ESSENTIAL -->
+        <div class="plan-box plan-essential">
+          <div class="plan-header">
+            <span class="plan-duration">3 Meses de Acompanhamento</span>
+            <h3 class="plan-name">BioARch Essential</h3>
+            <p class="plan-tagline">O reset metabólico ideal para quebrar o efeito sanfona e iniciar a perda de gordura.</p>
+          </div>
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span><strong>3 Consultas Médicas</strong> presenciais com o Dr. Francisco Haidar</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span><strong>3 Bioimpedâncias</strong> analíticas com relatório comparativo</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span>Mapeamento laboratorial e correção de deficiências nutricionais</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span>Acesso ao <strong>Portal do Paciente</strong> com extrato de evolução</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/5551997353309?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+Plano+BioARch+Essential." target="_blank" class="btn-plan-select btn-plan-normal">
+            Escolher Essential
+          </a>
+        </div>
+
+        <!-- PRIME (DESTAQUE OURO) -->
+        <div class="plan-box plan-prime">
+          <div class="badge-pop">Mais Escolhido</div>
+          <div class="plan-header">
+            <span class="plan-duration">6 Meses de Parceria Médica</span>
+            <h3 class="plan-name">BioARch Prime</h3>
+            <p class="plan-tagline">Consolidação de resultados, remodelação corporal e sustentabilidade a longo prazo.</p>
+          </div>
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span><strong>6 Consultas Médicas</strong> com acompanhamento mensal contínuo</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span><strong>6 Bioimpedâncias Clínicas</strong> com monitoramento de massa magra</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span>Acesso a <strong>protocolos injetáveis (IM)</strong> quando indicado clinicamente</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span>Canal de suporte concierge direto para esclarecimento de dúvidas</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span>Ajustes finos na transição de fases (queima → ganho muscular)</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/5551997353309?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+Plano+BioARch+Prime." target="_blank" class="btn-plan-select btn-plan-gold">
+            Escolher Prime (Recomendado)
+          </a>
+        </div>
+
+        <!-- BLACK (CARBONO LUXO) -->
+        <div class="plan-box plan-black">
+          <div class="plan-header">
+            <span class="plan-duration">12 Meses • Exclusividade Total</span>
+            <h3 class="plan-name">BioARch Black</h3>
+            <p class="plan-tagline">O ápice da longevidade biológica e acompanhamento concierge para quem busca o máximo da sua máquina humana.</p>
+          </div>
+          <ul class="plan-features-list">
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span><strong>12 Meses de Blindagem Metabólica</strong> (12 consultas completas)</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span><strong>12 Bioimpedâncias de Precisão</strong> com gráficos históricos no app</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span>Acompanhamento prioritário e flexibilidade máxima de agenda</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span>Foco rigoroso em longevidade ativa, performance cognitiva e sono</span>
+            </li>
+            <li class="plan-feature-item">
+              <span class="plan-feature-icon">✦</span>
+              <span>Mapeamento hormonal completo e individualizado durante as 4 estações</span>
+            </li>
+          </ul>
+          <a href="https://wa.me/5551997353309?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+Plano+BioARch+Black." target="_blank" class="btn-plan-select btn-plan-black">
+            Candidatar-se ao Black
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 5: INTERLIGAÇÃO COM O ERP (PORTAL DO PACIENTE & TECNOLOGIA) -->
+  <section id="tecnologia-erp" class="section-erp-demo">
+    <div class="container">
+      <div class="erp-preview-card">
+        <div>
+          <span class="section-eyebrow">Tecnologia Própria AuraVie</span>
+          <h2 style="font-size: 2.3rem; color: var(--marinho-profundo); line-height: 1.15; margin-bottom: 16px;">
+            Seu tratamento conectado ao nosso ecossistema inteligente.
+          </h2>
+          <p style="color: #475569; font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
+            Ao se tornar paciente da clínica, você não recebe apenas receitas de papel. Você tem acesso à sua <strong>área restrita no Portal do Paciente</strong>, conectada ao ERP médico da AuraVie:
+          </p>
+          <div style="display: grid; gap: 14px; margin-bottom: 30px;">
+            <div style="display: flex; gap: 10px; align-items: center; color: #1e293b; font-weight: 600;">
+              <span style="color: #d4af37;">✓</span> Extrato evolutivo das suas bioimpedâncias com gráficos reais
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; color: #1e293b; font-weight: 600;">
+              <span style="color: #d4af37;">✓</span> Prescrições e rotinas de suplementação salvas no seu celular
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; color: #1e293b; font-weight: 600;">
+              <span style="color: #d4af37;">✓</span> Agendamento inteligente e direto com aviso de vagas disponíveis
+            </div>
+          </div>
+          <button onclick="openPortalModal()" class="btn-lg-primary" style="padding: 12px 28px; font-size: 0.95rem;">
+            Experimentar Portal do Paciente →
+          </button>
+        </div>
+
+        <!-- DEMONSTRAÇÃO VISUAL DO APP DO PACIENTE -->
+        <div class="erp-mockup-graphic">
+          <div class="erp-mock-header">
+            <span><strong>AuraVie Health Portal</strong> • Paciente VIP</span>
+            <span class="mock-badge-online">● Conectado ao ERP</span>
+          </div>
+
+          <div class="mock-patient-graph">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+              <span>Gordura Visceral (Nível)</span>
+              <strong style="color: #f7df8b;">Nível 4 (Otimizado)</strong>
+            </div>
+            <div class="mock-graph-bar">
+              <div class="mock-graph-fill" style="width: 35%;"></div>
+            </div>
+          </div>
+
+          <div class="mock-patient-graph">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+              <span>Massa Magra Preservada</span>
+              <strong style="color: #4ade80;">+3.2 kg (98.4%)</strong>
+            </div>
+            <div class="mock-graph-bar">
+              <div class="mock-graph-fill" style="width: 88%;"></div>
+            </div>
+          </div>
+
+          <div style="background: rgba(255,255,255,0.03); border: 1px dashed rgba(212,175,55,0.3); border-radius: 12px; padding: 12px; text-align: center; font-size: 0.8rem; color: #cbd5e1;">
+            📅 Próxima reavaliação com Dr. Francisco Haidar: <strong>Disponível na Agenda</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER MODERNO COM TODAS AS ROTAS LOCAIS -->
+  <footer class="footer-luxo">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4 style="color: var(--dourado-champagne);">AuraVie Concept</h4>
+        <p>Redefinindo sua longevidade biológica e metabolismo com ciência médica individualizada.</p>
+        <p style="margin-top: 10px;">
+          <strong>Dr. Francisco Haidar</strong><br>
+          CRM/RS 57907<br>
+          <span style="font-size: 0.8rem; opacity: 0.7;">Médico com pós-graduação em nutrologia, não especialista</span>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Localização & Contato</h4>
+        <p>
+          📍 Rua Santa Teresinha, 205<br>
+          Sala D - Centro, Campo Bom/RS<br>
+          CEP: 93700-000
+        </p>
+        <p style="margin-top: 10px;">
+          📞 WhatsApp: (51) 99735-3309<br>
+          📸 Instagram: @drfranciscohaidar
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Cidades Atendidas</h4>
+        <p>
+          Campo Bom • Sapiranga • Novo Hamburgo • Dois Irmãos • Estância Velha • Ivoti • Portão • São Leopoldo
+        </p>
+        <div style="margin-top: 15px;">
+          <a href="/nutrologo-campo-bom" style="display: inline-block; color: #f7df8b; text-decoration: underline; font-size: 0.82rem;">Ver páginas regionais de atendimento →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Dr. Francisco Haidar - AuraVie Concept. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- MODAL DE SIMULAÇÃO DO PORTAL DO PACIENTE -->
+  <div id="modalPortal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closePortalModal()">✕</button>
+      <div style="text-align: center; margin-bottom: 25px;">
+        <div style="width: 50px; height: 50px; background: var(--marinho-profundo); border-radius: 50%; color: var(--dourado-ouro); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: 800; font-size: 1.3rem;">
+          🔐
+        </div>
+        <h3 style="color: var(--marinho-profundo); font-size: 1.5rem; margin-bottom: 6px;">Portal do Paciente AuraVie</h3>
+        <p style="color: #64748b; font-size: 0.9rem;">
+          Esta área é conectada em tempo real ao <strong>AuraVie ERP</strong>. Seus exames, laudos e bioimpedâncias em um só lugar.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
+        <div>
+          <label style="display: block; font-size: 0.85rem; font-weight: 600; color: #334155; margin-bottom: 6px;">Informe seu CPF de Paciente</label>
+          <input type="text" id="mockCpfInput" placeholder="000.000.000-00" style="width: 100%; padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 12px; font-size: 1rem; outline: none;">
+        </div>
+        <button onclick="simulatePortalLogin()" class="btn-lg-primary" style="width: 100%; justify-content: center; padding: 12px;">
+          Acessar Meu Prontuário Digital
+        </button>
+      </div>
+
+      <div id="portalMockFeedback" style="display: none; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 14px; text-align: center; font-size: 0.85rem; color: #166534;">
+        ✅ <strong>Conexão Simulada com Sucesso!</strong><br>
+        No site final, esta ação direciona automaticamente para a rota <code>/meu-extrato</code> do ERP com todos os dados protegidos do paciente.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPortalModal() {
+      document.getElementById('modalPortal').style.display = 'flex';
+    }
+    function closePortalModal() {
+      document.getElementById('modalPortal').style.display = 'none';
+      document.getElementById('portalMockFeedback').style.display = 'none';
+    }
+    function simulatePortalLogin() {
+      document.getElementById('portalMockFeedback').style.display = 'block';
+    }
+    // Fecha ao clicar fora
+    document.getElementById('modalPortal').addEventListener('click', function(e) {
+      if (e.target === this) closePortalModal();
+    });
+  </script>
+
+</body>
+</html>

@@ -43,6 +43,7 @@
     { "source": "/lipedema", "destination": "/" },
     { "source": "/menopausa-climaterio", "destination": "/" },
     { "source": "/protocolo-bioarch", "destination": "/" },
+    { "source": "/mockup.html", "destination": "/mockup.html" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
