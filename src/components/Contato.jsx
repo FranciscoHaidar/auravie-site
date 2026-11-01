@@ -55,9 +55,9 @@ const Contato = ({ siteConfig }) => {
      return availableSlots.filter(time => {
          const slotKey = `${dateStr}T${time}`;
          // Remove se o médico bloqueou o horário lá no painel ERP
-         if (horariosBloqueados.includes(slotKey)) return false;
+         if (horariosBloqueados.some(s => s === slotKey || s.startsWith(slotKey))) return false;
          // Remove se já tiver um paciente marcado na AgendaClinica do ERP
-         if (occupiedSlots.includes(slotKey)) return false;
+         if (occupiedSlots.some(s => s === slotKey || s.startsWith(slotKey))) return false;
 
          // Remove se cair dentro de alguma Regra Semanal Fixa
          const isRecurringBlocked = bloqueiosRecorrentes.some(rule => {
@@ -78,7 +78,8 @@ const Contato = ({ siteConfig }) => {
      });
   };
 
-  const getNextAvailableDays = () => {
+  // Avalia as datas disponíveis reativamente quando siteConfig e ocupações chegam do Supabase
+  const availableDays = React.useMemo(() => {
     const days = [];
     let d = new Date();
     let lookAheadCount = 0;
@@ -97,10 +98,7 @@ const Contato = ({ siteConfig }) => {
       lookAheadCount++;
     }
     return days;
-  };
-
-  // Avalia as datas disponíveis na inicialização do componente
-  const [availableDays] = useState(getNextAvailableDays());
+  }, [siteConfig, occupiedSlots, diasBloqueados, horariosBloqueados, bloqueiosRecorrentes]);
 
   const formatPhone = (val) => {
     let v = val.replace(/\D/g, '');
