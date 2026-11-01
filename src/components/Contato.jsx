@@ -15,6 +15,7 @@ const Contato = ({ siteConfig }) => {
   const agendaData = siteConfig?.agenda_horarios || null;
   const diasBloqueados = siteConfig?.dias_bloqueados || [];
   const horariosBloqueados = siteConfig?.horarios_bloqueados || [];
+  const bloqueiosRecorrentes = siteConfig?.bloqueios_recorrentes || siteConfig?.agenda_horarios?._bloqueios_recorrentes || [];
   const useFallback = !agendaData || Object.keys(agendaData).length === 0;
 
   React.useEffect(() => {
@@ -33,33 +34,6 @@ const Contato = ({ siteConfig }) => {
     fetchOcupacoes();
   }, []);
 
-  const getNextAvailableDays = () => {
-    const days = [];
-    let d = new Date();
-    let lookAheadCount = 0;
-    while (days.length < 5 && lookAheadCount < 30) {
-      d.setDate(d.getDate() + 1);
-      const dayOfWeek = d.getDay(); 
-      const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-      
-      // Se a data inteira está na lista de bloqueios da clínica, pula este dia
-      if (!diasBloqueados.includes(dateStr)) {
-          if (useFallback) {
-             if (dayOfWeek !== 0) days.push(new Date(d));
-          } else {
-             const dayKey = dayOfWeek.toString();
-             if (agendaData[dayKey] && agendaData[dayKey].length > 0) {
-                days.push(new Date(d));
-             }
-          }
-      }
-      lookAheadCount++;
-    }
-    return days;
-  };
-
-  // Avalia as datas disponíveis na inicialização do componente
-  const [availableDays] = useState(getNextAvailableDays());
   const fallbackTimes = ['09:30', '11:00', '14:30', '16:00', '17:30'];
 
   const getTimesForDate = (date) => {
@@ -74,17 +48,59 @@ const Contato = ({ siteConfig }) => {
      } else {
          availableSlots = fallbackTimes;
      }
+
+     const dayOfWeek = date.getDay();
      
-     // Filtrar as vagas checando ERP e Bloqueios Específicos
+     // Filtrar as vagas checando ERP e Bloqueios Específicos / Recorrentes
      return availableSlots.filter(time => {
          const slotKey = `${dateStr}T${time}`;
          // Remove se o médico bloqueou o horário lá no painel ERP
          if (horariosBloqueados.includes(slotKey)) return false;
          // Remove se já tiver um paciente marcado na AgendaClinica do ERP
          if (occupiedSlots.includes(slotKey)) return false;
+
+         // Remove se cair dentro de alguma Regra Semanal Fixa
+         const isRecurringBlocked = bloqueiosRecorrentes.some(rule => {
+             if (!rule.dias || !Array.isArray(rule.dias)) return false;
+             if (!rule.dias.map(Number).includes(dayOfWeek)) return false;
+
+             const slotTime = time.substring(0, 5);
+             const hIni = (rule.horario_inicio || '').substring(0, 5);
+             const hFim = (rule.horario_fim || '').substring(0, 5);
+
+             if (!hIni) return false;
+             if (!hFim || hIni === hFim) return slotTime === hIni;
+             return slotTime >= hIni && slotTime < hFim;
+         });
+         if (isRecurringBlocked) return false;
+
          return true;
      });
   };
+
+  const getNextAvailableDays = () => {
+    const days = [];
+    let d = new Date();
+    let lookAheadCount = 0;
+    while (days.length < 5 && lookAheadCount < 30) {
+      d.setDate(d.getDate() + 1);
+      const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      
+      // Se a data inteira está na lista de bloqueios da clínica, pula este dia
+      if (!diasBloqueados.includes(dateStr)) {
+          // Checa se o dia possui ao menos 1 horário livre após todos os filtros
+          const times = getTimesForDate(new Date(d));
+          if (times.length > 0) {
+             days.push(new Date(d));
+          }
+      }
+      lookAheadCount++;
+    }
+    return days;
+  };
+
+  // Avalia as datas disponíveis na inicialização do componente
+  const [availableDays] = useState(getNextAvailableDays());
 
   const formatPhone = (val) => {
     let v = val.replace(/\D/g, '');
